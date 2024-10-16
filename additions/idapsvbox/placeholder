@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="view-details-jews">
+      <div class="property-1tab-5-sponsors">
+        <div class="property-1tab-5-sponsors-child"></div>
+        <div class="body">
+          <div class="container"></div>
+          <div class="text-and-scroll-bar-sponsors">
+            <div class="scroll-bar">
+              <div class="scroll-bar-child"></div>
+              <div class="scroll-bar-item"></div>
+            </div>
+            <div class="text">
+              <div class="text-child"></div>
+              <div class="sponsors-volunteers-text">
+                <div class="master-container"></div>
+                <div class="column-3">
+                  <div class="container1"></div>
+                  <div class="jonathan-sacks-composersounds-container">
+                    <p class="jonathan-sacks">
+                      <b>Jonathan Sacks</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>Composer/Soundscapes</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>&nbsp;</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Gabriela Hofmeyer</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>Suppers & Salons</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>&nbsp;</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Mimi Kennedy</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>Female Voice Over</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>&nbsp;</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Sharman Spector</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>Britex Fabrics</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>&nbsp;</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>&nbsp;</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Barbara Greiser</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Linda Madden</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Celia Menczel</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Eric Safire</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Nancy Sheftel-Gomes</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>Subject Family Seekers</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>&nbsp;</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Donald Benke</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>The Home Depot</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>&nbsp;</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Margaret Ernst</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Patrick Mucerino</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>The People’s Suppers</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>&nbsp;</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Hines Growers Inc.</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Lowes, San Bruno</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>Flowers & Plants</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>&nbsp;</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Mike Lopez</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Color Spot</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>Flowers & Plants</i>
+                    </p>
+                  </div>
+                </div>
+                <div class="column-2">
+                  <div class="container2"></div>
+                  <div class="hideki-uchida-heidis-container">
+                    <p class="jonathan-sacks">
+                      <b>Hideki Uchida</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>Heidi’s Husband</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>&nbsp;</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Chris Carroll</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>Installation</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>&nbsp;</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Shelia Chue</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>Mural & Moral Support</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>&nbsp;</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Caitlin Luu</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>Heidi’s Assistant</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>&nbsp;</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>&nbsp;</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Anthony Patton</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>Supervisor, Community</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>Volunteer Team</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>&nbsp;</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>&nbsp;</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>&nbsp;</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>&nbsp;</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Lynne Howe</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>Volunteer Recruitment</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>&nbsp;</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Leland A. Gray</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>Gray & Gray Architects</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>&nbsp;</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>&nbsp;</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Nima Parza</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>Graphics & Social Media</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>Print Materials</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>&nbsp;</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Elaine Michaud</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Charlie Stott</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>Vision Support</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>&nbsp;</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Denis Valois</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>Universal Forest Products</i>
+                    </p>
+                  </div>
+                </div>
+                <div class="column-1">
+                  <div class="container1"></div>
+                  <div class="jonathan-sacks-composersounds-container">
+                    <p class="jonathan-sacks">
+                      <b>Artists</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>Think Round Fine Arts</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i class="blank-line24">&nbsp;</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Art Collectors</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>Think Round Fine Arts</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>&nbsp;</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Sales Force Transit Center</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>Mural Artists</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>&nbsp;</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Richa Sharma</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>Fabrics & Framing</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>Fun & Friend</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>&nbsp;</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Merna Oeberst</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Hilary Perr</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>PowerPoint Presentation</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>&nbsp;</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>&nbsp;</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>&nbsp;</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>&nbsp;</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Bruno Coon</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>Soundtrack Music & Male Voice Over</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>&nbsp;</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Janet Bilden</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>Touching Objects & TLC</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>&nbsp;</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>&nbsp;</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>April Van der Hoogt</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>Spiritual Well</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>&nbsp;</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>&nbsp;</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Francisco with Daniel</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>Armatures & Fabrics</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>&nbsp;</i>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>&nbsp;</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <b>Lynne Hardin</b>
+                    </p>
+                    <p class="jonathan-sacks">
+                      <i>TheMagicofWhy.com</i>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header">
+          <div class="text-button">
+            <div class="container4"></div>
+            <div class="title">
+              <div class="part-ii-families">
+                Part II: Families in Paradise (Jews)
+              </div>
+              <div class="sponsors-volunteers">Sponsors & Volunteers</div>
+            </div>
+            <div class="button-return">
+              <img class="arrow-icon" alt="" src="./public/arrow@2x.png" />
+
+              <div class="text1">
+                <div class="return">Return</div>
+              </div>
+            </div>
+          </div>
+          <div class="tabs">
+            <div class="container5"></div>
+            <div class="tab-5-sponsors-volunteers">
+              <div class="tab-5-sponsors-volunteers-child"></div>
+              <div class="tab-5-sponsors-volunteers-item"></div>
+              <div class="press-releases">Sponsors & Volunteers</div>
+            </div>
+            <div class="tab-4-press-releases">
+              <div class="tab-4-press-releases-child"></div>
+              <div class="tab-5-sponsors-volunteers-item"></div>
+              <div class="press-releases">Press Releases</div>
+            </div>
+            <div class="tab-3-artist-statement">
+              <div class="tab-4-press-releases-child"></div>
+              <div class="tab-5-sponsors-volunteers-item"></div>
+              <div class="press-releases">Artist Statement</div>
+            </div>
+            <div class="tab-2-dedication">
+              <div class="tab-4-press-releases-child"></div>
+              <div class="tab-5-sponsors-volunteers-item"></div>
+              <div class="press-releases">Dedication</div>
+            </div>
+            <div class="tab-1-inspiration">
+              <div class="tab-1-inspiration-child"></div>
+              <div class="tab-5-sponsors-volunteers-item"></div>
+              <div class="press-releases">Inspiration</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="property-1tab-4-press-relea">
+        <div class="property-1tab-5-sponsors-child"></div>
+        <div class="body">
+          <div class="container"></div>
+          <div class="text-and-scroll-bar-sponsors">
+            <div class="scroll-bar">
+              <div class="scroll-bar-child"></div>
+              <div class="scroll-bar-item"></div>
+            </div>
+            <div class="text2">
+              <div class="text-item"></div>
+              <div class="press-release-for-container">
+                <p class="jonathan-sacks">
+                  <b>PRESS RELEASE</b>
+                </p>
+                <p class="jonathan-sacks">
+                  <b>&nbsp;</b>
+                </p>
+                <p class="jonathan-sacks">
+                  <b>FOR IMMEDIATE RELEASE / SEPTEMBER 14, 2018</b>
+                </p>
+                <p class="jonathan-sacks">&nbsp;</p>
+                <p class="jonathan-sacks">
+                  <b class="what">WHAT:</b>
+                  <span>
+                    Families in Paradise (The Four Jews)...an
+                    installations</span
+                  >
+                </p>
+                <p class="jonathan-sacks">
+                  78 portraits by Heidi Hardin, collages by Rachel Leibman from
+                  her Diaspora Series, and original music score and soundtracks
+                  by LA Composer, Jonathan Sacks
+                </p>
+                <p class="jonathan-sacks">&nbsp;</p>
+                <p class="jonathan-sacks">
+                  <b class="what">OPENING RECEPTION:</b>
+                  <span>
+                    Saturday, October 6, from 4-8 pm, with Artists’ Talks at
+                    6:00 pm</span
+                  >
+                </p>
+                <p class="jonathan-sacks">&nbsp;</p>
+                <p class="jonathan-sacks">
+                  <b class="what">WHEN:</b>
+                  <span> October 1 - December 29, 2018</span>
+                </p>
+                <p class="jonathan-sacks">&nbsp;</p>
+                <p class="jonathan-sacks">
+                  <b class="what">WHERE:</b>
+                  <span>
+                    Think Round Fine Arts, 2140 Bush, Suite 1, SF, CA
+                    94115.</span
+                  >
+                </p>
+                <p class="jonathan-sacks">&nbsp;</p>
+                <p class="jonathan-sacks">
+                  Everyone is invited to join Heidi Hardin, Rachel Liebman, and
+                  Jonathan Sacks for ArtSpan’s 2018 Open Studio and beyond, for
+                  this exaltation of art, culture, and family. A full program of
+                  Family Art Making Workshops, Artists and Family Talks, Guest
+                  Speakers, Interactive 3-D Digital Demonstrations,
+                  Performances, Jewish Immigration Story Telling, and much more,
+                  will accompany this exhibit on Saturdays, from 10-11:30AM,
+                  beginning October 14 through December 30. Additionally, Hardin
+                  will lead Guided Walk-Through Meditations every Sunday from
+                  4-5PM, and School Tours and Art Activities on Friday
+                  afternoons from 1-2PM. Gabriela Hofmeyer, artist volunteer,
+                  will help to facilitate Human Family Suppers (potlucks) and
+                  Salons on Tuesday evenings from 6-8PM. All classes,
+                  activities, and refreshments are free of charge.
+                </p>
+                <p class="jonathan-sacks">&nbsp;</p>
+                <p class="jonathan-sacks">
+                  Please visit: http://www.thinkround.org/index/#/our-artists/
+                  for a full calendar of events. Think Round Fine Arts is
+                  located at 2140 Bush Street, Suite 1, San Francisco, CA 94115.
+                  For more information or to RSVP for classes, meditations and
+                  dinners, please call Heidi at (415) 602-9599 or email:
+                  heidi@heidihardin.com. Space is limited so please call now.
+                  Gallery hours are 9-noon, Tuesdays and Thursdays, and by
+                  appointment. The opening reception for Hardin, Liebman, and
+                  Sacks is on Saturday, October 6, from 4-8 pm, with Artists’
+                  Talks at 6 pm.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header1">
+          <div class="text-button">
+            <div class="container4"></div>
+            <div class="title1">
+              <div class="part-ii-families1">
+                Part II: Families in Paradise (Jews)
+              </div>
+              <div class="sponsors-volunteers">Press Releases</div>
+            </div>
+            <div class="button-return">
+              <img class="arrow-icon" alt="" src="./public/arrow@2x.png" />
+
+              <div class="text1">
+                <div class="return">Return</div>
+              </div>
+            </div>
+          </div>
+          <div class="tabs">
+            <div class="container5"></div>
+            <div class="tab-5-sponsors-volunteers">
+              <div class="tab-5-sponsors-volunteers-inner"></div>
+              <div class="tab-5-sponsors-volunteers-item"></div>
+              <div class="press-releases">Sponsors & Volunteers</div>
+            </div>
+            <div class="tab-4-press-releases">
+              <div class="tab-4-press-releases-5-ite-child"></div>
+              <div class="tab-5-sponsors-volunteers-item"></div>
+              <div class="press-releases">Press Releases</div>
+            </div>
+            <div class="tab-3-artist-statement">
+              <div class="tab-4-press-releases-child"></div>
+              <div class="tab-5-sponsors-volunteers-item"></div>
+              <div class="press-releases">Artist Statement</div>
+            </div>
+            <div class="tab-2-dedication">
+              <div class="tab-4-press-releases-child"></div>
+              <div class="tab-5-sponsors-volunteers-item"></div>
+              <div class="press-releases">Dedication</div>
+            </div>
+            <div class="tab-1-inspiration">
+              <div class="tab-1-inspiration-child"></div>
+              <div class="tab-5-sponsors-volunteers-item"></div>
+              <div class="press-releases">Inspiration</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="property-1tab-3-artist-stat">
+        <div class="property-1tab-5-sponsors-child"></div>
+        <div class="body">
+          <div class="container"></div>
+          <div class="text-and-scroll-bar-sponsors">
+            <div class="scroll-bar">
+              <div class="scroll-bar-child"></div>
+              <div class="scroll-bar-item"></div>
+            </div>
+            <div class="text4">
+              <div class="text-inner"></div>
+              <div class="press-release-for-container">
+                <p class="jonathan-sacks">
+                  <b class="what">Heidi Hardin shares:</b>
+                  <span>
+                    Since 1999, I have been creating The Human Family Tree/A
+                    Walk Through Paradise…seven installations as a personal
+                    meditation on home and family, and as a way for me to heal
+                    the many broken heartstrings of my chaotic childhood with
+                    alcoholic and sex addicted parents. Disillusioned by the
+                    absence of the Christian values of the faith that I was
+                    baptized and confirmed into, I began to explore families
+                    practicing other faiths to see if and how they were teaching
+                    the distilled wisdom of their faith to their children. In
+                    this process, I became aware of the fears of people who are
+                    practicing various major world religions, like Buddhist,
+                    Hindus, Jews, and Muslims. Many were unwilling to
+                    participate in my project because they feared retaliation
+                    and hate crimes against them and their families. I learned
+                    that even in the most seemingly progressive city in the
+                    world, San Francisco, Muslims are harassed on public buses
+                    and Jews are afraid “to be seen” because of a variety of
+                    complex, racial, political, and social fears related to
+                    their ethnicity and faith. I discovered that even in San
+                    Francisco, there are extreme biases within individual faiths
+                    against people of minority races or ethnicities. These
+                    revelations of intolerance and the fears they engender are
+                    underlying the existence of daily life for millions of
+                    people practicing different faiths--a fact that seemed
+                    unbelievable to Heidi until they were revealed in one-on-one
+                    interviews of prospective subject families of her
+                    project.</span
+                  >
+                </p>
+                <p class="jonathan-sacks">&nbsp;</p>
+                <p class="jonathan-sacks">
+                  Having the opportunity to paint families of different
+                  ethnicities who are practicing the seven major world religions
+                  over the past twenty years has given me the courage, strength,
+                  and hope to face and accept the many traumatic events of my
+                  own childhood, growing up in an alcoholic, sex-addicted home.
+                  [Trauma recovery research done by Kaiser Permanente and the
+                  CDC in 1992, correlates adverse childhood experiences (ACEs*)
+                  and its impact on human health across a lifetime. (Please
+                  visit Nadine Berke-Harris “TED Talk” on this subject.)] Think
+                  Round joined the movement to end ACEs in 2017 by taking on a
+                  new health and wellness program, Turning the Tide of Trauma, a
+                  program I began at Kaiser in 2015 and continue to practice to
+                  reduce my PTSD from an ACE score of nine.
+                </p>
+                <p class="jonathan-sacks">&nbsp;</p>
+                <p class="jonathan-sacks">
+                  Created and implemented by Diana Canant, we offer biannual
+                  open enrollments. It is free, confidential, non-medical,
+                  non-diagnosing, non-religious.
+                </p>
+                <p class="jonathan-sacks">&nbsp;</p>
+                <p class="jonathan-sacks">
+                  <b class="what">Rachel Leibman shares:</b>
+                  <span>
+                    “These collages tell stories about Jews living in the
+                    diaspora. Each piece provides a different narrative, some
+                    quotidian and some profound. Although life in the diaspora
+                    has often been difficult and cruel, it was important to me
+                    that Jews not be depicted only as victims. Jewish people
+                    have been proud and resilient, brilliant and common,
+                    challenging and generous. In short, beautifully human. So,
+                    my stories are of tailors and peddlers, rituals and
+                    journeys, scientists and musicians, persecution and
+                    resistance.</span
+                  >
+                </p>
+                <p class="jonathan-sacks">&nbsp;</p>
+                <p class="jonathan-sacks">
+                  From an artistic point of view, composition is very important
+                  to me. I would like for viewers to be able to stand at a
+                  distance from my art- work and see something beautiful,
+                  exciting, interesting or pleasing. But the medium of collage
+                  affords the opportunity to provide an additional level of
+                  meaning. I have chosen source materials which further the
+                  narratives of the stories. As you get close to the pieces in
+                  this exhibit, you will see women scientists, Yiddish actors,
+                  partisan fighters, passports, visas, manuscripts, thimbles and
+                  thread.
+                </p>
+                <p class="jonathan-sacks">&nbsp;</p>
+                <p class="jonathan-sacks">
+                  I collected much of my materials from the Internet but also
+                  put out a call on social media for people to send me pictures
+                  of their loved-ones and ancestors. I received a treasure-trove
+                  of depictions of Jewish life around the world. In many of my
+                  collages I included photo- graphs of people I know: My
+                  grandfather who came through Ellis Island, my in-laws as bride
+                  and groom, my friend David who fought in Vietnam, Maggy who
+                  was part of the Kindertransport, and my cousin Rob who is an
+                  awesome soccer goalie. I think that incorporating these
+                  personal materials helps to add relevance and intimacy.
+                </p>
+                <p class="jonathan-sacks">&nbsp;</p>
+                <p class="jonathan-sacks">
+                  My hope is that when you look at my artwork, you will in turn
+                  feel gratified, angry, proud, and encouraged. I hope that some
+                  of my pieces will just make you laugh.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header1">
+          <div class="text-button">
+            <div class="container4"></div>
+            <div class="title2">
+              <div class="part-ii-families2">
+                Part II: Families in Paradise (Jews)
+              </div>
+              <div class="sponsors-volunteers">Artist Statement</div>
+            </div>
+            <div class="button-return">
+              <img class="arrow-icon" alt="" src="./public/arrow@2x.png" />
+
+              <div class="text1">
+                <div class="return">Return</div>
+              </div>
+            </div>
+          </div>
+          <div class="tabs">
+            <div class="container5"></div>
+            <div class="tab-5-sponsors-volunteers">
+              <div class="tab-5-sponsors-volunteers-inner"></div>
+              <div class="tab-5-sponsors-volunteers-item"></div>
+              <div class="press-releases">Sponsors & Volunteers</div>
+            </div>
+            <div class="tab-4-press-releases">
+              <div class="tab-4-press-releases-child"></div>
+              <div class="tab-5-sponsors-volunteers-item"></div>
+              <div class="press-releases">Press Releases</div>
+            </div>
+            <div class="tab-3-artist-statement">
+              <div class="tab-4-press-releases-5-ite-child"></div>
+              <div class="tab-5-sponsors-volunteers-item"></div>
+              <div class="press-releases">Artist Statement</div>
+            </div>
+            <div class="tab-2-dedication">
+              <div class="tab-4-press-releases-child"></div>
+              <div class="tab-5-sponsors-volunteers-item"></div>
+              <div class="press-releases">Dedication</div>
+            </div>
+            <div class="tab-1-inspiration">
+              <div class="tab-1-inspiration-child"></div>
+              <div class="tab-5-sponsors-volunteers-item"></div>
+              <div class="press-releases">Inspiration</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="property-1tab-2-dedication">
+        <div class="property-1tab-5-sponsors-child"></div>
+        <div class="body3">
+          <div class="container12"></div>
+          <div class="text6">
+            <div class="text-child1"></div>
+            <div class="press-release-for-container">
+              Think Round, Inc.’s URI Cooperation Circle formed in a few weeks
+              through outreach by our Executive Director, Heidi Hardin, to the
+              closest supporters of TRI’s work over the last decade, and Heidi's
+              work over the last thirty years. Simply by asking these long-term
+              allies to review the URI charter, PPPs, application, and all its
+              embedded links, inspired our group to coalesce in order to realize
+              the mission, vision, and objectives of Think Round, Inc. to reach
+              global audiences that URI provides. This process has also allowed
+              us to investigate the other Cooperation Circles of URI with whom
+              we might link arms to accomplish similar goals. As Heidi said to
+              Think Round, Inc.’s board of directors, “Having the opportunity to
+              join URI as a Cooperation Circle feels like finding our
+              Mothership.” Now we will align the energies of our personalities
+              to accomplish the great work of the mission, vision, and
+              objectives of Think Round, Inc. and URI.
+            </div>
+          </div>
+        </div>
+        <div class="header1">
+          <div class="text-button">
+            <div class="container4"></div>
+            <div class="title3">
+              <div class="part-ii-families3">
+                Part II: Families in Paradise (Jews)
+              </div>
+              <div class="sponsors-volunteers">Dedication</div>
+            </div>
+            <div class="button-return">
+              <img class="arrow-icon" alt="" src="./public/arrow@2x.png" />
+
+              <div class="text1">
+                <div class="return">Return</div>
+              </div>
+            </div>
+          </div>
+          <div class="tabs">
+            <div class="container5"></div>
+            <div class="tab-5-sponsors-volunteers">
+              <div class="tab-5-sponsors-volunteers-inner"></div>
+              <div class="tab-5-sponsors-volunteers-item"></div>
+              <div class="press-releases">Sponsors & Volunteers</div>
+            </div>
+            <div class="tab-4-press-releases">
+              <div class="tab-4-press-releases-child"></div>
+              <div class="tab-5-sponsors-volunteers-item"></div>
+              <div class="press-releases">Press Releases</div>
+            </div>
+            <div class="tab-3-artist-statement">
+              <div class="tab-4-press-releases-child"></div>
+              <div class="tab-5-sponsors-volunteers-item"></div>
+              <div class="press-releases">Artist Statement</div>
+            </div>
+            <div class="tab-2-dedication">
+              <div class="tab-4-press-releases-5-ite-child"></div>
+              <div class="tab-5-sponsors-volunteers-item"></div>
+              <div class="press-releases">Dedication</div>
+            </div>
+            <div class="tab-1-inspiration">
+              <div class="tab-1-inspiration-child"></div>
+              <div class="tab-5-sponsors-volunteers-item"></div>
+              <div class="press-releases">Inspiration</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="property-1tab-1-inspiration">
+        <div class="property-1tab-5-sponsors-child"></div>
+        <div class="body3">
+          <div class="container12"></div>
+          <div class="text6">
+            <div class="text-child1"></div>
+            <div class="press-release-for-container">
+              Our hopes for the future are to manifest: heaven on earth, which
+              will require: the end of aging (or at least gaining the knowledge
+              and belief that aging is a curable illness), the end of ACEs
+              (Adverse Child- hood Experiences), a paradigm shift in human
+              belief systems from a fear model to a love model of living, and
+              life-long intergenerational learning; however, we know our limits!
+              :) We really just hope that human beings can begin to evolve
+              spiritually to understand and accept their roles as deliberate
+              creators, capable of and responsible for, creating heaven on
+              earth, thereby earnestly living their lives on earth as they
+              imagine it to be in heaven! Our plans for the future are to
+              complete the Paradise Project and build the Center for the Human
+              Family to house it and the several other objectives for programs
+              and project to be implemented there that foster human spiritual
+              evolution, conflict resolution, and sustainable living on the
+              planet. Paradise... any place of great beauty & perfection, Earth.
+            </div>
+          </div>
+        </div>
+        <div class="header1">
+          <div class="text-button">
+            <div class="container4"></div>
+            <div class="title4">
+              <div class="part-ii-families4">
+                Part II: Families in Paradise (Jews)
+              </div>
+              <div class="sponsors-volunteers">Inspiration</div>
+            </div>
+            <div class="button-return">
+              <img class="arrow-icon" alt="" src="./public/arrow@2x.png" />
+
+              <div class="text1">
+                <div class="return">Return</div>
+              </div>
+            </div>
+          </div>
+          <div class="tabs">
+            <div class="container5"></div>
+            <div class="tab-5-sponsors-volunteers">
+              <div class="tab-5-sponsors-volunteers-inner"></div>
+              <div class="tab-5-sponsors-volunteers-item"></div>
+              <div class="press-releases">Sponsors & Volunteers</div>
+            </div>
+            <div class="tab-4-press-releases">
+              <div class="tab-4-press-releases-child"></div>
+              <div class="tab-5-sponsors-volunteers-item"></div>
+              <div class="press-releases">Press Releases</div>
+            </div>
+            <div class="tab-3-artist-statement">
+              <div class="tab-4-press-releases-child"></div>
+              <div class="tab-5-sponsors-volunteers-item"></div>
+              <div class="press-releases">Artist Statement</div>
+            </div>
+            <div class="tab-2-dedication">
+              <div class="tab-4-press-releases-child"></div>
+              <div class="tab-5-sponsors-volunteers-item"></div>
+              <div class="press-releases">Dedication</div>
+            </div>
+            <div class="tab-1-inspiration">
+              <div class="tab-1-inspiration-5-items-child"></div>
+              <div class="tab-5-sponsors-volunteers-item"></div>
+              <div class="press-releases">Inspiration</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
