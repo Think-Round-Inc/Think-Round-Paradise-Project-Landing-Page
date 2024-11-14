@@ -274,6 +274,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  color: var(--color-indigo-100);
   padding: var(--padding-29xl) 0 0;
   box-sizing: border-box;
   font-size: var(--font-size-base);
@@ -654,6 +655,13 @@
   justify-content: flex-start;
   padding: 0 0 0 var(--padding-sm);
   color: var(--color-white);
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
   cursor: pointer;
 }
 .buttons1 {
@@ -981,6 +989,14 @@
   min-width: 102px;
   flex-shrink: 0;
   debug_commit: 1de1738;
+  cursor: pointer;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
 }
 .text-wrapper10,
 .text20 {
@@ -1410,13 +1426,6 @@
   box-sizing: border-box;
   color: var(--color-gray-300);
 }
-.explore9 {
-  position: relative;
-  display: inline-block;
-  min-width: 102px;
-  flex-shrink: 0;
-  debug_commit: 1de1738;
-}
 .text-wrapper12,
 .text24 {
   display: flex;
@@ -1644,20 +1653,9 @@
   flex-direction: column;
   padding: var(--padding-10xs) 0 0;
 }
-.exhibit-12,
-.exhibit-buttons {
+.exhibit-12{
   display: flex;
   align-items: flex-start;
-}
-.exhibit-buttons {
-  align-self: stretch;
-  height: 42px;
-  flex-direction: row;
-  justify-content: center;
-  padding: 0 var(--padding-2xl) 0 var(--padding-xl);
-  box-sizing: border-box;
-}
-.exhibit-12 {
   flex-direction: column;
   justify-content: flex-start;
   gap: var(--gap-29xl);
@@ -1700,20 +1698,9 @@
   flex-direction: column;
   padding: var(--padding-10xs) 0 0;
 }
-.bali-action,
 .exhibit-22 {
   display: flex;
   align-items: flex-start;
-}
-.bali-action {
-  align-self: stretch;
-  height: 42px;
-  flex-direction: row;
-  justify-content: center;
-  padding: 0 var(--padding-2xl) 0 var(--padding-xl);
-  box-sizing: border-box;
-}
-.exhibit-22 {
   flex-direction: column;
   justify-content: flex-start;
   gap: var(--gap-29xl);
@@ -1963,6 +1950,13 @@
   flex-direction: row;
   align-items: flex-start;
   box-sizing: border-box;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
 }
 .button-wrapper15 {
   align-self: stretch;
@@ -2308,7 +2302,6 @@
   .explore8,
   .presenting-the-families8,
   #hindusSikhs-family-text,
-  .explore9,
   .featuring1,
   .installations1{
     font-size: var(--font-size-5xl);
@@ -2552,7 +2545,6 @@
   .title-parent2 {
     gap: 21px;
   }
-  .explore9,
   .featuring1,
   .installations1 {
     font-size: var(--font-size-lg);
@@ -2760,11 +2752,10 @@ left: 1.37%;
     .left-arrow-icon {
       -webkit-transform: scaleX(-1);
       transform: scaleX(-1);
-      width: 42px;
+      height: 4vh;
+      width: auto;
       position: relative;
-      height: 42px;
       object-fit: contain;
-      
       }
 
 
@@ -2850,6 +2841,13 @@ display: none;
   height: 65px;
   box-sizing: border-box;
   /* display: inline-block; */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
   float: right;
   cursor: pointer;
 }
