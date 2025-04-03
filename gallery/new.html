@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Carousel with Pagination</title>
+  <style>
+    /* Main container */
+    .carousel-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 100%;
+      padding: 20px;
+    }
+
+    /* Large image container */
+    .large-image {
+      flex: 2;
+      max-width: 750px;
+      text-align: center;
+    }
+
+    .large-image img {
+      width: 100%;
+      max-width: 750px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    /* Small images container */
+    .small-images-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .small-images {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      padding: 10px;
+      max-width: 350px;
+    }
+
+    /* Small images */
+    .small-image {
+      width: 150px;
+      height: 100px;
+      object-fit: cover;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .small-image:hover {
+      opacity: 0.7;
+      transform: scale(1.05);
+    }
+
+    /* Pagination controls */
+    .pagination {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .arrow {
+      font-size: 24px;
+      cursor: pointer;
+      margin: 0 10px;
+      user-select: none;
+    }
+
+    .arrow:hover {
+      color: blue;
+    }
+
+    .circles {
+      display: flex;
+      gap: 5px;
+    }
+
+    .circle {
+      width: 12px;
+      height: 12px;
+      background-color: lightgray;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .circle.active {
+      background-color: blue;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 900px) {
+      .carousel-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .small-images {
+        max-width: 300px;
+      }
+
+      .small-image {
+        width: 120px;
+        height: 80px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .small-images {
+        grid-template-columns: repeat(1, 1fr);
+        max-width: 200px;
+      }
+
+      .small-image {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="carousel-container">
+    <div class="large-image">
+      <img src="/images/one.png" alt="Large Image" id="mainImage">
+    </div>
+    <div class="small-images-wrapper">
+      <div class="small-images" id="smallImagesContainer">
+        <!-- Small images will be loaded dynamically -->
+      </div>
+      <div class="pagination">
+        <span class="arrow" id="prevArrow">⬅️</span>
+        <div class="circles" id="paginationCircles"></div>
+        <span class="arrow" id="nextArrow">➡️</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Sample images (replace with actual image paths)
+    const allImages = [
+      '/images/one.png', '/images/two.png', '/images/three.png', '/images/four.png', '/images/five.png',
+      '/images/six.png', '/images/seven.png', '/images/eight.png', '/images/nine.png', '/images/ten.png',
+      '/images/eleven.png', '/images/twelve.png', '/images/thirteen.png', '/images/fourteen.png', '/images/fifteen.png',
+      '/images/sixteen.png', '/images/seventeen.png', '/images/eighteen.png', '/images/nineteen.png', '/images/twenty.png'
+    ];
+
+    const imagesPerPage = 10;
+    let currentPage = 0;
+    const totalPages = Math.ceil(allImages.length / imagesPerPage);
+
+    const smallImagesContainer = document.getElementById('smallImagesContainer');
+    const paginationCircles = document.getElementById('paginationCircles');
+    const prevArrow = document.getElementById('prevArrow');
+    const nextArrow = document.getElementById('nextArrow');
+    const mainImage = document.getElementById('mainImage');
+
+    function loadImages(page) {
+      smallImagesContainer.innerHTML = '';
+      const startIndex = page * imagesPerPage;
+      const endIndex = startIndex + imagesPerPage;
+      const currentImages = allImages.slice(startIndex, endIndex);
+
+      currentImages.forEach(imageSrc => {
+        const img = document.createElement('img');
+        img.src = imageSrc;
+        img.classList.add('small-image');
+        img.addEventListener('click', () => {
+          mainImage.src = imageSrc;
+        });
+        smallImagesContainer.appendChild(img);
+      });
+
+      updatePagination(page);
+    }
+
+    function updatePagination(page) {
+      paginationCircles.innerHTML = '';
+      for (let i = 0; i < totalPages; i++) {
+        const circle = document.createElement('div');
+        circle.classList.add('circle');
+        if (i === page) {
+          circle.classList.add('active');
+        }
+        circle.addEventListener('click', () => {
+          currentPage = i;
+          loadImages(currentPage);
+        });
+        paginationCircles.appendChild(circle);
+      }
+    }
+
+    prevArrow.addEventListener('click', () => {
+      if (currentPage > 0) {
+        currentPage--;
+        loadImages(currentPage);
+      }
+    });
+
+    nextArrow.addEventListener('click', () => {
+      if (currentPage < totalPages - 1) {
+        currentPage++;
+        loadImages(currentPage);
+      }
+    });
+
+    // Initial load
+    loadImages(currentPage);
+  </script>
+</body>
+</html>
