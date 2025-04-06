@@ -1,0 +1,35 @@
+/* https://www.w3schools.com/howto/howto_js_collapse_sidebar.asp */
+#miniGallerySidebar{
+    background-color: white;
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    right: 0;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+}
+.button-mini-gallery:hover {
+    background-color: yellow;
+}
+.headerIcon:hover{
+    filter: invert(100%);
+}
+.dropdown-content-title,
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f9f9f9;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+padding: 12px 16px;
+margin-top: 40px;
+transition: 500ms;
+z-index: 5;
+}
+.dropdown-content-item-filterBy:hover,
+.dropdown-content-item-sortBy:hover{
+   font-weight: bolder;
+}

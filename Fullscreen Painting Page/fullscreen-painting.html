@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,600;1,400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant Infant:wght@500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant SC:wght@400;500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Arimo:wght@700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"
+    />
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./fullscreen-painting.css" />
+    <link rel="stylesheet" href="./additional.css">
+  </head>
+  <script>
+    function viewWithBackground(){
+      var bB = document.getElementById('bgButton');
+      bB.innerText = "View Main Painting";
+      document.getElementById("painting").style.transform = 'scale(0.5)';
+      bB.removeEventListener('click',viewWithBackground);
+      bB.addEventListener('click',viewMainPainting);
+    }
+    function viewMainPainting(){
+      var bB = document.getElementById('bgButton');
+      bB.innerText = "View Background";
+      document.getElementById("painting").style.transform = 'scale(1)';
+      bB.removeEventListener('click',viewMainPainting);
+      bB.addEventListener('click',viewWithBackground);
+    }
+    function viewDescription(){
+      var dB = document.getElementById('descButton');
+      document.getElementById('a-4-icon-top').style.opacity = '100%';
+      dB.innerText = "Hide Description";
+      dB.removeEventListener('click',viewDescription);
+      dB.addEventListener('click',hideDescription);
+    }
+    function hideDescription(){
+      var dB = document.getElementById('descButton');
+      document.getElementById('a-4-icon-top').style.opacity = '0%';
+      dB.innerText = "View Description";
+      dB.removeEventListener('click',hideDescription);
+      dB.addEventListener('click',viewDescription);
+    }
+    function previousPainting(){ //may need to change paintings size
+
+    }
+    function nextPainting(){ //may need to change paintings size
+
+    }
+    function exitFullScreen(){
+      window.location.href = "../Gallery Page/gallery-page.html";
+    }
+  </script>
+  <body>
+    <div class="fullscreen-painting-home-pag">
+      <div class="fullscreen-painting-home-pag-child"></div>
+      <nav class="fullscreen-buttons">
+        <button class="action-buttons">
+          <b class="exit-fullscreen" onclick="exitFullScreen()">Exit Fullscreen</b>
+        </button>
+        <button class="action-buttons1">
+          <b class="view-description" id="descButton">View Description</b>
+        </button>
+        <div class="painting-container-wrapper">
+          <button class="action-buttons1">
+            <b class="view-main-painting" id="bgButton">View Background</b>
+          </button>
+        </div>
+      </nav>
+      <main class="information-panel-wrapper">
+        <section class="information-panel">
+          <div class="title-and-description">
+            <div class="artwork-description-wrapper">
+              <div class="artwork-description">1/78</div>
+            </div>
+            <div class="painting-title1">Painting Title</div>
+          </div>
+          <div class="shape-container">
+            <div id="paintingBg">
+
+            </div> 
+            <div class="shape-panel">
+              <div class="vector-parent">
+                <img id="leftArrow"
+                  class="polygon-icon"
+                  loading="lazy"
+                  alt=""
+                  src="./public/polygon-3.svg"
+                />
+
+                <img id="rightArrow"
+                  class="frame-child4"
+                  loading="lazy"
+                  alt=""
+                  src="./public/polygon-4.svg"
+                />
+              </div>
+              <img id="painting"
+                class="a-4-icon"
+                loading="lazy"
+                alt=""
+                src="./public/1a-4@2x.png"
+              />
+            </div>
+            <div id="a-4-icon-top">
+              <div id="descText">
+                <h4>Painting Description</h4>
+                <span>TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+  <script>
+    document.getElementById('descButton').addEventListener('click',viewDescription);
+    document.getElementById('bgButton').addEventListener('click',viewWithBackground);
+    document.getElementById('leftArrow').addEventListener('click',previousPainting);
+    document.getElementById('rightArrow').addEventListener('click',nextPainting);
+  </script>
+</html>

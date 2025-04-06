@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./additional.css"/>
+    <link
+      rel="stylesheet"
+      href="./gallery.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,600;1,400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant Infant:wght@500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant SC:wght@400;500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Arimo:wght@700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"
+    />
+  </head>
+  <script>
+      function openNav() {
+        document.getElementById("miniGallerySidebar").style.width = "20%";
+        document.getElementById("main").style.width = "80%";
+      }
+      /* Set the width of the sidebar to 0 and the right margin of the page content to 0 */
+      function closeNav() {
+        document.getElementById("miniGallerySidebar").style.width = "0";
+        document.getElementById("main").style.marginRight = "0";
+      }
+      function toggleSortByMenu(){
+        closeFilterByMenu();
+        var dDContent = document.getElementById('sortByMenu');
+        if (dDContent.style.display === 'block') dDContent.style.display = 'none';
+        else dDContent.style.display = 'block';
+      }
+      function closeSortByMenu(){
+        document.getElementById('sortByMenu').style.display = 'none';
+      }
+      function toggleFilterByMenu(){
+        closeSortByMenu();
+        var dDContent = document.getElementById('filterByMenu');
+        if (dDContent.style.display === 'block') dDContent.style.display = 'none';
+        else dDContent.style.display = 'block';
+      }
+      function closeFilterByMenu(){
+        document.getElementById('filterByMenu').style.display = 'none';
+      }
+      function sortBy(){
+        //No Functionality Right Now
+      }
+      function addFilter(){
+
+      }
+      function removeFilter(id){ 
+        //pass the id to the filter and delete it
+        //doesnt currently filter paintings as i have no information on tags
+
+
+      }
+  </script>
+  <body>
+    <div class="gallery-experience-category">
+      <main class="background-parent">
+        <section class="background"></section>
+        <section class="header" data-scroll-to="header">
+          <div class="header-1">
+            <div class="header-1-child"></div>
+            <div class="twitter-parent">
+              <a href="https://twitter.com/i/flow/login?redirect_after_login=%2FThinkRound_" target="_blank"><img
+                class="headerIcon"
+                loading="lazy"
+                alt=""
+                src="./public/twitter@2x.png"
+              /></a>
+              <a href="https://www.facebook.com/thinkroundinc/?ref=bookmarks" target="_blank"><img
+                class="headerIcon"
+                loading="lazy"
+                alt=""
+                src="./public/facebook@2x.png"
+              /></a>
+              <a href="https://www.instagram.com/thinkround/" target="_blank"><img
+                class="headerIcon"
+                loading="lazy"
+                alt=""
+                src="./public/instagram@2x.png"
+              /></a>
+              <a href="https://www.youtube.com/channel/UCWwDo1uREn4oE02onTvMUaw" target="_blank"><img
+                class="headerIcon"
+                loading="lazy"
+                alt=""
+                src="./public/youtube@2x.png"
+              /></a>
+            </div>
+            <div class="search">
+              <div class="search-child"></div>
+              <div class="search1">Search</div>
+              <img class="search-icon" alt="" src="./public/search.svg" />
+            </div>
+          </div>
+          <header class="header-2">
+            <div class="header-2-child"></div>
+            <img
+              class="image-8-icon"
+              loading="lazy"
+              alt=""
+              src="./public/image-8@2x.png"
+            />
+
+            <div class="give-receive-help-subscribe-wrapper">
+              <div class="give-receive-help">
+                Give, Receive, Help, Subscribe
+              </div>
+            </div>
+            <div class="header-2-inner">
+              <div class="shop-art-parent">
+                <div class="shop-art">Shop Art</div>
+                <div class="think-round-fine">Think Round Fine Arts</div>
+                <div class="visions">Visions</div>
+                <div class="programs">Programs</div>
+                <div class="events">Events</div>
+                <div class="about">About</div>
+                <div class="blog">Blog</div>
+              </div>
+            </div>
+          </header>
+        </section>
+        <section class="frame-wrapper">
+          <div class="body-header-2-parent" id="main">
+            <div class="body-header-2">
+              <div class="bar-1">
+                <div class="frame"></div>
+                <div class="button-1-wrapper">
+                  <div class="button-1" id="button1Container">
+                    <img
+                      class="keyboard-arrow-down"
+                      loading="lazy"
+                      alt=""
+                      src="./public/keyboard-arrow-down@2x.png"
+                    />
+
+                    <h3 class="return">Return</h3>
+                  </div>
+                </div>
+                <h1 class="part-1-christians">Part 1: Christians</h1>
+                <div class="button-2-wrapper">
+                  <div class="button-2">
+                    <div class="button">
+                      <div class="all-groups-wrapper">
+                        <div class="all-groups">All Groups</div>
+                      </div>
+                      <img
+                        class="keyboard-arrow-down1"
+                        alt=""
+                        src="./public/keyboard-arrow-down-1.svg"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="bar-2-wrapper">
+                <div class="bar-2">
+                  <div class="frame1"></div>
+                  <h3 class="the-human-family">The Human Family Tree</h3>
+                </div>
+              </div>
+            </div>
+            <div class="frame-parent">
+              <div class="body-2-state-1-parent">
+                <div class="body-2-state-1">
+                  <div class="level-1">
+                    <div class="sorting-wrapper">
+                      <div class="sorting">
+                        <div class="items">
+                          <div class="button1">
+                                <div id='sortby' class="sort-by">Sort By</div>
+                                <img id='sortbyarrow' class="keyboard-arrow-down2"
+                                  alt=""
+                                  src="./public/keyboard-arrow-down-1.svg"
+                                />
+                                <div id="sortByMenu" class="dropdown-content">
+                                  <p class='dropdown-content-item-sortBy' id="defaultSort">Default</p>
+                                  <p class='dropdown-content-item-sortBy' id="artistSort">Artist (A-Z)</p>
+                                  <p class="dropdown-content-item-sortBy" id="paintingNameSort">Painting Name (A-Z)</p>
+                                </div> 
+                          </div>
+                          <div class="button3">
+                            <div id="filterBy">Filter By</div>
+                            <img class="keyboard-arrow-down3" id="filterByArrow"
+                              alt=""
+                              src="./public/keyboard-arrow-down-1.svg"/>
+                            <div id="filterByMenu" class="dropdown-content">
+                              <p class="dropdown-content-item-filterBy" id="materialMenu">Material</p>
+                              <p class="dropdown-content-item-filterBy" id="subgroupMenu">Subgroup</p>
+                            </div> 
+                          </div>
+                          <div class="button-mini-gallery" onclick="openNav()"> <!-- On Pressing the button hide this area-->
+                            <div class="text2">
+                              <h3 class="miniGalleryButton">Show Gallery</h3>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="sort-and-filter-indicators-wrapper">
+                      <div class="sort-and-filter-indicators">
+                        <div class="frame3"></div>
+                        <div id="currently-sorted-by">
+                          Currently Sorted By: Default
+                        </div>
+                        <div class="sort-and-filter-indicators-inner">
+                          <div class="item-parent">
+                            <button class="item">
+                              <div class="filter-1-wrapper">
+                                <div class="filter-1">Filter 1</div>
+                              </div>
+                              <img
+                                class="cancel-icon"
+                                alt=""
+                                src="./public/cancel.svg"
+                              />
+                            </button>
+                            <button class="item1">
+                              <div class="filter-2-wrapper">
+                                <div class="filter-2">Filter 2</div>
+                              </div>
+                              <img
+                                class="cancel-icon1"
+                                alt=""
+                                src="./public/cancel.svg"
+                              />
+                            </button>
+                          </div>
+                        </div>
+                        <!-- <div class="sort-and-filter-indicators-child"></div> -->
+                      </div>
+                    </div>
+                    <div class="key-image">
+                      <img class="key-image-child" alt="" />
+
+                      <img class="key-image-item" alt="" />
+
+                      <div class="container-parent">
+                        <div class="container"></div>
+                        <img
+                          class="a-1-icon"
+                          alt=""
+                          src="./public/1a-1@2x.png"
+                        />
+                      </div>
+                      <div class="frame-group">
+                        <div class="counter-wrapper">
+                          <button class="counter">
+                            <div class="counter-child"></div>
+                            <div class="div">1/78</div>
+                          </button>
+                        </div>
+                        <img
+                          class="fullscreen-icon"
+                          loading="lazy"
+                          alt=""
+                          src="./public/fullscreen.svg"
+                          id="fullscreenIcon"
+                        />
+                      </div>
+                      <img
+                        class="arrows-icon"
+                        loading="lazy"
+                        alt=""
+                        src="./public/arrows.svg"
+                      />
+                    </div>
+                    <div class="key-information">
+                      <div class="frame4"></div>
+                      <div class="painting-title-wrapper">
+                        <h3 class="painting-title">Painting Title</h3>
+                      </div>
+                      <h3 class="artist-name">Artist Name</h3>
+                      <h3 class="date-produced">Date Produced</h3>
+                    </div>
+                  </div>
+                  <div class="level-2">
+                    <div class="text-box-frame"></div>
+                    <div class="text">
+                      <div class="text1">
+                        <div class="text-frame"></div>
+                        <h3 class="lorem-ipsum-dolor">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit. Vestibulum quis euismod tellus. Proin in
+                          accumsan nisi. Sed sed dignissim felis. Proin semper
+                          sem eu odio hendrerit commodo. Interdum et malesuada
+                          fames ac ante ipsum primis in faucibus. Vestibulum sed
+                          cursus tortor. Proin nisl elit, consectetur a
+                          pellentesque ac, malesuada at velit. Pellentesque vel
+                          tortor sit amet urna luctus finibus sit amet eleifend
+                          ante. Aliquam pretium rhoncus ante, at lacinia nibh
+                          mollis ultrices. Mauris velit arcu, maximus a nunc ut,
+                          porta porttitor nisl. Suspendisse ut quam quis eros
+                          congue rutrum eu vitae ex. Mauris ultrices vitae erat
+                          sit amet hendrerit. Cras facilisis lacinia risus id
+                          tempus. Phasellus est nisi, elementum ut viverra et,
+                          suscipit vel elit. Donec venenatis condimentum dui
+                          vitae pellentesque.
+                        </h3>
+                      </div>
+                      <div class="button5" id="buttonContainer">
+                        <div class="button-frame"></div>
+                        <div class="button6">
+                          <div class="read-more-wrapper">
+                            <h3 class="read-more">Read More</h3>
+                          </div>
+                          <img
+                            class="keyboard-arrow-down4"
+                            alt=""
+                            src="./public/keyboard-arrow-down-1.svg"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="back-to-top-wrapper">
+                <div class="back-to-top" id="backToTop">
+                  <div class="keyboard-arrow-down-wrapper">
+                    <img
+                      class="keyboard-arrow-down5"
+                      alt=""
+                      src="./public/keyboard-arrow-down-5.svg"
+                    />
+                  </div>
+                  <h3 class="back-to-top1">Back to top</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mini-gallery" id="miniGallerySidebar">
+            <img
+              class="navigation-icon"
+              alt=""
+              src="./public/navigation.svg"
+            />
+      
+            <div class="gallery-header-wrapper">
+              <div class="gallery-header" id="galleryHeaderContainer">
+                <div class="frame5"></div>
+                <div class="button-mini-gallery" onclick="closeNav()">
+                  <div class="text2">
+                    <h3 class="miniGalleryButton">Hide Gallery</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="images">
+              <div class="row-1">
+                <div class="image">
+                  <img class="image-child" alt="" />
+      
+                  <img class="image-item" alt="" />
+      
+                  <div class="container-group">
+                    <div class="container1"></div>
+                    <img
+                      class="a-2-icon"
+                      loading="lazy"
+                      alt=""
+                      src="./public/1a-2@2x.png"
+                    />
+                  </div>
+                  <div class="current-image">
+                    <div class="container2"></div>
+                    <div class="currently-selected">
+                      Currently Selected
+                    </div>
+                  </div>
+                </div>
+                <img
+                  class="image-icon"
+                  loading="lazy"
+                  alt=""
+                  src="./public/image.svg"
+                />
+              </div>
+              <div class="row-2">
+                <img
+                  class="image-icon1"
+                  alt=""
+                  src="./public/image-1.svg"
+                />
+      
+                <img
+                  class="image-icon2"
+                  alt=""
+                  src="./public/image-21.svg"
+                />
+              </div>
+              <div class="row-3">
+                <img
+                  class="image-icon3"
+                  alt=""
+                  src="./public/image-31.svg"
+                />
+      
+                <img
+                  class="image-icon4"
+                  alt=""
+                  src="./public/image-41.svg"
+                />
+              </div>
+              <div class="row-4">
+                <img
+                  class="image-icon5"
+                  alt=""
+                  src="./public/image-51.svg"
+                />
+      
+                <img
+                  class="image-icon6"
+                  alt=""
+                  src="./public/image-61.svg"
+                />
+              </div>
+              <div class="row-5">
+                <img
+                  class="image-icon7"
+                  alt=""
+                  src="./public/image-71.svg"
+                />
+      
+                <img
+                  class="image-icon8"
+                  alt=""
+                  src="./public/image-81.svg"
+                />
+              </div>
+              <div class="row-6">
+                <img
+                  class="image-icon9"
+                  alt=""
+                  src="./public/image-91.svg"
+                />
+      
+                <img
+                  class="image-icon10"
+                  alt=""
+                  src="./public/image-10.svg"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="footer">
+          <div class="background1"></div>
+          <div class="footer-inner">
+            <div class="mission-parent">
+              <div class="mission">Mission</div>
+              <div class="contact">Contact</div>
+              <div class="our-board-members">Our Board Members</div>
+              <div class="map">Map</div>
+            </div>
+          </div>
+          <div class="c3-nonprofit-parent">
+            <div class="c3-nonprofit">501(C)3 Nonprofit</div>
+            <div class="bush-street-suite">
+              2140 Bush Street, Suite 1, San Francisco, CA 94115, United States
+            </div>
+            <div class="div1">(415) 602-9599</div>
+            <div class="infothinkroundorg">info@thinkround.org</div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+
+    <script>
+      var button1Container = document.getElementById("button1Container");
+      if (button1Container) {
+        button1Container.addEventListener("click", function (e) {
+          window.location.href = "../index.html";
+        });
+      }
+      var fullscreenIcon = document.getElementById("fullscreenIcon");
+      if (fullscreenIcon) {
+        fullscreenIcon.addEventListener("click", function (e) {
+          window.location.href = "../Fullscreen Painting Page/fullscreen-painting.html";
+        });
+      }
+      var buttonContainer = document.getElementById("buttonContainer");
+      if (buttonContainer) {
+        buttonContainer.addEventListener("click", function (e) {
+          // Please sync "Gallery Experience - Category Opened - Christians" to the project
+        });
+      }
+      var galleryHeaderContainer = document.getElementById("galleryHeaderContainer");
+      if (galleryHeaderContainer) {
+        galleryHeaderContainer.addEventListener("click", function (e) {
+          // Please sync "Gallery Experience - Category Opened - Christians" to the project
+        });
+      } 
+      var backToTop = document.getElementById("backToTop");
+      if (backToTop) {
+        backToTop.addEventListener("click", function () {
+          var anchor = document.querySelector("[data-scroll-to='header']");
+          if (anchor) {
+            anchor.scrollIntoView({ block: "start", behavior: "smooth" });
+          }
+        });
+      }
+      document.getElementById("sortby").addEventListener('click',toggleSortByMenu);
+      document.getElementById("sortbyarrow").addEventListener('click',toggleSortByMenu);
+      document.getElementById("filterBy").addEventListener('click',toggleFilterByMenu);
+      document.getElementById("filterByArrow").addEventListener('click',toggleFilterByMenu);
+      var sortBys = document.getElementsByClassName("dropdown-content-item-sortBy");
+      for (let i = 0; i < sortBys.length; i++){
+        sortBys[i].addEventListener('click',function(){
+          document.getElementById('currently-sorted-by').innerText = "Currently Sorted By: " + 
+          (sortBys[i].id === 'defaultSort' ? 'Default ': (sortBys[i].id === 'artistSort' ? 'Artist' : 'Painting Name'));
+          toggleSortByMenu()
+        })
+      }
+      </script>
+  </body>
+</html>

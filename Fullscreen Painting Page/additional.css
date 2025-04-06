@@ -1,0 +1,8 @@
+#descText{
+    padding: 5%;
+    word-wrap: break-word;
+    width: 1072px;
+}
+#painting{
+  transition: 100ms;  
+}
