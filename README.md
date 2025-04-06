@@ -13,3 +13,27 @@ Issues that remain include but are not limited to:
 8. The header links don't currently work, and neither does the search bar. This is the same problem for the footer.
 9. The scrollbar in the view details sections could be moved to the left, while the textbox itself could be widened.
 10. The Heidi Hardin description box's text could be enlargened, but the CSS goofs up when this happens.
+
+# Think-Round-Gallery-Page
+
+This gallery is currently out of date. Please refer to the Figma for the Paradise Project's gallery section.
+Issues include but are not limited to:
+
+1. General Layout
+2. Actually incorporating the images - right now everything is placeholder
+  + Use Eric Korman's links to google drive, may have to download them directly
+    + He has said they are resorting them, so possibly this should be done later
+  + Gallery Buttons do not currently work (left, right, fullscreen)
+3. Changing how to switch between the family parts
+4. Removal of the filtering (has since been removed)
+  + Sort by, Filter By can be removed
+  + Group by represents the families (Jews, Christians, etc.) so that should be retooled
+5. The sidebar is very slow on first open
+6. CSS
+
+# Think-Round-Fullscreen-Painting-Page
+
+This version of the fullscreen gallery images is currently out of date. Please refer to the Figma of the full screen images of the Paradise Project.
+Issues include but are not limited to:
+1. For simplicity, it is probably best to merge the functionality of this file with the gallery page instead of being another page by itself.
+2. The format and buttons have been changed and moved around.
