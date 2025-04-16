@@ -1,0 +1,728 @@
+// MAKE VISIBLE (FLEX) THE FAMILY BOX -> convert id to just the family, then append the kind of box
+// remove text button change
+function displayArtistBlurb(id){ //hide current family box and reveal blurb
+  closeArtistBlurbs();
+  var blurb = id + "-blurb-box";
+  var family = id + "-family-box";
+  document.getElementById(blurb).style.display = "flex";
+  document.getElementById(family).style.display = "none";
+}
+function closeArtistBlurbs(){ //reveal all family boxes and hide all blurbs
+  var blurbs = document.getElementsByClassName('blurb-box');
+  var families = document.getElementsByClassName('family-box');
+  for (let i = 0; i < blurbs.length; i++){
+    document.getElementById(blurbs[i].id).style.display = 'none';
+    document.getElementById(families[i].id).style.display = 'flex';
+  }
+}
+function transitionSubject(id,list){ //Slowly Changes Opacity of Text over time and replaces with new text
+  //remove first element of list and add to end
+  var nList = list;
+  nList.push(nList.shift());
+  //slowly shift opacity down
+  for (let i = 0; i < 0.5; i += 0.1) setTimeout(()=>{document.getElementById(id).style.opacity = (0.8 - 2*i).toString()},1000*i)
+  //change text
+  setTimeout(()=>{document.getElementById(id).innerText = nList[0]},500);
+  //slowly shift it back up
+  for (let i = 0; i < 0.5; i += 0.1) setTimeout(()=>{document.getElementById(id).style.opacity = (0.2 + 2*i).toString()},500 + 1000*i)
+  setTimeout(()=>{transitionSubject(id,nList)}, 10000);
+}
+function startChangeNamesOfSubjects(){ //prompts the name changes of the family boxes
+  const christians = ['Hideki Uchida','Shelley Bradford Bell','Leslie Aguilar','Scott Madison'];
+  const jews = ['Susanna Spong-Fernandez','Ray Pestrong','Jonathan Sacks','Fleur and Marc Attia'];
+  const muslims = ['Ismaila Biaye','Mona Anonymous','Salma Arastu','Souleiman Ghali'];
+  const hindusSikhs = ['Richa Sharma','Vaishali Jogi','Tahil Sharma','Ruchi Maheshwari'];
+  const indigenous = ['Rebecca Padgett','Rosalia Gutierez'];
+  const familyTexts = document.getElementsByClassName('family-text');
+  for (let i = 0; i < familyTexts.length; i++){
+    var id = familyTexts[i].id;
+    if (id === 'christians-family-text') transitionSubject(id,christians);
+    else if (id === 'jews-family-text') transitionSubject(id,jews);
+    else if (id === 'muslims-family-text') transitionSubject(id,muslims);
+    else if (id === 'hindusSikhs-family-text') transitionSubject(id,hindusSikhs);
+    else if (id === 'indigenous-family-text') transitionSubject(id,indigenous);
+  }
+}
+function changeBlurbBoxContents(group,tab){ //change the contents of the blurbBox //Need to add sponsors
+  var titleEdit = null;
+  if (group === 'christians') {
+    titleEdit = document.getElementById('christian-tab-subtitle');
+    if (tab === 'inspiration') document.getElementById('christian-blurb-text').innerText = 
+    `
+    The inspiration for this exhibit is the more than two thousand children of Bayview Hunters Point Community Elementary Schools: Bret Harte, Carver, Charles Drew, Malcolm X and 21st Century Academy. These children have participated in the Children’s Mural Program, a Bayview Opera House Visual Arts Program focused on the environment. Their paintings and essays about the Sun, Earth, Air, Water, Soil, Plants, Animals, Their Own Backyard, Earth Day and Hunters Point Shipyard have given me a great reverence for the planet and an even greater joy for paint and painting. They have also given me the greatest gift of life… the gift of love. Love comes in many forms. Fun is one of my favorites. One child wrote, "Learning can be fun when I get to paint." This has been the slogan of the Children’s Mural Program ever since. I have had great fun learning from the many children in this very popular and highly successful arts program. We hope you will appreciate the children’s paintings seen around the room, and the connection of this art to Chief Seattle’s letter and the content of this exhibit…home and family. I have had great fun with the children and their teachers. Without the ongoing support of the scores of teachers-who have worked tirelessly with our artist/instructors to bring high quality lesson to the children about their cultures and the planet-we could not have sustained and grown our program. We are grateful to every one of them. The principals too deserve credit for their willingness to let us take over their multi-purpose rooms one afternoon each week so that we can take a blank page and, with paint, create worlds. The artist/instructors who serve the community in the Children’s Mural Program are my band of angels. They are creators of the highest order and I hope that you will appreciate their art, which is also on display with the children’s around the perimeter of the Opera House’s theater floor. They are bringers of the light—that is, the color wheel, from which comes shape, line and texture. Patterns emerge from these and life and art becomes, in this way, very rich in their company.
+    `;
+    else if (tab === 'dedication') document.getElementById('christian-blurb-text').innerText =
+    `
+    This exhibit is dedicated to the children who visit the Earth plane for a brief time: those children who are aborted, miscarried, and die young. They are the gap between our thoughts; they are the glue that holds families together. For me, there are two special souls who visited briefly that I would like to acknowledge in this Great Work… The first is my older brother, Robert Scott Hardin, who died at the age of two months of sudden infant death syndrome. He is the light of my life today and the glue which has helped me to reconnect with my five other siblings, Kay, Lynne, Buzzy, Chris and Mark-without whom I would not have learned all I needed to know to find peace on Earth. To Bobby I wish peace and express gratitude. Second, is the son of Sam Asseffa and Jill Kongabel. His name is Zakarias. He has been with me since coming to hear of his early death at eight months (Jan 6, 1991- Aug. 29, 1991) from a failed liver transplant. Sam first shared Zakarias’ life with me over sandwiches in the Martin Luther King, Jr. Park. I had invited Sam to speak at the Children’s Mural Program Workshops, to acquaint community children with the Redevelopment Plan for Hunters Point Shipyard that Sam has helped to develop. I know Zakarias has helped Sam in this monumental and thoughtful effort, and for that we are grateful and wish him peace too.
+    `;
+    else if (tab === 'artist') document.getElementById('christian-blurb-text').innerHTML = 
+    `
+    <b>Heidi Hardin shares:</b> It is my belief that the peoples of the earth exist within a web of natural, spiritual, and social forces (much as individual planets are guided by the steady laws of nature) that both hold them together and keep them apart. Though we are separate individuals, nations, cultures, and faiths, we are one in our humanity. The issues of faith, religion, divine and natural force(s)—as reflected in humanity, have fascinated me from my first efforts as an artist painting the seasonal rituals of my own family (Oklahoma is OK/Seasonal Rituals 1959). Other vectors that have fueled my art making for the past twenty years include the pursuit of the American dream (Stardust Light in August;Incantations/Books 1 & 2: Parsifal and Self Discipline) and the notion of manifest destiny in the American psyche (The Sound and the Fury; Swan Paintings; Family Values). American icons as diverse representatives of humanity are reflected in my latest series of artworks about the season rituals of my "larger" family—my friends, neighbors, business associates and in some cases, strangers from countries around the world (The Human Family Tree/A Walk Through Paradise…). The Human Family Tree/A Walk Through Paradise… is the first of a larger series of planned installations that will include the study of families in America who are followers of eight of the major world religions: Christianity, Judaism, Buddhism, Taoism, Confucianism, Hinduism, Islam and Primalism. The inspiration for this life project, or birth vision, resulted from my own spiritual quest and the study of myth and religion, particularly through the work of Joseph Campbell and Houston Smith, my interaction with the artworks from countries around the world at the Fine Arts Museums of San Francisco, and the intimate moments I have shared with the ethnically diverse members of San Francisco’s Bayview Hunters Point community--especially the senior men and women who shared their lives with me and the hundreds of children to whom I teach art each week in the community schools.
+    `;
+    else if (tab === 'press') document.getElementById('christian-blurb-text').innerHTML = 
+    `
+    <b>PRESS RELEASE</b><br>
+
+<b>FOR IMMEDIATE RELEASE / OCTOBER 12, 2000</b><br>
+
+<b>The Bayview Opera House presents The Human Family Tree/A Walk Through Paradise, an environmental installation.</b><br>
+
+On December 19, 2000, as part of holiday and millennium festivities, and in celebration of cultural differences and the spirit of harmony and humanness that unite a cross-section of San Francisco residents, the Bayview Opera House will premiere, The Human Family Tree/A Walk Through Paradise, an environmental installation. The installation will center on seventy-eight paintings created by SF artist, Heidi Hardin, and thirty-six corresponding original musical works by Los Angeles composer, Jonathan Sacks.
+
+Visitors to the Opera House will find the theater transformed by an elaborate labyrinth of pillars and paths, based on the ancient tarot of the Egyptians, or Tree of Life. Each of the ten, four-sided pillars and the twenty-two triangulated paths will hold paintings created from family photographs—images that span the past one hundred years, and document each family’s history. Four families have been selected to represent major ethnic groups, standing as icons for Americans of African, Latin, Caucasian and Asian decent.
+
+Each of these families has been associated with the Bayview Opera House and the Bayview Hunters Point community, either directly or indirectly, for the past eight years or more. Shelley Bradford Bell has served as a member of the Board of Directors and is currently the Executive Director of the Bayview Opera House. Leslie Aguilar has served annually as artist/instructor for the Children’s Mural Program, an in-school, visual arts program of the Bayview Opera House. Scott Madison served diligently for nine years as the Secretary of Board of Directors of the Bayview Opera House. Richard Uchida is the husband of the artist; in that capacity he has served to assist Ms. Hardin in the many Bayview Opera House project and programs created by her—including this project.
+
+The photographs have been selected to represent archetypal evolutionary human experiences (for example, infancy, childhood, adolescence, motherhood, fatherhood, marriage, death, etc.), and will be installed on panels decorated with papers that evoke the dreams and aspirations of the times. The musical soundtrack is composed to match the emotional vibration of each of the shared human experiences depicted. The art and music are a celebration of the Great Work of American families. The experiences depicted recreate the circular nature of life, and the spiritual evolution of all peoples as members of the human family.
+
+The Bayview Opera House is proud to present this exhibition in celebration of the holiday season and as a marker of the true beginning of the new millennium. It is a highlight of two years of on-going programming that has centered on ethnic diversity. The installation will run through January 14, 2001, and will be open Monday through Saturday from noon until five each evening. A reception for the subject families and the artists will be held December 19, 2000, from 3-6:00 p.m. , at the Bayview Opera House, at 4705 Third Street, between Newcomb and Oakdale, SF, CA 94124.
+
+<br><b>PRESS RELEASE</b><br>
+
+<b>FOR IMMEDIATE RELEASE / SEPTEMBER 11, 2001</b><br>
+
+<b>Heidi Hardin - The Human Family Tree, an installation.</b><br>
+
+Newspace presents San Francisco artist Heidi Hardin and her installation of paintings documenting California family histories. The paintings are incorporated into an installation combining objects, music, and elaborate displays which take the viewer on a “walk through paradise” in which we are guided along a path and must come to a rest stop before each “station” of family history.
+
+Hardin’s work examines the family photo album as a tool for evoking common human experiences linking four separate cultural experiences while allowing the viewer to see the inner culture within each family. Four different families stand as icons for Americans of African, European, Asian, and Latin descent. Hardin’s paintings are expanded using cultural decorative arts, handmade papers, trimmings and flowers as well as original musical score by Jonathan Sacks.
+
+An accomplished figurative painter and muralist, Hardin has been working in San Francisco where “The Human Family Tree” first debuted at the Bayview Opera House. The installation visits Los Angeles courtesy of Home Depot and Newspace.
+
+    `;
+    else if (tab === 'sponsors') document.getElementById('christian-blurb-text').innerHTML = 
+    `
+    <div class='sponsors-volunteers-box-parent'>
+      <div class='sponsors-volunteers-half'>
+        <b>Shelley Bradford-Bell</b><br>
+<i>Installation Space @The Bayview Opera House</i><br>
+<br>
+<br>
+<b>Jonathan Sacks</b><br>
+<i>Music: 36 original music compositions (one for each of 14 stations and 22 for each path)</i>
+<br>
+<br>
+<b>George Kruse</b><br>
+<i>Photography</i><br>
+<br>
+<b>Betsie Miller-Kusz</b><br>
+<i>Mural Resource Center</i><br>
+<b><br>
+Good Guys<br>
+Glidden Paints<br>
+Energizer<br>
+The Emeral Fund<br>
+Costco<br>
+Foods Co.<br>
+Additional Supplies<br>
+</b><br>
+      </div>
+      <div class='sponsors-volunteers-half'>
+        <b>Home Depot, Colma Store II, #0639</b><br>
+<i>All materials: armatures, paints, floor coverings for pathways, batteries for headsets, poinsettias, and so much more</i><br>
+<br>
+<b>Don Benki</b><br>
+<b>Master Carpenter Jim Horton</b><br>
+<b>Store Manager</b><br>
+<i>Team Depot Volunteers</i><br>
+<br>
+<b>Sharman Spector</b><br>
+<i>Britex Fabric Store</i><br>
+<br>
+<b>Jaques Terzian & Debra</b><br>
+<i>The Point</i><br>
+<br>
+<b>
+Barbara Boxer<br>
+US State Senator Nancy Pelosi<br>
+US Congresswoman Sue Bierman<br>
+SF Board of Supervisors Willie Brown, Jr.<br>
+SF Mayor John L. Burton<br>
+CA State Senator Kevin Shelley<br>
+CA State Assembly Member Carole Migden<br>
+CS State Assembly Member<br>
+</b>
+<i>Recognition from Local Civic Leaders</i><br>
+      </div>
+    </div>
+    `;
+  }
+  else if (group === 'jews') {
+    titleEdit = document.getElementById('jew-tab-subtitle');
+    if (tab === 'inspiration') document.getElementById('jew-blurb-text').innerText = 
+    `
+    Our hopes for the future are to manifest: heaven on earth, which will require: the end of aging (or at least gaining the knowledge and belief that aging is a curable illness), the end of ACEs (Adverse Child- hood Experiences), a paradigm shift in human belief systems from a fear model to a love model of living, and life-long intergenerational learning; however, we know our limits! :) We really just hope that human beings can begin to evolve spiritually to understand and accept their roles as deliberate creators, capable of and responsible for, creating heaven on earth, thereby earnestly living their lives on earth as they imagine it to be in heaven! Our plans for the future are to complete the Paradise Project and build the Center for the Human Family to house it and the several other objectives for programs and project to be implemented there that foster human spiritual evolution, conflict resolution, and sustainable living on the planet. Paradise... any place of great beauty & perfection, Earth.
+    `
+    else if (tab === 'dedication') document.getElementById('jew-blurb-text').innerText = 
+    `
+    Think Round, Inc.’s URI Cooperation Circle formed in a few weeks through outreach by our Executive Director, Heidi Hardin, to the closest supporters of TRI’s work over the last decade, and Heidi's work over the last thirty years. Simply by asking these long-term allies to review the URI charter, PPPs, application, and all its embedded links, inspired our group to coalesce in order to realize the mission, vision, and objectives of Think Round, Inc. to reach global audiences that URI provides. This process has also allowed us to investigate the other Cooperation Circles of URI with whom we might link arms to accomplish similar goals. As Heidi said to Think Round, Inc.’s board of directors, “Having the opportunity to join URI as a Cooperation Circle feels like finding our Mothership.” Now we will align the energies of our personalities to accomplish the great work of the mission, vision, and objectives of Think Round, Inc. and URI.
+    `;
+    else if (tab === 'artist') document.getElementById('jew-blurb-text').innerHTML = 
+    `
+    <b>Heidi Hardin shares:</b> Since 1999, I have been creating The Human Family Tree/A Walk Through Paradise…seven installations as a personal meditation on home and family, and as a way for me to heal the many broken heartstrings of my chaotic childhood with alcoholic and sex addicted parents. Disillusioned by the absence of the Christian values of the faith that I was baptized and confirmed into, I began to explore families practicing other faiths to see if and how they were teaching the distilled wisdom of their faith to their children. In this process, I became aware of the fears of people who are practicing various major world religions, like Buddhist, Hindus, Jews, and Muslims. Many were unwilling to participate in my project because they feared retaliation and hate crimes against them and their families. I learned that even in the most seemingly progressive city in the world, San Francisco, Muslims are harassed on public buses and Jews are afraid “to be seen” because of a variety of complex, racial, political, and social fears related to their ethnicity and faith. I discovered that even in San Francisco, there are extreme biases within individual faiths against people of minority races or ethnicities. These revelations of intolerance and the fears they engender are underlying the existence of daily life for millions of people practicing different faiths--a fact that seemed unbelievable to Heidi until they were revealed in one-on-one interviews of prospective subject families of her project. Having the opportunity to paint families of different ethnicities who are practicing the seven major world religions over the past twenty years has given me the courage, strength, and hope to face and accept the many traumatic events of my own childhood, growing up in an alcoholic, sex-addicted home. [Trauma recovery research done by Kaiser Permanente and the CDC in 1992, correlates adverse childhood experiences (ACEs*) and its impact on human health across a lifetime. (Please visit Nadine Berke-Harris “TED Talk” on this subject.)] Think Round joined the movement to end ACEs in 2017 by taking on a new health and wellness program, Turning the Tide of Trauma, a program I began at Kaiser in 2015 and continue to practice to reduce my PTSD from an ACE score of nine. Created and implemented by Diana Canant, we offer biannual open enrollments. It is free, confidential, non-medical, non-diagnosing, non-religious. Rachel Leibman shares: “These collages tell stories about Jews living in the diaspora. Each piece provides a different narrative, some quotidian and some profound. Although life in the diaspora has often been difficult and cruel, it was important to me that Jews not be depicted only as victims. Jewish people have been proud and resilient, brilliant and common, challenging and generous. In short, beautifully human. So, my stories are of tailors and peddlers, rituals and journeys, scientists and musicians, persecution and resistance. From an artistic point of view, composition is very important to me. I would like for viewers to be able to stand at a distance from my art- work and see something beautiful, exciting, interesting or pleasing. But the medium of collage affords the opportunity to provide an additional level of meaning. I have chosen source materials which further the narratives of the stories. As you get close to the pieces in this exhibit, you will see women scientists, Yiddish actors, partisan fighters, passports, visas, manuscripts, thimbles and thread. I collected much of my materials from the Internet but also put out a call on social media for people to send me pictures of their loved-ones and ancestors. I received a treasure-trove of depictions of Jewish life around the world. In many of my collages I included photo- graphs of people I know: My grandfather who came through Ellis Island, my in-laws as bride and groom, my friend David who fought in Vietnam, Maggy who was part of the Kindertransport, and my cousin Rob who is an awesome soccer goalie. I think that incorporating these personal materials helps to add relevance and intimacy. My hope is that when you look at my artwork, you will in turn feel gratified, angry, proud, and encouraged. I hope that some of my pieces will just make you laugh.
+    `;
+    else if (tab === 'press') document.getElementById('jew-blurb-text').innerHTML = 
+    `
+    <b>PRESS RELEASE</b><br>
+
+<b>FOR IMMEDIATE RELEASE / OCTOBER 12, 2000</b><br>
+
+<b>The Bayview Opera House presents The Human Family Tree/A Walk Through Paradise, an environmental installation.</b><br>
+
+On December 19, 2000, as part of holiday and millennium festivities, and in celebration of cultural differences and the spirit of harmony and humanness that unite a cross-section of San Francisco residents, the Bayview Opera House will premiere, The Human Family Tree/A Walk Through Paradise, an environmental installation. The installation will center on seventy-eight paintings created by SF artist, Heidi Hardin, and thirty-six corresponding original musical works by Los Angeles composer, Jonathan Sacks.
+
+Visitors to the Opera House will find the theater transformed by an elaborate labyrinth of pillars and paths, based on the ancient tarot of the Egyptians, or Tree of Life. Each of the ten, four-sided pillars and the twenty-two triangulated paths will hold paintings created from family photographs—images that span the past one hundred years, and document each family’s history. Four families have been selected to represent major ethnic groups, standing as icons for Americans of African, Latin, Caucasian and Asian decent.
+
+Each of these families has been associated with the Bayview Opera House and the Bayview Hunters Point community, either directly or indirectly, for the past eight years or more. Shelley Bradford Bell has served as a member of the Board of Directors and is currently the Executive Director of the Bayview Opera House. Leslie Aguilar has served annually as artist/instructor for the Children’s Mural Program, an in-school, visual arts program of the Bayview Opera House. Scott Madison served diligently for nine years as the Secretary of Board of Directors of the Bayview Opera House. Richard Uchida is the husband of the artist; in that capacity he has served to assist Ms. Hardin in the many Bayview Opera House project and programs created by her—including this project.
+
+The photographs have been selected to represent archetypal evolutionary human experiences (for example, infancy, childhood, adolescence, motherhood, fatherhood, marriage, death, etc.), and will be installed on panels decorated with papers that evoke the dreams and aspirations of the times. The musical soundtrack is composed to match the emotional vibration of each of the shared human experiences depicted. The art and music are a celebration of the Great Work of American families. The experiences depicted recreate the circular nature of life, and the spiritual evolution of all peoples as members of the human family.
+
+The Bayview Opera House is proud to present this exhibition in celebration of the holiday season and as a marker of the true beginning of the new millennium. It is a highlight of two years of on-going programming that has centered on ethnic diversity. The installation will run through January 14, 2001, and will be open Monday through Saturday from noon until five each evening. A reception for the subject families and the artists will be held December 19, 2000, from 3-6:00 p.m. , at the Bayview Opera House, at 4705 Third Street, between Newcomb and Oakdale, SF, CA 94124.
+
+<b>PRESS RELEASE</b><br>
+
+<b>FOR IMMEDIATE RELEASE / SEPTEMBER 11, 2001</b><br>
+
+<b>Heidi Hardin - The Human Family Tree, an installation.</b><br>
+
+Newspace presents San Francisco artist Heidi Hardin and her installation of paintings documenting California family histories. The paintings are incorporated into an installation combining objects, music, and elaborate displays which take the viewer on a “walk through paradise” in which we are guided along a path and must come to a rest stop before each “station” of family history.
+
+Hardin’s work examines the family photo album as a tool for evoking common human experiences linking four separate cultural experiences while allowing the viewer to see the inner culture within each family. Four different families stand as icons for Americans of African, European, Asian, and Latin descent. Hardin’s paintings are expanded using cultural decorative arts, handmade papers, trimmings and flowers as well as original musical score by Jonathan Sacks.
+
+An accomplished figurative painter and muralist, Hardin has been working in San Francisco where “The Human Family Tree” first debuted at the Bayview Opera House. The installation visits Los Angeles courtesy of Home Depot and Newspace.
+
+    `;
+    else if (tab === 'sponsors') document.getElementById('jew-blurb-text').innerHTML =
+    `
+    <div class='sponsors-volunteers-box-parent'>
+      <div class='sponsors-volunteers-half'>
+          <b>Artists</b><br>
+          <i>Think Round Fine Arts</i><br>
+          <br>
+          <b>Art Collectors</b><br>
+          <i>Think Round Fine Arts</i><br>
+          <br>
+          <b>Sales Force Transit Center</b><br>
+          <i>Mural Artists</i><br>
+          <br>
+          <b>Richa Sharma</b><br>
+          <i>Fabrics & Framing</i><br>
+          <i>Fun & Friend</i><br>
+          <br>
+          <b>Merna Oeberst</b><br>
+          <b>Hilary Perr</b><br>
+          <i>PowerPoint Presentation</i><br>
+          <br>
+          <br>
+          <br> 
+          <br>
+          <b>Bruno Coon</b><br>
+          <i>Soundtrack Music & Male Voice Over</i><br>
+          <br>
+          <b>Janet Bilden</b><br>
+          <i>Touching Objects & TLC</i><br>
+          <br>
+          <br>
+          <b>April Van der Hoogt</b><br>
+          <i>Spiritual Well</i><br>
+          <br>
+          <br>
+          <b>Francisco with Daniel</b><br>
+          <i>Armatures & Fabrics</i><br>
+          <br>
+          <br>
+          <b>Lynne Hardin</b><br>
+          <i>TheMagicofWhy.com</i><br>
+      </div>
+      <div class='sponsors-volunteers-half'>
+        <b>Hideki Uchida</b><br>
+        <i>Heidi’s Husband</i><br>
+        <br>
+        <b>Chris Carroll</b><br>
+        <i>Installation</i>
+        <br>
+        <b>Shelia Chue</b><br>
+        <i>Mural & Moral Support</i><br>
+        <br>
+        <b>Caitlin Luu</b><br>
+        <i>Heidi’s Assistant</i><br>
+        <br>
+        <br>
+        <b>Anthony Patton</b><br>
+        <i>Supervisor, Community</i><br>
+        <i>Volunteer Team</i><br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <b>Lynne Howe</b><br>
+        <i>Volunteer Recruitment</i><br>
+        <br>
+        <b>Leland A. Gray</b><br>
+        <i>Gray & Gray Architects</i><br>
+        <br>
+        <br>
+        <b>Nima Parza</b><br>
+        <i>Graphics & Social Media</i><br>
+        <i>Print Materials</i><br>
+        <br>
+        <b>Elaine Michaud</b><br>
+        <b>Charlie Stott</b><br>
+        <i>Vision Support</i><br>
+        <br>
+        <b>Denis Valois</b><br>
+        <i>Universal Forest Products</i><br>
+      </div>
+      <div class='sponsors-volunteers-half'>
+        <b>Jonathan Sacks</b><br>
+        <i>Composer/Soundscapes</i><br>
+        <br>
+        <b>Gabriela Hofmeyer</b><br>
+        <i>Suppers & Salons</i><br>
+        <br>
+        <b>Mimi Kennedy</b><br>
+        <i>Female Voice Over</i><br>
+        <br>
+        <b>Sharman Spector</b><br>
+        <i>Britex Fabrics</i><br>
+        <br>
+        <br>
+        <b>Barbara Greiser</b><br>
+        <b>Linda Madden</b><br>
+        <b>Celia Menczel</b><br>
+        <b>Eric Safire</b><br>
+        <b>Nancy Sheftel-Gomes</b><br>
+        <i>Subject Family Seekers</i><br>
+        <br>
+        <b>Donald Benke</b><br>
+        <i>The Home Depot</i><br>
+        <br>
+        <b>Margaret Ernst</b><br>
+        <b>Patrick Mucerino</b><br>
+        <i>The People’s Suppers</i><br>
+        <br>
+        <b>Hines Growers Inc.</b><br>
+        <b>Lowes, San Bruno</b><br>
+        <i>Flowers & Plants</i><br>
+        <br>
+        <b>Mike Lopez</b><br>
+        <b>Color Spot</b><br>
+        <i>Flowers & Plants</i><br>
+      </div>
+    </div>
+    `;
+  }
+  else if (group === 'muslims') {
+    titleEdit = document.getElementById('muslim-tab-subtitle');
+    if (tab === 'inspiration') document.getElementById('muslim-blurb-text').innerText = 
+    `
+    The inspiration for this exhibit is the countless adults in the world who walk the Earth numb and confused, seeking protection and care for the frozen, flowing child within them. (Children cannot fight or flee. They are forced within deranged families to freeze and flow.) I have been one of these adults, powerless over the fears and shame that adverse childhood experiences (ACEs) embedded within me. These adult children I have encountered in the rooms of 12-step recovery programs, mental health groups, therapy classes, my spiritual training, art studios and galleries, exercise and yoga classes, writing classes, family recovery workshops, self-help books, Abraham and family constellation workshops, families and family photo albums. Their shares and personal stories about their childhoods, their parents, step-parents, siblings and step-siblings, teachers, and religious schooling have helped me to, put into con- text the difficult trudge I’ve experienced since leaving home to discover “what happened” in my own life. What happened was dreadful. Once I remembered it all, wrote it out and illustrated it in a memoir titled, Up to Age Six, I could then begin to temper and redirect all my broken places with the intention of making them my strengths. The children I taught for twenty years in Southeast San Francisco schools and the civic leaders I encountered as the Superfund cleanup and reuse of Hunters Point Shipyard advanced, taught me that it takes a village to clean- up and reuse one’s toxic past, but that it can be done. The artists/instructors who served the community in the Children’s Mural Program were then and still are my band of angels. They are creators of the highest order and are now exhibiting contemporary masters at our gallery, Think Round Fine Arts. I hope that you will appreciate their art, which is on display throughout the year. They are bringers of the light—that is, the color wheel, from which comes shape, line, and texture. Patterns emerge from these and life and art becomes, in this way, very rich in their company. My husband Hideki Richard Uchida and I are blessed by the contemplative surrounding they create in our home as the months have moved ahead and the walls of our home have been transformed by their art.
+    `;
+    else if (tab === 'dedication') document.getElementById('muslim-blurb-text').innerText =
+    `
+    This exhibit is dedicated to the children who visit the Earth plane knowing that they are to become wounded healers: those children who are abused in any way—emotionally, spiritually, sexually, physically and/or intellectually. They are the gap between our thoughts; they are the lost ones, the forgotten ones. They are the ones who, eventually, become determined to know and understand the truth for themselves. For me, it has taken sixty years to heal the broken heartstrings of my childhood. My ACE score is nine, not ten, because I swore never to tell on my dad for molesting me so that he would not have to go to jail. Otherwise, my score would be ten out of ten. There are many healers who have made my life-way, my life-wave, easier to traverse, including most recently Diana Canant, Nadine Burke Harris, and Jimmy Carter. Join the movement to end ACEs, the number one health threat facing the nation today, by taking the ACE test yourself, and taking whatever steps you may need to take in order to heal your own broken heartstrings. In this way, our Earth, our paradise, will become much closer to being our heaven on earth, here and now. As human longevity extends, some think without upper limits, I believe this is humanity’s spiritual mandate: to manifest heaven, here and now. Imagine it: every human, going within to heal themselves under the protection and care of a God of their own understanding, thereby living longer, happier, and healthier, each day, in every way. Heaven!
+    `;
+    else if (tab === 'artist') document.getElementById('muslim-blurb-text').innerHTML = 
+    `
+    <b>“Celebration of Calligraphy”</b> is a new series of paintings to enlighten and awaken the spiritual connection of universal humanity through lyrical and fluid imagery of Arabic Calligraphy and Islamic patterns painted by Salma Arastu.<br>
+
+<b>Salma Arastu shares:</b> “I find myself yearning to find infinite possibilities of the lyrical line itself on large canvases. I just want to plunge myself into the pleasure of contemplating the abstract flow of the swelling lines, and form compositions of lines and fields within given space and enjoy the celebration of calligraphy through lyrical visions. I paint to express the prayers of my heart and intend for the energy of the calligraphy, powered by the positive messages from the texts, to reveal the joy and celebration that I experience while creating them. Each verse I portray gives me strength and peace, and I hope instill these feelings in my viewers.”<br>
+
+<b>Heidi Hardin shares:</b> “Having the opportunity to paint families of different eth- nicities who are practicing the seven major world religions over the past twenty years has given me the courage, strength, and hope to face and accept the many traumatic events of my own childhood, growing up in an alcoholic, sex-addicted home. Trauma recovery research done by Kaiser Permanente and the CDC in 1992, correlates adverse childhood experiences (ACEs*) and its impact on human health across a lifetime. (For more information, please Google: ACE Study and Nadine Burk-Harris.)<br>
+
+Thanks to a new trauma recovery program offered by Kaiser in San Francisco, the Community Self-care Demonstration Program, otherwise known as Turning the Tide of Trauma, I have finally found an effective way to integrate the devastation of being molested and raped as a child, as well as the seven other adverse child- hood experiences I endured. Through this program, and through my painting over the years, I have been able to find my own internal wisdom about these events and redefine my own reality with respect to them.<br>
+    `;
+    else if (tab === 'press') document.getElementById('muslim-blurb-text').innerHTML = 
+    `
+    <b>PRESS RELEASE</b><br>
+
+<b>FOR IMMEDIATE RELEASE / AUGUST 7, 2017</b><br>
+
+<b>WHAT:</b> <i>HUMAN MESSAGES: NEW VISTAS</i>, a two-women exhibition, a multimedia exaltation of art, culture, and family, created by Bay Area fine artists, Heidi Hardin and Salma Arastu.<br>
+
+<b>OPENING RECEPTION:</b> Saturday, October 7, from 4-8 pm, with Artists’ Talks and 3D Demo at 6:00 pm<br>
+
+<b>WHEN:</b> October 1 - December 30, 2017<br>
+
+<b>WHERE:</b> Think Round Fine Arts, 2140 Bush Street, Suite 1, SF, CA 94115.<br>
+
+Everyone is invited to join Heidi Hardin and Salma Arastu for ArtSpan’s 2017 Open Studio and beyond, for this exaltation of art, culture, and family. A full program of Family Art Making Work- shops, Artists’ Talks, Guest Speakers, Interactive 3D Digital Demonstrations, Performances, Muslim Immigration Story Telling, and much more, will accompany this exhibit on Saturdays, from 10 -noon, beginning October 14 through December 30. Additionally, Hardin will lead K-12 School Tours with Art Activites, M-F, 10- noon, by appointment, Guided Walk-Through Meditations every Sunday from 4-5 pm, and Human Family Suppers on Tuesday evenings from 6-8. All classes, activities, and refreshments are free of charge.<br>
+
+Please visit: http://www.thinkround.org/index/#/our- artists/ for a full calendar of events. Think Round Fine Arts is located at 2140 Bush Street, Suite 1, San Francisco, CA 94115. For more information or to RSVP for classes, meditations, and dinners, please call Heidi at 415-771-2198 or email: heidi@heidihardin.com. Space is limited so please call now. Gallery hours are 9-noon, Tuesdays and Thursdays, and by appointment. The opening reception for Hardin and Arastu is on Saturday, October 7, from 4-8 pm, with Artists’ Talks and Interactive 3D Demo by Oro Fernandez of Hardin’s extended project: The Human Family Tree/A Walk Through Paradise…seven installations at 6 pm.<br>
+    `;
+    else if (tab === 'sponsors') document.getElementById('muslim-blurb-text').innerHTML = 
+    `
+      <div class='sponsors-volunteers-box-parent'>
+        <div class='sponsors-volunteers-half'>
+          <b>Artists</b><br>
+          <i>Think Round Fine Arts</i><br>
+          <br>
+          <b>Art Collectors</b><br>
+          <i>Think Round Fine Arts</i><br>
+          <br>
+          <b>Lynne Howe</b><br>
+          <i>Volunteer Recruitment</i><br>
+          <br>
+          <br>
+          <b>Althea Dyer</b><br>
+          <i>Donation Requests</i><br>
+          <br>
+          <br>
+          <b>Gretchen Barley</b><br>
+          <i>Fabrics, Graphics, Schools</i><br>
+          <br>
+          <b>Gabriella Hofmeyer</b><br>
+          <i>School Distributions</i><br>
+          <br>
+          <br>
+          <b>Janet Bilden</b><br>
+          <i>Touching Objects & TLC</i><br>
+          <br>
+          <br>
+          <b>Shelia Chue</b><br>
+          <i>Dedicated Fabric Mounter</i><br>
+          <br>
+          <b>April Van der Hoogt</b><br>
+          <i>Spiritual Well</i><br>
+          <br>
+          <b>Barbara Greiser</b><br>
+          <i>Dedicated Fabric Mounter</i><br>
+          <br>
+          <b>Lynne Hardin</b><br>
+          <i>TheMagicofWhy.com</i><br>
+        </div>
+        <div class='sponsors-volunteers-half'>
+          <b>Hideki Uchida</b><br>
+          <i>Heidi’s Husband</i><br>
+          <br>
+          <b>Sheila Goodman</b><br>
+          <i>Supervisor, Community Volunteer Team</i><br>
+          <br>
+          <b>Chris Carroll</b><br>
+          <i>The 45 Minute Hour Fabric Mounter & Installer</i><br>
+          <br>
+          <br>
+          <b>Jenny Bender<br>
+          Amanda Herman</b><br>
+          <i>Program Partners</i><br>
+          <br>
+          <b>Oro Fernandez</b><br>
+          <i>3D Modeler of The Paradise Project</i><br>
+          <br>
+          <b>Elaine Michaud<br>
+          Marc Ellen Hamel</b><br>
+          <i>Press Release & PR</i><br>
+          <br>
+          <b>Denis Valois</b><br>
+          <i>Universal Forest Products</i><br>
+          <br>
+          <br>
+          <b>Jonathan Sacks</b><br>
+          <i>Composer/Soundscapes</i><br>
+          <br>
+          <b>Bruno Coon</b><br>
+          <i>Soundtrack Music and Male Voice Over</i><br>
+          <br>
+          <b>Mimi Kennedy</b><br>
+          <i>Female Voice Over</i><br>
+          <br>
+          <b>Caitlin Luu</b><br>
+          <i>Heidi’s Assistant</i><br>
+        </div>
+        <div class='sponsors-volunteers-half'>
+          <b>Kay Fifer</b><br>
+          <i>Supper Donations</i><br>
+          <br>
+          <b>Karlie Chung</b><br>
+          <i>Graphics & Social Media</i><br>
+          <br>
+          <b>Linda Madden<br>
+          Celia Menczel</b><br>
+          <i>Subject Family Seekers</i><br>
+          <br>
+          <b>Eric Safire<br>
+          Nancy Sheftel-Gomes</b><br>
+          <i>Subject Family Seekers</i><br>
+          <br>
+          <b>Salma Arastu</b><br>
+          <i>Family Art Making</i><br>
+          <br>
+          <b>Donald Benke</b><br>
+          <i>The Home Depot</i><br>
+          <br>
+          <br>
+          <b>Margaret Ernst<br>
+          Patrick Mucerino</b><br>
+          <i>The People’s Suppers</i><br>
+          <br>
+          <b>Sharman Spector</b><br>
+          <i>Britex Fabrics</i><br>
+          <br>
+          <b>Trader Joes - Hyde Street</b><br>
+          <i>Additional Supplies</i><br>
+          <br>
+          <b>Color Spot</b><br>
+          <i>Flowers and Plants</i><br>
+          <br>
+          <b>Hines Growers Inc.</b><br>
+          <i>Flowers and Plants</i><br>
+        </div>
+      </div>
+    `;
+  }
+  else if (group === 'hindusSikhs') {
+    titleEdit = document.getElementById('hinduSikh-tab-subtitle');
+    if (tab === 'inspiration') document.getElementById('hinduSikh-blurb-text').innerHTML = 
+    `
+    Paradise: a realm of extraordinary beauty & perfection, right here, now, our Earth.<br>
+<br>
+As we embark on the virtual launch of The Center for the Human Family and the reception for Part IV of The Paradise Project, Family Dharma, our aspirations for the future remain anchored in the pursuit of manifesting a heaven on Earth. This profound transformation necessitates a collective commitment to several core principles:
+<br>
+<b>1. Redefining Aging:</b> Embracing the belief that aging is not a immutable destiny but a condition we can overcome.<br>
+<b>2. Healing Wounds:</b> The eradication of Adverse Childhood Experiences (ACEs), ensuring that every child grows in a nurturing environment.<br>
+<b>3. Empowering Women and Children:</b> Breaking free from the historical oppression imposed by male-dominated world religions, promoting equality, and fostering empowerment for all.<br>
+<b>4. A Shift in Belief Systems:</b> Transitioning from a fear-based paradigm to one rooted in love, both in parenting and in our approach to life itself.<br>
+<b>5. Lifelong Learning:</b> Embracing intergenerational knowledge-sharing as a cornerstone of personal and collective growth.<br>
+<br>
+Yet, we acknowledge our human limitations with a sense of humility and humor. Ultimately, our deepest hope is that humanity awakens to its spiritual potential, understanding and embracing our roles as intentional creators. In doing so, we become stewards of this Earth, co-creating a reality that mirrors the paradise we envision.<br>
+<br>
+Our dual aspirations for the future are: to bring The Paradise Project to its completion and to establish The Center for the Human Family (The Center) as its home. Within The Center, we envisage a tapestry of art and science programs and projects designed to nurture human spiritual evolution, promote conflict resolution, prevent and heal ACEs, and champion sustainable living on our beloved planet. Together, we embark on a journey toward a world where heaven and Earth converge in perfect harmony.<br>
+    `;
+    else if (tab === 'dedication') document.getElementById('hinduSikh-blurb-text').innerHTML =
+    `
+<b>The Dedication… To All of Our VolunteerMatch Respondents</b><br>
+<br>
+<b>Seventy Global Youth ARTISTS Collaborate to Launch Think Round’s Virtual Center for the Human Family, Fostering Global Unity Through Innovative Multimedia Digital Art and Science</b><br>
+<br>
+<b>Heidi Hardin shares:</b> When I embarked on my journey as an artist tasked with mythologizing the environment, the world, and its people, I could never have imagined that my calling would attract over 1000 individuals in just eight months. They were drawn to Think Round's VolunteerMatch listings seeking UX-UI Prototypers, Unity and Full Stack Developers, Architectural Renderers, and 3D Animators, all united in the vision of creating Think Round's virtual Center for the Human Family. Among these remarkable individuals, more than 70 seem truly heaven-sent, much like the 30 visual artists who generously contributed to our Children's Mural Program more than 20 years ago. This overwhelming support fills me with deep gratitude.<br>
+    `;
+    else if (tab === 'artist') document.getElementById('hinduSikh-blurb-text').innerText = 
+    `
+    Originally from Oklahoma City, Heidi Hardin received her MFA in Painting in 1979 and her BA in Biology and Visual Arts in 1976, both from the UCSD. For 30 years she has exhibited her paintings nationally in galleries and museums and has taught arts at all levels. Her artwork was represented by Newspace, LA from the early 1980s until 2006 when the gallery closed and its archives—along with Ms. Hardin's exhibits—became a part of the Smithsonian Institute in Washington, D. C.. She now directs and represents her own artwork and that of other San Francisco fine artists at Think Round Fine Arts (TRFA), located at 2140 Bush Street, Suite 1, SF, CA. TRFA is a not-for-profit gallery that represents artists with a focus on the Earth and its families.
+
+Heidi has taught community children for the past 20 years about the Superfund Cleanup and Reuse of Hunters Point Shipyard in SF schools through the innovative art and science curriculum, The Children’s Mural Program (CMP). In 2010, Ms. Hardin and Think Round were awarded one of the nine public art commissions for HPS through the SF Redevelopment Agency HPS Public Art Program. In 2010-11, more than 60 local CMP students participated in the creation of this commission, titled STREAM of CONSCIOUSNESS, a 1’ x 120’ handmade ceramic & mosaic tile mural telling the story of water in 24 “chapters”.
+
+All of Ms. Hardin’s work as a community-based artist & as a practicing fine artist are now held in trust in the vision, mission & objectives of Think Round, Inc., (TRI) a 501(c)(3) nonprofit that she formed in 2004. TRI offices relocated in 2012 to expanded facilities including exhibition, studio & teaching spaces with a modest art & science library. In 2018, TRI became a Cooperation Circle of United Religions Initiative. (URI). Currently, Heidi Hardin is: completing her birth vision, The Human Family Tree/A Walk Through Paradise...seven installations & working to build The Center for the Human Family to house it...
+    `;
+    else if (tab === 'press') document.getElementById('hinduSikh-blurb-text').innerHTML = 
+    `
+    <b>Think Round Unveils The Center for the Human Family & Presents Part IV of The Paradise Project: Family Dharma (Hindus & Sikhs)</b><br>
+<br>
+<i>Seventy Global Youth Collaborate to Launch Think Round’s Virtual Center for the Human Family, Fostering Global Unity Through Innovative Multimedia Art and Science</i><br>
+<br>
+<i>"We live within webs of cultural and social forces, bound together as one in our humanity."</i> -- Heidi Hardin, 1999<br>
+<br>
+<b>SAN FRANCISCO, CA</b> — On August 24, 2023, Think Round, Inc. proudly introduces The Center for the Human Family through an immersive virtual experience, coinciding with the opening of Think Round Fine Arts' exhibit, Family Dharma (Hindus & Sikhs). This exhibit marks Part IV of The Human Family Tree/A Walk Through Paradise…7 Installations (also known as The Paradise Project), initiated by Heidi Hardin in 1998, which catalyzed the vision for The Center for the Human Family. Parts I, II, and III, titled Families of Abraham (Jews, Christians, & Muslims), were collectively showcased in 2019 across four San Francisco venues.<br>
+<br>
+Family Dharma (Hindus & Sikhs) will be displayed from October 7th to December 30, 2023. The Opening Reception, scheduled for Saturday, October 7th, 3-7 PM, will feature an artist talk and the official launch of The Vrtual Center for the Human Family at 5 PM. The event welcomes both in-person and virtual attendees.<br>
+<br>
+Think Round’s Twin Visions<br>
+The Center for the Human Family and The Paradise Project are conceived to solve systemic, intergenerational, and epigenetic transmission of ACEs, Adverse Childhood Experiences while offering evolutionary Whole Systems Learning curricula across a lifetime (prenatal through retirement) in TRI’s K-12 (and beyond) art and science education programs.<br>
+<br>
+About Think Round’s Virtual Center for the Human Family<br>
+· The Center for the Human Family offers an authentic journey into human experience, spirituality, and creativity.<br>
+· It fosters exploration of world religions, human evolution, consciousness, and conflict resolution.<br>
+· The center's programs aim to establish sustainable, happy, and healthy living on a global scale.<br>
+<br>
+About The Paradise Project<br>
+Think Round’s Paradise Project is a hub for distilled wisdom across faiths through The Human Family Tree/A Walk Through Paradise. The project comprises seven intricate installations housing 546 portraits representing 28 families practicing 10 major world religions.<br>
+    `;
+    else if (tab === 'sponsors') document.getElementById('hinduSikh-blurb-text').innerHTML = 
+    `
+      <div class='sponsors-volunteers-box-parent'>
+        <div class='sponsors-volunteers-half'>
+          <b>Pacific Nurseries</b><br>
+          <i>Plants for Paradise</i><br>
+          <br>
+          <br>
+          <b>Vashali Jogi</b><br>
+          <i>Subject Family</i><br>
+          <br>
+          <b>Ruchi Maheshwari</b><br>
+          <i>Subject Family</i><br>
+          <br>
+          <br>
+          <br>
+          <b>Richa Sharma</b><br>
+          <i>Subject Family Member, Fabrics, & More</i><br>
+          <br>
+          <b>Tahil Sharma</b><br>
+          <i>Subject Family Member</i><br>
+          <br>
+          <b>Jonathan Sacks</b><br>
+          <i>Composer of Original</i><br>
+          <i>Music & Soundtracks</i><br>
+        </div>
+        <div class='sponsors-volunteers-half'>
+          <b>Jamie Goddard<br>
+          Mark Friedlander</b><br>
+          <i>SF ReServe</i><br>
+          <br>
+          <b>Vicky Bhundhumani</b><br>
+          <i>Office Assistant</i><br>
+          <b>Sarah Lewington</b><br>
+          <i>Studio Assistants</i><br>
+          <br>
+          <br>
+          <br>
+          <b>Leland A. Gray</b><br>
+          <i>Gray & Gray Architects</i><br>
+          <br>
+          <b>Sharman Spector</b><br>
+          <i>Britex Fabrics</i><br>
+          <br>
+          <b>Martin Vasquez</b><br>
+          <i>Installation/Framing</i><br>
+        </div>
+        <div class='sponsors-volunteers-half'>
+          <b>Debbie Clark</b><br>
+          <i>Editor/Advisory Board</i><br>
+          <br>
+          <br>
+          <b>Hideki Uchida</b><br>
+          <i>Heidi’s Husband</i><br>
+          <br>
+          <b>Office Max<br>
+          Home Depot<br>
+          Team Depot</b><br>
+          <i>Volunteers</i><br>
+          <br>
+          <b>Unity Developers<br>
+          Social Media Managers<br>
+          Software Engineers & Developers<br>
+          UX/UI Designers & Prototypers<br>
+          Civil Engineering Consultants<br>
+          3D Modelers<br>
+          Grant Writers<br>
+          Business Development</b><br>
+          <i>Think Round Interns</i>
+        </div>
+      </div>
+    `;
+  }
+  else if (group === 'indigenous') {
+    titleEdit = document.getElementById('indigenous-tab-subtitle');
+    if (tab === 'inspiration') document.getElementById('indigenous-blurb-text').innerHTML = 
+    `
+    <b>Honoring the Indigenous Families of the Americas</b><br><br>
+    <b>The First Families/Family First (Indigenous)…an installation,</b> Part 1 of Part V of Think Round’s Paradise Project, draws inspiration from the strength, resilience, and cultural heritage of Indigenous families who have generously shared their stories. This tribute honors <b>Rebecca Lincoln Padgett</b> of the Choctaw Nation (Oklahoma) and <b>Maria Isabel de Oliveira da Silva</b> of the Dessana ethnic group (Brazil). Their stories illuminate the deep connection between Indigenous families across the Americas and—thanks to Rosalia Gutierrez, an Indigenous leader of The Indigenous People of Argentina URI-CC in Buenos Aires, Argentina—reflect the ancient prophecy of the Eagle and the Condor: a symbol of unity, healing, and hope for our shared future.
+    <br><br>Growing up in Oklahoma City, where the Trail of Tears ended, profoundly shaped my understanding of American history. The new First Americans Museum in “the City” now commemorates 39 tribes forcibly relocated to the state. I vividly remember seeing The End of the Trail by James Earle Fraser, a towering 18-foot statue at the National Cowboy & Western Heritage Museum depicting a weary Native American and his horse. First encountering it at 15, I was overwhelmed by its sorrow—a feeling that returns with each visit.<br>
+    <br>The struggles of Indigenous peoples have weighed heavily on me throughout my life. Creating this exhibit through research and painting—has been a healing journey, helping me address my own trauma, reflected in my ACE score of 9/10. While in Oklahoma City, I recorded Rebecca’s oral history in the company of her maternal aunt and daughter and my sister Lynne. Their lived experiences as Choctaw women embody resilience, inspiring this installation and igniting a profound personal transformation. I've found healing through their stories, family photos, and those of Maria Isabel. In many ways, as I create this installation, I have returned home to Oklahoma and to my own body by integrating many of my childhood adversities.<br>
+    <br>— Heidi Hardin, September 7, 2024
+    `;
+    else if (tab === 'dedication') document.getElementById('indigenous-blurb-text').innerHTML = 
+    `
+    <i>To the First Peoples of the World,<br>
+    Who carry the weight of history in their bones, in the four mountains of their DNA: A-T-C-G<br>
+    Whose heartstrings have been severed, buried, yet never forgotten.</i><br>
+    <br><br>
+    In the labyrinth of the Paradise Project, we seek to honor the deep time that binds us all—a time when humanity first walked out of Africa, crossing continents and becoming one global family. Dr. Spencer Wells' work has illuminated our shared origins, tracing the journey of primordial Adam and Eve through the genetic markers in our Y chromosomes and mitochondrial DNA. This scientific truth reveals that we are all interconnected, our stories woven together in the tapestry of life, fostering a sense of unity among us all.
+    <br><br>
+    Yet, as we pursued luxury and wealth, this shared journey took a dark turn, leading to the exploration, exploitation, and profound suffering of Indigenous peoples around the world. This history, often ignored or forgotten, was brought to my attention again this morning as I watched Mankind Decoded. The realization of our lost connection to each other and our planet compels me to dedicate this work to healing those ancient wounds.
+    <br><br>
+    The Paradise Project is my deep desire to help humanity see into this vast expanse of time—to reconnect with the truth of our shared origins and to confront the inhumane treatment of the First Peoples. Through this artistic journey, I hope to assist in the healing of the broken heartstrings buried deep within the Earth and within us all. Though often hidden, these wounds are still alive, and they call out for recognition, understanding, and, most importantly, healing, inspiring a sense of optimism for the future.
+    <br><br>
+    May this work serve as a beacon, guiding us back to our true selves and to the deep connection we share with each other and with the Earth.
+    <br><br>
+    — Heidi Hardin, September 2024
+    `;
+    else if (tab === 'artist') document.getElementById('indigenous-blurb-text').innerHTML = 
+    `
+    <b>Healing Through Connection: My Journey Through the Paradise Project</b><br>
+    <br>
+    The Paradise Project has been a journey of deep personal healing and reconnection with my past, my family, and the larger human story. Returning to my birthplace, Oklahoma City, to gather family photos from Rebecca, newly married to my first nephew, brought me full-circle moments of healing I could not have anticipated. In learning the stories of Rebecca's Choctaw ancestors, I was struck by the profound trauma they endured—stories that were hidden beneath the surface of everyday life, like the prohibition of their native language, religion, and customs in Oklahoma’s Native American boarding schools between 1880 and 1965. These schools, which forced children like Rebecca’s grandmother to forsake their heritage under the threat of violence, left wounds that are still felt across generations.
+    <br><br>
+    As I painted Rebecca, my new niece-in-law, as a child hunting for Easter eggs, I found myself reflecting on my own childhood and the layers of trauma that I, too, have carried. The image of Rebecca in her lacy white frills, with one foot illuminated by sunlight and the other hidden in shadow, speaks to the dualities of innocence and pain, of resilience and suffering, that have defined both our lives.
+    <br><br>
+    In 1979, my MFA exhibition, "Oklahoma is OK/Seasonal Rituals 1959," featured a large-scale triptych of my own family dressed for church on Easter morning. I painted everyone without faces, and I, at age five, had no legs—a visual representation that, though I didn't understand it at the time, was my inner teacher's way of revealing the trauma I had buried. Decades of recovery have since uncovered an ACE score of 9/10, and it is through painting that I have begun to reconnect with my dissociated inner child, moving the trauma through and out of my body.
+    <br><br>
+    Each figure I have painted—whether an infant, child, adolescent, prince, princess, mother, father, or elder—has guided me on this path of resilience and advocacy. They have been my silent teachers, helping me to confront and process the deep wounds of childhood trauma, not only my own but those carried by the generations before me. Through this work, I seek to honor the strength and survival of the First Peoples, to shine a light on the epigenetic and intergenerational transmission of trauma, and to contribute to the ongoing movement to prevent and heal Adverse Childhood Experiences (ACEs).
+    <br><br>
+    The Paradise Project is more than a series of installations; it is a living labyrinth of connection, a space where we can all come to see into deep time, to recognize our lost connections to one another and to the Earth, and to begin the process of healing the wounds that have been passed down through the ages. This work is my offering to the world—a call to remember, heal, and embrace the resilience within us all.
+    <br><br>
+    — Heidi Hardin, September 4, 2024
+    `;
+    else if (tab === 'press') document.getElementById('indigenous-blurb-text').innerHTML = 
+    `
+    <b>PRESS RELEASE</b><br>
+    <br>
+    <b>FOR IMMEDIATE RELEASE / AUGUST 22, 2024</b><br>
+    <br>
+    Think Round Unveils Part 1 of Part V of The Paradise Project: First Families/Family First (Indigenous) and Updates on the Virtual Center for the Human Family. Think Round is Celebrating Indigenous Narratives through Art and Technology: A Global Collaboration with Over 200 Interns.
+    <br><br>
+    "We are woven together, each thread representing a different family, yet all part of the same human fabric." — Heidi Hardin, 2024
+    <br><br>
+    <b>SAN FRANCISCO, CA</b> — On October 7, 2024, Think Round, Inc. proudly presents Part 1 of Part V of The Human Family Tree/A Walk Through Paradise...7 Installations, titled First Families/Family First (Indigenous). This latest installation continues The Paradise Project, a vision that San Francisco fine artist Heidi Hardin has cultivated since 1998. The exhibition will run from October 7 to December 30, 2024, at Think Round Fine Arts, 2140 Bush Street, Suite 1, San Francisco, 94115. The Opening Reception is set for Saturday, October 12th, from 3 to 7 PM. It will feature an artist talk and updates from interns on the progress of Think Round’s Virtual Center for the Human Family at 5 PM. The event is open to in-person and virtual attendees, providing a platform for global engagement.
+    <br><br>
+    THINK ROUND’S TWIN VISIONS<br>
+    First Families/Family First (Indigenous), an installation that marks Part 1 of Part V of Think Round’s Paradise Project, represents a continuation of Think Round’s commitment to addressing the systemic, intergenerational, and epigenetic transmission of ACEs (Adverse Childhood Experiences). This installation highlights the rich cultural heritage and resilience of Indigenous families from North and South America, weaving their stories into the broader narrative of The Paradise Project. Featuring original music by LA composer Jonathan Sacks, the exhibit focuses on two subject families: Rebecca Lincoln Padgett from the Choctaw Nation in Oklahoma City, Oklahoma, and Maria Isabel de Oliveira da Silva of the Dessana ethnic group from Sítio Iaquirana, Brazil. This installation is intended to catalyze the prophecy of the Eagle and the Condor, symbolizing the reunification of North and South America and the harmonious balance of different cultures, perspectives, and lived experiences.
+    <br><br>
+    About The Paradise Project<br>
+    The Paradise Project stands as a monumental testament to the diversity and unity of the human family. Comprised of seven detailed installations, this project features 546 portraits across 28 families from 10 major world religions. Each installation delves into the shared human experiences that bind us together, regardless of cultural or religious background.
+    <br><br>
+    About Part 1 of Part V: First Families/Family First (Indigenous)<br>
+    This installation showcases the stories and experiences of Indigenous families from North and South America, captured through photographs and transformed into mixed-media art. The exhibit features forty oil-painted portraits (16” x 20”) mounted on fabric-covered panels (48” x 24”), incorporating Indigenous symbols and themes. Accompanied by original music and multimedia elements, the installation honors Indigenous communities' rich traditions, lived experiences, and resilience. The First Families installation and its related art activities promote family health and resilience, encouraging dialogue and art-making to address and heal Adverse Childhood Experiences (ACEs). This exhibit is part of a larger narrative, set to unfold over the next five years, culminating in 2029 with the completion of the Paradise Project.
+    <br><br>
+    About Think Round’s Virtual Center for the Human Family<br>
+    In tandem with this exhibit, Think Round continues to develop its Virtual Center for the Human Family. This global initiative involves over 200 youth interns from around the world, creating a hub where art, science, and spirituality intersect. The center fosters a deeper understanding of human evolution, world religions, and conflict resolution, promoting global unity and sustainable living through the fusion of creativity and technology.
+    <br><br>
+    Join Us<br>
+    We invite the public to join us in celebrating this significant milestone. Whether attending in person or via Zoom, guests will have the opportunity to engage with the artists, meet the talented interns and subject family members, and explore the immersive world of the Virtual Center for the Human Family. For more information, please email: info@thinkround.org, call: 415-602-9599, or visit: https://www.thinkround.org.
+    `;
+    else if (tab === 'sponsors') document.getElementById('indigenous-blurb-text').innerHTML =
+    ``;
+  }
+  //Change Tab Title
+  if (tab === 'inspiration') titleEdit.innerText = 'Inspiration';
+  else if (tab === 'dedication') titleEdit.innerText = 'Dedication';
+  else if (tab === 'artist') titleEdit.innerText = 'Artist Statement';
+  else if (tab === 'press') titleEdit.innerText = 'Press Releases';
+  else if (tab === 'sponsors') titleEdit.innerText = 'Sponsors & Volunteers';
+}
+function changeHeidiText(page){
+  //unhighlight all dots
+  var dots = document.getElementsByClassName('dot-selector');
+  for (let i = 0; i < dots.length; i++){
+    dots[i].style.backgroundColor = null;
+    dots[i].style.borderColor = null;
+    dots[i].style.border = null;
+  }
+  //set the dot to highlight
+  var dotToHighlight = 'dot' + page;
+  var colors = [['#9ecee140','rgb(158, 206, 225)'],['rgb(151, 71, 255)','rgb(200, 188, 215)'],['orange','rgb(234, 186, 138)'],['lightgreen','rgb(122, 249, 99)'],['red','rgb(224, 115, 115)']];
+  document.getElementById(dotToHighlight).style.backgroundColor = colors[page-1][0];
+  document.getElementById(dotToHighlight).style.border = "2px solid"
+  document.getElementById(dotToHighlight).style.borderColor = colors[page-1][1];
+  document.getElementById('heidi-text-box').style.borderColor = colors[page-1][1]
+  //change the text to the correct page
+  if (page === 1) document.getElementById('heidi-text-box').innerHTML = 
+  `
+  Heidi Hardin, originally from Oklahoma City, holds a Master of Fine Arts in Painting (1979) and a Bachelor of Arts in Biology and Visual Arts (1976) from UC San Diego.
+  <br><br>
+  Influenced by notable mentors like Manny Farber, Patricia Patterson, and Alexis Smith, she refined her craft at the Whitney Museum's Independent Study Program under David Diao. Her career spans over forty years, with national exhibitions and extensive teaching in San Francisco schools, UCSD, National University, and City College of San Francisco.
+  `;
+  else if (page === 2) document.getElementById('heidi-text-box').innerHTML =
+  `
+  Heidi's acclaimed exhibit, Families in Paradise (Part II of Paradise), received front-page recognition in the SF Chronicle in 2004. The Human Family Tree (Part I of Paradise) premiered to accolades from various governmental bodies in 2000. Represented by Newspace LA until 2006, her work is now part of the Smithsonian Institution's archives.
+  <br><br>
+As a founding member of the Hunters Point Shipyard Citizens Advisory Committee, Heidi has educated community children about environmental issues through her Children’s Mural Program (CMP) for over twenty years. She has earned numerous public art commissions and awards, including the 2010 KCBS Jefferson Award and the 2001 EPA Environmental Achievement Award.
+  `;
+  else if (page === 3) document.getElementById('heidi-text-box').innerHTML = 
+  `
+  In 1999, she retired from the Fine Arts Museums of San Francisco to focus on her art, her “birth vision,” the creation of The Human Family Tree/A Walk Through Paradise...seven installations, The Paradise Project. Heidi founded Think Round, Inc. in 2004, a nonprofit that merges the arts and sciences to address environmental and community issues. Think Round has expanded her programs to a broader audience, facilitating the completion of her Paradise Project and the development of The Center for the Human Family to house it.
+  <br><br>
+In response to Adverse Childhood Experiences (ACEs), Think Round has partnered with LifeSpheres (formerly The Ardicare Foundation) to offer trauma reduction programs. Heidi’s commitment extends to her home state of Oklahoma and the broader Bay Area, addressing the impact of ACEs through educational and recovery programs.
+  `;
+  else if (page === 4) document.getElementById('heidi-text-box').innerHTML =
+  `
+  Under Heidi’s leadership, Think Round joined the United Religions Initiative in 2018, producing films and projects aligned with the UN's Sustainable Development Goals. Think Round has further partnered with Integrated Solutions' Magic of Why?TM Process, Peace by 2030, and ArtSeed, significantly enhancing its reach and impact.
+  <br><br>
+The incredible response, talent, and generosity of more than 200 globally based interns (from over 3,400 applicants), ages 18-37, who are Unity and Full Stack Developers, UX-UI Prototypers, 3D and Architectural Renderers, are creating The Virtual Center for the Human Family.
+  `;
+  else if (page === 5) document.getElementById('heidi-text-box').innerHTML =
+  `
+  Heidi’s virtual exhibition of her artworks is available at Think Round Fine Arts, TRFA ONLINE, and on Think Round's website, www.thinkround.org. The in-person exhibition of Part 1 of Part V of the Paradise Project, First Families/Families First (Indigenous), opens on October 12, 2024, with the full installation set for exhibition by October 2025 at Think Round Fine Arts. Heidi will continue painting two families a year, with Part VI featuring Buddhist/Jain families in 2026 and 2027 and Part VII showcasing Taoist/Confucian families in 2028 and 2029. The Paradise Project will be fully completed and celebrated with all 28 families in 2030.
+  <br><br>
+Heidi’s dedication to community art and education, coupled with her innovative approach to environmental and social issues, positions her as a transformative figure in both the artistic and nonprofit sectors.
+  `;
+}

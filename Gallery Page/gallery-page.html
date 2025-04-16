@@ -3,75 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-
     <link rel="stylesheet" href="./global.css" />
     <link rel="stylesheet" href="./additional.css"/>
-    <link
-      rel="stylesheet"
-      href="./gallery.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,600;1,400&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cormorant Infant:wght@500&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cormorant SC:wght@400;500&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Arimo:wght@700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"
-    />
+    <link rel="stylesheet" href="./gallery.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,600;1,400&display=swap"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant Infant:wght@500&display=swap"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant SC:wght@400;500&display=swap"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:wght@700&display=swap"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"/>
+    <script src="gallery.js"></script>
   </head>
-  <script>
-      function openNav() {
-        document.getElementById("miniGallerySidebar").style.width = "20%";
-        document.getElementById("main").style.width = "80%";
-      }
-      /* Set the width of the sidebar to 0 and the right margin of the page content to 0 */
-      function closeNav() {
-        document.getElementById("miniGallerySidebar").style.width = "0";
-        document.getElementById("main").style.marginRight = "0";
-      }
-      function toggleSortByMenu(){
-        closeFilterByMenu();
-        var dDContent = document.getElementById('sortByMenu');
-        if (dDContent.style.display === 'block') dDContent.style.display = 'none';
-        else dDContent.style.display = 'block';
-      }
-      function closeSortByMenu(){
-        document.getElementById('sortByMenu').style.display = 'none';
-      }
-      function toggleFilterByMenu(){
-        closeSortByMenu();
-        var dDContent = document.getElementById('filterByMenu');
-        if (dDContent.style.display === 'block') dDContent.style.display = 'none';
-        else dDContent.style.display = 'block';
-      }
-      function closeFilterByMenu(){
-        document.getElementById('filterByMenu').style.display = 'none';
-      }
-      function sortBy(){
-        //No Functionality Right Now
-      }
-      function addFilter(){
-
-      }
-      function removeFilter(id){ 
-        //pass the id to the filter and delete it
-        //doesnt currently filter paintings as i have no information on tags
-
-
-      }
-  </script>
   <body>
     <div class="gallery-experience-category">
       <main class="background-parent">
@@ -368,9 +309,7 @@
               <div class="row-1">
                 <div class="image">
                   <img class="image-child" alt="" />
-      
                   <img class="image-item" alt="" />
-      
                   <div class="container-group">
                     <div class="container1"></div>
                     <img

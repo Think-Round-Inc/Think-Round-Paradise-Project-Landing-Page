@@ -1,3 +1,9 @@
+.header-link{
+  cursor: pointer;
+}
+.header-link:hover{
+  color:black;
+}
 .exhibits,
 .exhibits1 {
   height: 2px;

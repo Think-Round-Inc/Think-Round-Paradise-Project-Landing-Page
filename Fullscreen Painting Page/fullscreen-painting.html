@@ -3,69 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,600;1,400&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cormorant Infant:wght@500&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cormorant SC:wght@400;500&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Arimo:wght@700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,600;1,400&display=swap"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant Infant:wght@500&display=swap"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant SC:wght@400;500&display=swap"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:wght@700&display=swap"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"/>
     <link rel="stylesheet" href="./global.css" />
     <link rel="stylesheet" href="./fullscreen-painting.css" />
     <link rel="stylesheet" href="./additional.css">
+    <script src="fullscreen.js"></script>
   </head>
-  <script>
-    function viewWithBackground(){
-      var bB = document.getElementById('bgButton');
-      bB.innerText = "View Main Painting";
-      document.getElementById("painting").style.transform = 'scale(0.5)';
-      bB.removeEventListener('click',viewWithBackground);
-      bB.addEventListener('click',viewMainPainting);
-    }
-    function viewMainPainting(){
-      var bB = document.getElementById('bgButton');
-      bB.innerText = "View Background";
-      document.getElementById("painting").style.transform = 'scale(1)';
-      bB.removeEventListener('click',viewMainPainting);
-      bB.addEventListener('click',viewWithBackground);
-    }
-    function viewDescription(){
-      var dB = document.getElementById('descButton');
-      document.getElementById('a-4-icon-top').style.opacity = '100%';
-      dB.innerText = "Hide Description";
-      dB.removeEventListener('click',viewDescription);
-      dB.addEventListener('click',hideDescription);
-    }
-    function hideDescription(){
-      var dB = document.getElementById('descButton');
-      document.getElementById('a-4-icon-top').style.opacity = '0%';
-      dB.innerText = "View Description";
-      dB.removeEventListener('click',hideDescription);
-      dB.addEventListener('click',viewDescription);
-    }
-    function previousPainting(){ //may need to change paintings size
-
-    }
-    function nextPainting(){ //may need to change paintings size
-
-    }
-    function exitFullScreen(){
-      window.location.href = "../Gallery Page/gallery-page.html";
-    }
-  </script>
   <body>
     <div class="fullscreen-painting-home-pag">
       <div class="fullscreen-painting-home-pag-child"></div>
