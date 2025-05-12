@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabbed Image Gallery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      padding: 10px 20px;
+      margin: 0 5px;
+      cursor: pointer;
+      background-color: lightgray;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .tab.active {
+      background-color: blue;
+      color: white;
+    }
+
+    .carousel-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+
+    .large-image {
+      flex: 2;
+      max-width: 750px;
+      text-align: center;
+    }
+
+    .large-image img {
+      width: 100%;
+      max-width: 750px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .small-images-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .small-images {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      max-width: 350px;
+    }
+
+    .small-image {
+      width: 150px;
+      height: 100px;
+      object-fit: cover;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .small-image:hover {
+      opacity: 0.7;
+      transform: scale(1.05);
+    }
+
+    .pagination {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .arrow {
+      font-size: 24px;
+      cursor: pointer;
+      margin: 0 10px;
+      user-select: none;
+    }
+
+    .arrow:hover {
+      color: blue;
+    }
+
+    .circles {
+      display: flex;
+      gap: 5px;
+    }
+
+    .circle {
+      width: 12px;
+      height: 12px;
+      background-color: lightgray;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .circle.active {
+      background-color: blue;
+    }
+
+
+
+
+    #miniGallerySidebar {
+      width: 20%;
+      background-color: #7d179b; /* purple */
+      color: white;
+      padding: 10px;
+      box-sizing: border-box;
+      transition: width 0.3s;
+    }
+
+    #main {
+      width: 80%;
+      padding: 20px;
+      transition: width 0.3s;
+    }
+
+    .filter-section {
+      background: white;
+      color: black;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .filter-section h3 {
+      margin-top: 0;
+      font-size: 1rem;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    .filter-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+
+    .filter-item input {
+      margin-right: 8px;
+    }
+
+    .painting {
+      margin: 10px 0;
+      padding: 10px;
+      background-color: #f4f4f4;
+      border-radius: 4px;
+    }
+
+    .close-btn {
+      float: right;
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: white;
+    }
+
+
+
+
+
+    @media (max-width: 900px) {
+      .carousel-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .small-image {
+        width: 120px;
+        height: 80px;
+      }
+    }
+
+    @media (max-width: 900px) {
+
+      .large-image {
+        display: none;
+      }
+
+      .small-images {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      .small-image {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active" data-gallery="0">Part I</div>
+    <div class="tab" data-gallery="1">Part II</div>
+    <div class="tab" data-gallery="2">Part III</div>
+    <div class="tab" data-gallery="3">Part IV</div>
+    <div class="tab" data-gallery="4">Part V</div>
+  </div>
+
+  <!-- Gallery -->
+  <div class="carousel-container">
+    <div class="large-image">
+      <img src="" alt="Large Image" id="mainImage">
+    </div>
+    <div class="small-images-wrapper">
+      <div class="small-images" id="smallImagesContainer"></div>
+      <div class="pagination">
+        <span class="arrow" id="prevArrow">⬅️</span>
+        <div class="circles" id="paginationCircles"></div>
+        <span class="arrow" id="nextArrow">➡️</span>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="miniGallerySidebar">
+    <span class="close-btn" onclick="closeNav()">×</span>
+    <h2>Filters</h2>
+    <div class="filter-section">
+      <h3>Families</h3>
+      <div class="filter-item"><input type="checkbox" value="Hideki Uchida" onchange="filterPaintings()">Hideki Uchida</div>
+      <div class="filter-item"><input type="checkbox" value="Shelley Bradford Bell" onchange="filterPaintings()">Shelley Bradford Bell</div>
+      <div class="filter-item"><input type="checkbox" value="Leslie Aguilar" onchange="filterPaintings()">Leslie Aguilar</div>
+      <div class="filter-item"><input type="checkbox" value="Scott Madison" onchange="filterPaintings()">Scott Madison</div>
+    </div>
+  </div>
+  
+  <div id="main">
+    <button onclick="openNav()">Open Filters</button>
+  
+    <div class="painting" data-family="Hideki Uchida">Painting A by Hideki Uchida</div>
+    <div class="painting" data-family="Shelley Bradford Bell">Painting B by Shelley Bradford Bell</div>
+    <div class="painting" data-family="Leslie Aguilar">Painting C by Leslie Aguilar</div>
+    <div class="painting" data-family="Scott Madison">Painting D by Scott Madison</div>
+    <div class="painting" data-family="Hideki Uchida">Painting E by Hideki Uchida</div>
+  </div>
+
+
+
+
+
+
+  <script>
+
+    // this is the logic for the galleries
+
+    const familiesByPart = [
+  ['Hideki Uchida', 'Shelley Bradford Bell', 'Leslie Aguilar', 'Scott Madison'], // Part I
+  ['Family A', 'Family B', 'Family C', 'Family D'],                             // Part II
+  ['Family E', 'Family F', 'Family G', 'Family H'],                             // Part III
+  ['Family I', 'Family J', 'Family K', 'Family L'],                             // Part IV
+  ['Family M', 'Family N', 'Family O', 'Family P']                              // Part V
+];
+
+const imagePathsByPart = [
+  Array.from({ length: 20 }, (_, i) => `images/${['one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen','twenty'][i]}.png`),
+  Array.from({ length: 20 }, (_, i) => `images/${['one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen','twenty'][i]}.png`),
+  Array.from({ length: 5 }, (_, i) => `images/part3-${i + 1}.jpg`),
+  Array.from({ length: 5 }, (_, i) => `images/part4-${i + 1}.jpg`),
+  Array.from({ length: 5 }, (_, i) => `images/part5-${i + 1}.jpg`)
+];
+
+// Function to assign 5 images per family
+function buildGallery(partIndex) {
+  const familyList = familiesByPart[partIndex];
+  const paths = imagePathsByPart[partIndex];
+  const gallery = [];
+
+  const imagesPerFamily = Math.floor(paths.length / familyList.length);
+  let index = 0;
+
+  for (const family of familyList) {
+    for (let i = 0; i < imagesPerFamily; i++) {
+      if (index < paths.length) {
+        gallery.push({ src: paths[index], family });
+        index++;
+      }
+    }
+  }
+
+  return gallery;
+}
+
+const galleries = familiesByPart.map((_, i) => buildGallery(i));
+
+
+    let currentGalleryIndex = 0;
+    let currentPage = 0;
+    const imagesPerPage = 10;
+
+    const smallImagesContainer = document.getElementById('smallImagesContainer');
+    const paginationCircles = document.getElementById('paginationCircles');
+    const mainImage = document.getElementById('mainImage');
+    const prevArrow = document.getElementById('prevArrow');
+    const nextArrow = document.getElementById('nextArrow');
+    const tabs = document.querySelectorAll('.tab');
+
+   
+    function loadImages(page = 0, filteredFamilies = []) {
+        const gallery = galleries[currentGalleryIndex];
+        const filteredGallery = filteredFamilies.length
+            ? gallery.filter(img => filteredFamilies.includes(img.family))
+            : gallery;
+
+        const totalPages = Math.ceil(filteredGallery.length / imagesPerPage);
+        const startIndex = page * imagesPerPage;
+        const endIndex = startIndex + imagesPerPage;
+        const currentImages = filteredGallery.slice(startIndex, endIndex);
+
+        smallImagesContainer.innerHTML = '';
+
+        currentImages.forEach(({ src }) => {
+            const img = document.createElement('img');
+            img.src = src;
+            img.classList.add('small-image');
+            img.addEventListener('click', () => {
+            mainImage.src = src;
+            });
+            smallImagesContainer.appendChild(img);
+        });
+
+        if (currentImages.length > 0) {
+            mainImage.src = currentImages[0].src;
+        }
+
+        updatePagination(page, totalPages, filteredFamilies);
+        }
+
+
+
+
+
+    function updatePagination(current, total, filteredFamilies) {
+        paginationCircles.innerHTML = '';
+        for (let i = 0; i < total; i++) {
+            const circle = document.createElement('div');
+            circle.classList.add('circle');
+            if (i === current) circle.classList.add('active');
+            circle.addEventListener('click', () => {
+            currentPage = i;
+            loadImages(currentPage, filteredFamilies);
+            });
+            paginationCircles.appendChild(circle);
+            }
+        }
+
+
+    prevArrow.addEventListener('click', () => {
+      const totalPages = Math.ceil(galleries[currentGalleryIndex].length / imagesPerPage);
+      if (currentPage > 0) {
+        currentPage--;
+        loadImages(currentPage);
+      }
+    });
+
+    nextArrow.addEventListener('click', () => {
+      const totalPages = Math.ceil(galleries[currentGalleryIndex].length / imagesPerPage);
+      if (currentPage < totalPages - 1) {
+        currentPage++;
+        loadImages(currentPage);
+      }
+    });
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        currentGalleryIndex = parseInt(tab.getAttribute('data-gallery'));
+        currentPage = 0;
+        loadImages(currentPage);
+      });
+    });
+
+    // Load initial gallery
+    loadImages();
+
+
+
+    // this is the logic for the filter
+
+
+    function openNav() {
+    document.getElementById("miniGallerySidebar").style.width = "20%";
+    document.getElementById("main").style.width = "80%";
+  }
+
+  function closeNav() {
+    document.getElementById("miniGallerySidebar").style.width = "0";
+    document.getElementById("main").style.width = "100%";
+  }
+
+  function filterPaintings() {
+  const checkboxes = document.querySelectorAll('.filter-item input:checked');
+  const selectedFamilies = Array.from(checkboxes).map(cb => cb.value);
+
+  const paintings = document.querySelectorAll('.painting');
+  paintings.forEach(painting => {
+    const family = painting.getAttribute('data-family');
+    painting.style.display = selectedFamilies.length === 0 || selectedFamilies.includes(family)
+      ? 'block' : 'none';
+  });
+
+  // Also apply filter to gallery
+  currentPage = 0;
+  loadImages(currentPage, selectedFamilies);
+}
+
+
+
+  </script>
+</body>
+</html>

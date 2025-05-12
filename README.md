@@ -1,6 +1,7 @@
 # Think-Round-Landing-Page
 
-This is the gallery page I've been working on
+Gallery page I've been working on so far.
 
-- eventually I think it can just be cut and pasted into the page we will eventually use.
-- images are not as final intended
+- including filter and carousel
+
+- works a bit, still need to fix filter
