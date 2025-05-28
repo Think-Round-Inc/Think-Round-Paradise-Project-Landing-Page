@@ -33,9 +33,9 @@
         <section class="information-panel">
           <div class="title-and-description">
             <div class="artworkDescription-wrapper">
-              <div class="artworkDescription">Part 1 : The Human Family Tree (Christians)</div>
+              <div id="artworkDescription">Part 1 : The Human Family Tree (Christians)</div>
             </div>
-            <div class="paintingTitle">Painting Title</div>
+            <div id="paintingTitle">Painting Title</div>
           </div>
           <div class="shape-container">
             <div id="paintingBg"> 
@@ -64,5 +64,6 @@
     document.getElementById('bgButton').addEventListener('click',viewWithBackground);
     document.getElementById('leftArrow').addEventListener('click',previousPainting);
     document.getElementById('rightArrow').addEventListener('click',nextPainting);
+    setPainting();
   </script>
 </html>

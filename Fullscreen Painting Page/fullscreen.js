@@ -27,15 +27,114 @@ function hideDescription(){
   dB.addEventListener('click',viewDescription);
 }
 function setPainting(){ //read the url to find the specific painting
-  const URLparams = window.location.search("painting");
+  const params = new URL(document.location.toString()).searchParams;
+  const urlGroupParam = params.get("group").toLowerCase(); //window.location.search("group");
+  const urlIdParam = params.get("id").toLowerCase(); //window.location.search("id");
+  console.log(urlGroupParam);
+  console.log(urlIdParam);
   //search for the background version and the backgroundless version
   //Defaults
   var paintingTitle = "Painting Title";
   var family = "Part 1 : The Human Family Tree (Christians)";
   var paintingSrc = "./public/1a-4@2x.png";
   var paintingDescription = "";
-  if (URLparams){
-    //here we would check the corresponding image and update the title accordingly
+  if (urlGroupParam && urlIdParam){
+    const filenames = {
+      "muslims" : [],
+      "christians" : {"10_a":["10_a. Hideki_s Sister, Joko, Next to the Family Car, 1959 (Christians - Hideki Uchida).jpg"],
+                      "10_b":["10_b. Shelley_s Sister on Easter Morning (Christians - Shelley Bradford Bell).jpg"],
+                      "10_c":["10_c. Fictional Sister for Leslie (Christians -  Leslie Aguilar).jpg"],
+                      "10_d":["10_d.-Scott_s-Sister,-Patricia-Ann-before-the-Christmas-Tree-(European-Sister-as-Princess).jpg"],
+                      "10a":["10a. Hideki_s mom_s students in front of the family homeStar Beauty Salon (Christians - Hideki Uchida)(1).jpg"],
+                      "10a":["10a. Hideki_s mom_s students in front of the family homeStar Beauty Salon (Christians - Hideki Uchida).jpg"],
+                      "10b":["10b. A Neighbor in Front of Shelley_s Grandmom_s Home (Christians - Shelley Bradford Bell).jpg"],
+                      "10c":["10c. Leslie_s Home, South Central Los Angeles (Christians -  Leslie Aguilar).jpg"],
+                      "10d":["10d. Scott_s Family_s Home, South Bend 1945 (Christians -  Scott Madison).jpg"],
+                      "11":["11. Leslie at a SF Street Fair (Christians -  Leslie Aguilar).jpg"],
+                      "12":["12. Shelley_s Granddad (Christians - Shelley Bradford Bell).jpg"],
+                      "13":["13. Shelley_s Grandmom (Christians - Shelley Bradford Bell).jpg"],
+                      "14":["14. Hideki_s Mom in Her Bridal Costume (Christians - Hideki Uchida).jpg"],
+                      "15":["15. Hideki_s Granddad (Christians - Hideki Uchida).jpg"],
+                      "16":["16. Shelley_s Family Preacher with Them at Church (Christians - Shelley Bradford Bell).jpg"],
+                      "17":["17. Scott and His Sister on a Teeter Totter (Christians - Scott Madison).jpg"],
+                      "18":["18. Shelley and Her Son Imagining Their Future (Christians - Shelley Bradford Bell).jpg"],
+                      "19":["19. Leslie Presenting Pineapples to a Model (Christians -  Leslie Aguilar).jpg"],
+                      "1a":["1a. Hideki_s Grandfather_s View of the Pacific Ocean from SF (Christians - Hideki Uchida).jpg"],
+                      "1b":["1b. Shelley_s Grandmom_s Backyard, Chicago (Christians - Shelley Bradford Bell).jpg"],
+                      "1c":["1c. Leslie at Yosemite with Friends (Christians - Leslie Aguilar).jpg"],
+                      "20":["20. Hideki_s Grandmom Near Still Water (Christians - Hideki Uchida).jpg"],
+                      "21":["21. Shelley_s Mom, Dad and Grandmom in Vegas (Christians - Shelley Bradford Bell).jpg"],
+                      "22":["22. Scott_s Dad_s View of the Statue of Liberty (Christians - Scott Madison).jpg"],
+                      "23":["23. Scott_s Dad_s Troop in the Army (Christians - Scott Madison).jpg"],
+                      "24":["24. Hideki_s Ancestor_s Tomb (Christians - Hideki Uchida).jpg"],
+                      "25":["25. Leslie at One of His Art Openings (Christians -  Leslie Aguilar).jpg"],
+                      "26":["26. Heidi on the Mountain with Her Pet Goat (Christians -  Heidi).jpg"],
+                      "27":["27. Shelley_s Sister_s View Crossing The Golden Gate Bridge (Christians - Shelley Bradford Bell).jpg"],
+                      "28":["28. Shelley_s First Christmas with James, Jr. (Christians - Shelley Bradford Bell).jpg"],
+                      "29":["29. Shelley Reflected in a Pool by Moonlight (Christians - Shelley Bradford Bell).jpg"],
+                      "2_a":["2_a. Hideki_s Grandfather, Japan, 1933 (Christians - Hideki Uchida).jpg"],
+                      "2_b":["2_b. Shelley_s Dad in a Cowboy Hat, Chicago, 1980 (Christians - Shelley Bradford Bell).jpg"],
+                      "2_c":["2_c. Leslie_s Godfather at His Confirmation, Los-Angeles, 1967 (Christians - Leslie Aguilar).jpg"],
+                      "2_d":["2_d. Scott_s Dad at the Office, South Bend, 1955 (Christians - Scott Madison).jpg"],
+                      "2a":["2a. Hideki_s Uncle and Cousin Filling in For Father and Son of His Family, Japan 1935 (Christians - Hideki Uchida).jpg"],
+                      "2b":["2b. Shelley_s Dad on Easter Morning with His Family, Chicago, 1967 (Christians - Shelley Bradford Bell).jpg"],
+                      "2d":["2d. Scott_s Dad at Christmas time with His Two Children, South Bend, 1968 (Christians - Scott Madison).jpg"],
+                      "30":["30. Shelley_s Sister at Her High School Graduation (Christians - Shelley Bradford Bell).jpg"],
+                      "31":["31. Shelley with Friends at The Bay to Breakers (Christians - Shelley Bradford Bell).jpg"],
+                      "32":["32. You, The Viewer.jpg"],
+                      "3_a":["3_a. Hideki_s Mom, Yachiyo, in a Purple Robe (Christians - Yachiyo Uchida).jpg"],
+                      "3_b":["3_b.-Shelley_s-Mom,-Lillian,-in-the-Kitchen-Laughing,-Having-Fun-(African-Mom-as-Queen).jpg"],
+                      "3_c":["3_c. Leslie_s Mom, Vivian_s, Glamour Shot (Christians -  Leslie Aguilar).jpg"],
+                      "3_d":["3_d. Scott_s Mom, Mary, in the Backseat of the Car (Christians - Scott Madison).jpg"],
+                      "3a":["3a. Hideki with His Mom and Grandmom (Christians - Hideki Uchida).jpg"],
+                      "3b":["3b. Four Generations of Mothers in Shelley_s Family (Christians - Shelley Bradford Bell).jpg"],
+                      "3c":["3c. Leslie_s Mom with Her First Grandchild, Tina (Christians -  Leslie Aguilar).jpg"],
+                      "3d":["3d. Scott_s Mom and Grandmom in the Kitchen After Thanksgiving Dinner (Christians - Scott Madison).jpg"],
+                      "4a":["4a. Hideki and Two Friends Blowing Whistles at the California Academy of Sciences ( Christians - Hideki Uchida).jpg"],
+                      "4b":["4b. Shelley_s Brother, Quentin, and a Friend Giving the Panther Salute (Christians - Shelley Bradford Bell).jpg"],
+                      "4c":["4c. Leslie at High School Graduation with Two Friends (Christians -  Leslie Aguilar).jpg"],
+                      "4d":["4d. Scott and Two Friends with Their Baseball Stuff (Christians - Scott Madison).jpg"],
+                      "5a":["5a. Hideki, his Mom and her Students in Front of her Beauty Salon, Japan, 1954 (Christians - Hideki Uchida).jpg"],
+                      "5b":["5b. Shelley Supporting Her Sister (Christians - Shelley Bradford Bell).jpg"],
+                      "5c":["5c. Leslie Cheerleading, Los Angeles (Christians - Shelley Bradford Bell).jpg"],
+                      "6_a":["6_a. Hideki_s Formal Portrait, 1957 (Christians - Hideki Uchida).jpg"],
+                      "6_b":["6_b. Shelley_s Brother Quentin at Easter (Christians - Shelley Bradford Bell).jpg"],
+                      "6_c":["6_c. Leslie at His Confirmation (Christians -  Leslie Aguilar).jpg"],
+                      "6_d":["6_d. Scott before Christmas Tree (Christians - Scott Madison).jpg"],
+                      "6a":["6a. Hideki_s School Photo, Senior Year, 1968 (Christians - Hideki Uchida).jpg"],
+                      "6b":["6b. Shelley with Her Future Husband, James, before the Junior Prom (Christians - Shelley Bradford Bell).jpg"],
+                      "6c":["6c. Leslie_s Junior Prom Portrait (Christians -  Leslie Aguilar).jpg"],
+                      "6d":["6d. Scott with his Date to the Senior Prom (Christians - Scott Madison).jpg"],
+                      "7a":["7a. Hideki as Boy Scout (Christians - Hideki Uchida).jpg"],
+                      "7b":["7b. Shelley_s Son, James, 4 Years Old (Christians - Shelley Bradford Bell).jpg"],
+                      "7c":["7c. Leslie_s Third Grade School Portrait (Christians -  Leslie Aguilar).jpg"],
+                      "7d":["7d. Scott with His New Bike (Christians - Scott Madison).jpg"],
+                      "8a":["8a. Hideki_s Sister, Joko, with Several Beauticians Behind Her (Christians Hideki Uchida).jpg"],
+                      "8b":["8b. Shelley in Her Favorite Dress, Third Grade (Christians - Shelley Bradford Bell).jpg"],
+                      "8c":["8c. Leslie_s Classmate in Grammar School (Christians -  Leslie Aguilar).jpg"],
+                      "8d":["8d. Scott_s Sister, Patricia Ann with Her New Doll (Christians - Scott Madison).jpg"],
+                      "9a":["9a. Hideki_s Sister, Joko, on Her roo Day Birthday (Christians - Hideki Uchida).jpg"],
+                      "9b":["9b. Shelley_s Son_s (James) Baby Portrait (Christians - Shelley Bradford Bell).jpg"],
+                      "9c":["9c. Leslie on the Back Porch (Christians -  Leslie Aguilar).jpg"],
+                      "9d":["9d. Scott at 9 Months Old (Christians - Scott Madison).jpg"]
+                      },
+      "jews" : [],
+      "hindusandsikhs" : [],
+      "indigenous" : [],
+      "buddhistsandjains" : [],
+      "taoistsandconfucians" : []
+    };
+    if (filenames[urlGroupParam] && urlGroupParam in filenames && urlIdParam in filenames[urlGroupParam]){
+      paintingTitle = filenames[urlGroupParam][urlIdParam];
+      paintingSrc = encodeURI("../paintings/" + urlGroupParam + "/" + filenames[urlGroupParam][urlIdParam]);
+      //console.log(paintingSrc)
+      family = (urlGroupParam === 'christians' ? "Part 1 : The Human Family Tree (Christians)" : 
+                urlGroupParam === 'muslims' ? "" : 
+                ""                  
+      );
+      paintingDescription = ""; //need to get the text
+    }
+    //probably give an error if a bad param is given?
   }
   document.getElementById('paintingTitle').innerText = paintingTitle;
   document.getElementById('artworkDescription').innerText = family;

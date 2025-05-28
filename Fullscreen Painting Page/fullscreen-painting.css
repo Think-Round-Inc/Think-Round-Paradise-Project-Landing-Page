@@ -97,21 +97,21 @@
   color: var(--color-white);
   font-family: var(--font-arimo);
 }
-.artworkDescription {
+#artworkDescription {
   position: relative;
   line-height: 36px;
   display: inline-block;
   min-width: 64px;
   z-index: 1;
 }
-.artworkDescription-wrapper {
+#artworkDescription-wrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   padding: var(--padding-7xs) 0 0;
 }
-.paintingTitle {
+#paintingTitle {
   position: relative;
   z-index: 1;
 }
@@ -240,11 +240,11 @@
   }
 }
 @media screen and (max-width: 975px) {
-  .artworkDescription {
+  #artworkDescription {
     line-height: 29px;
   }
-  .artworkDescription,
-  .paintingTitle {
+  #artworkDescription,
+  #paintingTitle {
     font-size: var(--font-size-7xl);
   }
 }
@@ -254,11 +254,11 @@
   }
 }
 @media screen and (max-width: 450px) {
-  .artworkDescription {
+  #artworkDescription {
     line-height: 22px;
   }
-  .artworkDescription,
-  .paintingTitle {
+  #artworkDescription,
+  #paintingTitle {
     font-size: var(--font-size-lgi);
   }
   .title-and-description {
