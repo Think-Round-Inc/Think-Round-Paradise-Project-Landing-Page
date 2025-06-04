@@ -33,4 +33,5 @@ def writeToFile(fileName):
     return;
 
 if __name__ == "__main__":
-    readPaintings("Christians");
+    #readPaintings("Christians");
+    readPaintings("Muslims");

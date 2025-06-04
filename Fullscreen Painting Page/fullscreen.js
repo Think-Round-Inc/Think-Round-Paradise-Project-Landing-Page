@@ -5,6 +5,7 @@ function viewWithBackground(){
   bB.removeEventListener('click',viewWithBackground);
   bB.addEventListener('click',viewMainPainting);
 }
+//need to match paintings with their background versions
 function viewMainPainting(){
   var bB = document.getElementById('bgButton');
   bB.innerText = "View Background";
@@ -40,7 +41,56 @@ function setPainting(){ //read the url to find the specific painting
   var paintingDescription = "";
   if (urlGroupParam && urlIdParam){
     const filenames = {
-      "muslims" : [],
+      "muslims" : {"10_a":["10_a. Kea’lani Pretending to Drive Mommy’s Audi on her Third Birthday, Mountain View, CA March 25, 2014 (Jews - Suzanna Sprong-Fernandez)_cropped.jpg"],
+"10_b":["10_b. Yetta with High School Diploma in Hand (Jews - Ray Pestrong)_cropped.jpg"],
+"1a":["1a. Zephyr Kai and Kea’lani Zaire Walking by the Beach, Probably Pacifica May 3rd, 2014 (Jews - Suzanna Sprong-Fernandez)_cropped.jpg"],
+"1b":["1b. Ray’s Imaginary Backyard (Jews - Ray Pestrong)_cropped.jpg"],
+"1c":["1c. Jonathan (with His First Camera), His Mom, Brother and His Mom’s Parents, 1959 or 1960 (Jews - Irving Sacks)_cropped.jpg"],
+"1d":["1d. First Time in San Francisco (Ethan, Raphael, and Jonas at Fisherman’s Wharf), July 2015  (Jews - Marc and Fleur Attia)_cropped.jpg"],
+"2_a":["2_a. Wilbur Springfield Holding Baby Juanita, Probably Texas or Japan, 1949 (Jews - Suzanna Sprong-Fernandez)_cropped.jpg"],
+"2_b":["2_b. Davidon a Park Bench along the East River Drive(Within a Year of His Death), c. 1952 (Jews - Ray Pestrong)_cropped.jpg"],
+"2_c":["2_c. Irving Feeding His Newborn Granddaughter, Ellen, Oct (Jews - Irving Sacks)_cropped.jpg"],
+"2_d-Ethan’s Bar Mitsvah, Marseille, France, June 2014 (Jews - Marc and Fleur Attia)_cropped":["2_d-Ethan’s Bar Mitsvah, Marseille, France, June 2014 (Jews - Marc and Fleur Attia)_cropped.jpg"],
+"2a":["2a. John, Kea’lani, Susanna, and Zephyr at Six Flags for Youtube Employee Day, Summer 2017 (Jews - Suzanna Sprong-Fernandez)_cropped.jpg"],
+"2b":["2b. David Reading the Jewish Daily (at Age 60), NY City, 1950 (Jews - Ray Pestrong)_cropped.jpg"],
+"2c Lee, Reva, Irene, Jonathan and Irving Sacks":["2c Lee, Reva, Irene, Jonathan and Irving Sacks. Fall, early 1980s (Jews - Irving Sacks)_cropped.jpg"],
+"2d":["2d. Happy Fiftieth Birthday of Marc, Celebrated in Paris, France, November 2017 (Jews - Marc and Fleur Attia)_cropped(1).jpg"],
+"2d":["2d. Happy Fiftieth Birthday of Marc, Celebrated in Paris, France, November 2017 (Jews - Marc and Fleur Attia)_cropped.jpg"],
+"3_a  Lillian Ada Holds Juanita Lillian, early 1950s in either Georgia or Japan (Jews - Suzanna Sprong-Fernandez)_cropped":["3_a  Lillian Ada Holds Juanita Lillian, early 1950s in either Georgia or Japan (Jews - Suzanna Sprong-Fernandez)_cropped.jpg"],
+"3_b":["3_b. Ray’s Mom All Dressed Up in NYC (Jews - Ray Pestrong)_cropped.jpg"],
+"3_c":["3_c. Irene with Her Grandson, Robby, 2002 (Jews - Irving Sacks)_cropped(1).jpg"],
+"3_c":["3_c. Irene with Her Grandson, Robby, 2002 (Jews - Irving Sacks)_cropped.jpg"],
+"3_d":["3_d. Pride (Jonas, Marc, Ethan, Raphael, and Fleur at Ethan’s Bar Mitsvah) June 1st, 2014,Marseille, France (Jews - Marc and Fleur Attia)_cropped.jpg"],
+"3a":["3a. Dinner Out with the Kids Susanna Holds Kea’lani and Zephyr has Fallen Asleep, December 6th, 2013, in Redwood (Jews - Suzanna Sprong-Fernandez)_cropped.jpg"],
+"3b":["3b. Ray’s Mom, Irene, at the Kitchen Living Room Table, on First Street in NY (Jews - Ray Pestrong)_cropped.jpg"],
+"3c":["3c. Lee’s Graduation from Hebrew School Celebrated by Jonathan, Irene and Reva, 1967 (Jews - Irving Sacks)_cropped.jpg"],
+"3d":["3d. Happiness Under the Sun, Bendor Island, South of France August 2009 (Jews - Marc and Fleur Attia)_cropped.jpg"],
+"4c":["4c. Lee, Irving and Jonathan on Rosh Hashanah in 1958 (Jews - Irving Sacks)_cropped.jpg"],
+"4d":["4d. Looking Forward to Playing Soccer, Lyon, France 2008 (Jews - Marc and Fleur Attia)_cropped.jpg"],
+"5a":["5a. Lillian and Juanita, Late 1950s Early 1960s, Georgia (Jews - Suzanna Sprong-Fernandez)_cropped.jpg"],
+"5b":["5b. Yetta with Her Aunt Ethel (Jews - Ray Pestrong)_cropped.jpg"],
+"5c":["5c. Nothing is More Important Than That I Feel (Jews - Irving Sacks)_cropped.jpg"],
+"5d":["5d. Kisses from Loving Grandmothers, Elaine and Annette, at Raphael’s Bar Mitsvah, Marseille, France May 26th (Jews - Marc and Fleur Attia)_cropped.jpg"],
+"6_a":["6_a. Zephyr Kai on the Beach near Muir Woods, CA April 6th, 2014 (Jews - Suzanna Sprong-Fernandez)_cropped.jpg"],
+"6_b":["6_b. Ray with His Little Sister, Yetta (Jewish Boy as Prince of the Family) (Jews - Ray Pestrong)_cropped.jpg"],
+"6_c":["6_c. Jonathan and Lee in the Garden on Rosh Hashanah 1958 (Jews - Irving Sacks)_cropped.jpg"],
+"6_d":["6_d. First Prior with the Teilins, Ethan’s Bar Mitsvah, Marseille, France, June 2014 (Jews - Marc and Fleur Attia)_cropped.jpg"],
+"6a":["6a. Juanita as a Teenager, Georgia 1960s (Jews - Suzanna Sprong-Fernandez)_cropped.jpg"],
+"6b":["6b. Ray on His Very First Date (Jews - Ray Pestrong)_cropped.jpg"],
+"6c":["6c. Lee and Jonathan 1965 (Jews - Irving Sacks)_cropped.jpg"],
+"6d":["6d. Preparing for a Family Party, Lyon, France 2011 (Jews - Marc and Fleur Attia)_cropped.jpg"],
+"7a":["7a. Zephyr and Coco Watch TV Together at Our Apartment in Redwood City August 17, 2013 (Jews - Suzanna Sprong-Fernandez)_cropped.jpg"],
+"7b":["7b. Ray’s Very Special Way of Using His Fingertips to Find the Beauty in Life on the Surface of Things (Jews - Ray Pestrong)_cropped.jpg"],
+"7c":["7c. Lee as a Cub Scout, 1962 (Jews - Irving Sacks)_cropped.jpg"],
+"7d":["7d. Preschool Picture, Marc 4 Years Old, Marseille, France (Jews - Marc and Fleur Attia)_cropped.jpg"],
+"8a":["8a. Kea’lani Giving Herself “Tattoos” with Paint at Our House in Bayview, SF February 17, 2014 (Jews - Suzanna Sprong-Fernandez)_cropped.jpg"],
+"8b":["8b. Ray’s Sister, Yetta, I’m Guessing at Age 5 (Jews - Ray Pestrong)_cropped.jpg"],
+"8c":["8c. Reva in a Rage,1967 (Jews - Irving Sacks)_cropped.jpg"],
+"8d":["8d. Smile on the Stairs, Fleur 2 Years Old in Parc-de-la-tête-d’Or Lyon, FranceNEF (Jews - Marc and Fleur Attia)_cropped.jpg"],
+"9a":["9a. Kea’lani Zaire at the Beach in Pacifica, May 22, 2012 (Jews - Suzanna Sprong-Fernandez)_cropped.jpg"],
+"9b":["9b. Ray’s New Younger Sister, Yetta, c.1943 (Jews - Ray Pestrong)_cropped.jpg"],
+"9c":["9c. Jonathan Romping, probably 1954 (Jews - Irving Sacks)_cropped.jpg"],
+"9d":["9d. Love at First Sight, Raphael Paris, France 2003 (Jews - Marc and Fleur Attia)_cropped.jpg"],},
       "christians" : {"10_a":["10_a. Hideki_s Sister, Joko, Next to the Family Car, 1959 (Christians - Hideki Uchida).jpg"],
                       "10_b":["10_b. Shelley_s Sister on Easter Morning (Christians - Shelley Bradford Bell).jpg"],
                       "10_c":["10_c. Fictional Sister for Leslie (Christians -  Leslie Aguilar).jpg"],
@@ -142,6 +192,8 @@ function setPainting(){ //read the url to find the specific painting
   //probably change size too
   document.getElementById("descriptionText").innerText = paintingDescription;
 }
+// order should be as google drive shows it
+// loop back in the family do not switch to a new one
 function previousPainting(){ //may need to change paintings size
   //Things that will need to change:
   // Painting Title, Description Composition, Description Dimensions, Actual Descripton, Painting Family
