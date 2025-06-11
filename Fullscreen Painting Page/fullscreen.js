@@ -36,10 +36,12 @@ function setPainting(){ //read the url to find the specific painting
   //search for the background version and the backgroundless version
   //Defaults
   var paintingTitle = "Painting Title";
-  var family = "Part 1 : The Human Family Tree (Christians)";
+  var family = "Part I : The Human Family Tree (Christians)";
   var paintingSrc = "./public/1a-4@2x.png";
   var paintingDescription = "";
-  if (urlGroupParam && urlIdParam){
+  if (urlGroupParam && !urlIdParam){
+    //use the first painting for group
+  }else if (urlGroupParam && urlIdParam){
     const filenames = {
       "muslims" : {"10_a":["10_a. Kea’lani Pretending to Drive Mommy’s Audi on her Third Birthday, Mountain View, CA March 25, 2014 (Jews - Suzanna Sprong-Fernandez)_cropped.jpg"],
 "10_b":["10_b. Yetta with High School Diploma in Hand (Jews - Ray Pestrong)_cropped.jpg"],
@@ -178,18 +180,20 @@ function setPainting(){ //read the url to find the specific painting
       paintingTitle = filenames[urlGroupParam][urlIdParam];
       paintingSrc = encodeURI("../paintings/" + urlGroupParam + "/" + filenames[urlGroupParam][urlIdParam]);
       //console.log(paintingSrc)
-      family = (urlGroupParam === 'christians' ? "Part 1 : The Human Family Tree (Christians)" : 
-                urlGroupParam === 'muslims' ? "" : 
+      family = (urlGroupParam === 'christians' ? "Part I : The Human Family Tree (Christians)" : 
+                urlGroupParam === 'jews' ? "Part II: Families in Paradise (Jews)" : 
+                urlGroupParam === 'muslims' ? "Part III: Art of the Family (Muslims)" :
+                urlGroupParam === 'hindusandsikhs' ? "Part IV: Family Dharma (Hindus & Sikhs)" : 
                 ""                  
       );
-      paintingDescription = ""; //need to get the text
+      paintingDescription = ""; //need to get the text depending on both group and family
     }
     //probably give an error if a bad param is given?
   }
   document.getElementById('paintingTitle').innerText = paintingTitle;
   document.getElementById('artworkDescription').innerText = family;
   document.getElementById('painting').src = paintingSrc;
-  //probably change size too
+  //probably change size too IMPORTANT
   document.getElementById("descriptionText").innerText = paintingDescription;
 }
 // order should be as google drive shows it
@@ -197,7 +201,21 @@ function setPainting(){ //read the url to find the specific painting
 function previousPainting(){ //may need to change paintings size
   //Things that will need to change:
   // Painting Title, Description Composition, Description Dimensions, Actual Descripton, Painting Family
-
+  var url = new URL(document.location.toString());
+  var params = url.searchParams;
+  var urlGroupParam = params.get("group").toLowerCase(); //window.location.search("group");
+  var urlIdParam = params.get("id").toLowerCase(); //window.location.search("id");
+  //if no params go to last painting
+  if (!urlGroupParam && !urlIdParam){
+    urlGroupParam = "christians";
+    urlIdParam = "1a"; 
+  }else if (!urlIdParam){
+    if (urlGroupParam === "christians") urlIdParam = "1a";
+  }
+  var sequence = {};
+  if (urlGroupParam === "christians") sequence = {'1a': ['15', '1b'], '1b': ['1a', '1c'], '1c': ['1b', '2_a'], '2_a': ['1c', '2_b'], '2_b': ['2_a', '2_c'], '2_c': ['2_b', '2_d'], '2_d': ['2_c', '2a'], '2a': ['2_d', '2b'], '2b': ['2a', '2d'], '2d': ['2b', '3_a'], '3_a': ['2d', '3_b'], '3_b': ['3_a', '3_c'], '3_c': ['3_b', '3_d'], '3_d': ['3_c', '3a'], '3a': ['3_d', '3b'], '3b': ['3a', '3c'], '3c': ['3b', '3d'], '3d': ['3c', '4a'], '4a': ['3d', '4b'], '4b': ['4a', '4c'], '4c': ['4b', '4d'], '4d': ['4c', '5a'], '5a': ['4d', '5b'], '5b': ['5a', '5c'], '5c': ['5b', '6_a'], '6_a': ['5c', '6_b'], '6_b': ['6_a', '6_c'], '6_c': ['6_b', '6_d'], '6_d': ['6_c', '6a'], '6a': ['6_d', '6b'], '6b': ['6a', '6c'], '6c': ['6b', '6d'], '6d': ['6c', '7a'], '7a': ['6d', '7b'], '7b': ['7a', '7c'], '7c': ['7b', '7d'], '7d': ['7c', '8a'], '8a': ['7d', '8b'], '8b': ['8a', '8c'], '8c': ['8b', '8d'], '8d': ['8c', '9a'], '9a': ['8d', '9b'], '9b': ['9a', '9c'], '9c': ['9b', '9d'], '9d': ['9c', '10_a'], '10_a': ['9d', '10_b'], '10_b': ['10_a', '10_c'], '10_c': ['10_b', '10_d'], '10_d': ['10_c', '10a'], '10a': ['10_d', '10c'], '10c': ['10a', '10d'], '10d': ['10c', '11'], '11': ['10d', '12'], '12': ['11', '13'], '13': ['12', '14'], '14': ['13', '15'], '15': ['14', '1a']}
+  params.set('id',sequence[urlIdParam][0]);
+  window.location.href = url;
 }
 function nextPainting(){ //may need to change paintings size
   //Things that will need to change:

@@ -64,6 +64,9 @@
     document.getElementById('bgButton').addEventListener('click',viewWithBackground);
     document.getElementById('leftArrow').addEventListener('click',previousPainting);
     document.getElementById('rightArrow').addEventListener('click',nextPainting);
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'ArrowLeft') previousPainting();
+    })
     setPainting();
   </script>
 </html>
