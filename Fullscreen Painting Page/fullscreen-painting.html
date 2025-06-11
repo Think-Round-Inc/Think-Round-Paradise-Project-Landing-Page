@@ -66,6 +66,7 @@
     document.getElementById('rightArrow').addEventListener('click',nextPainting);
     document.addEventListener('keydown', function(e){
       if (e.key === 'ArrowLeft') previousPainting();
+      else if (e.key === 'ArrowRight') nextPainting();
     })
     setPainting();
   </script>
