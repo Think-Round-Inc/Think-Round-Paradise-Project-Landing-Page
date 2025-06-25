@@ -48,20 +48,50 @@ function setPainting(){ //read the url to find the specific painting
     const filenames = {
       "jews" : {"10_a":["10_a. Kea’lani Pretending to Drive Mommy’s Audi on her Third Birthday, Mountain View, CA March 25, 2014 (Jews - Suzanna Sprong-Fernandez)_cropped.jpg"],
 "10_b":["10_b. Yetta with High School Diploma in Hand (Jews - Ray Pestrong)_cropped.jpg"],
+"10_c":["10_c. Irene Sunning Herself On the Garden Walk on a Summer Day on 58th Street in Brooklyn, 1947 (Jews - Irving Sacks)_cropped.jpg"],
+"10_d":["10_d. Summer in Provence, Fleur in her Twentys, France (Jews - Marc and Fleur Attia)_cropped.jpg"],
+"10a":["10a. Zephyr Kai and Kea’lani Zaire in San Francisco’s Botanical Gardens May 12, 2013 (Jews - Suzanna Sprong-Fernandez)_cropped.jpg"],
+"10b":["10b. Ray’s View of the Neighbor’s Back Yard from his Apartment Where He Grew Up CU (Jews - Ray Pestrong)_cropped.jpg"],
+"10c":["10c. Reva outside our home enjoying the aftermath of  a winter snow fall  (Afternoon) (Jews - Irving Sacks)_cropped.jpg"],
+"10d":["10d. Hockey in Our Backyard for Jonas, Ethan, and Raphael,Lyon, France 2009 (Jews - Marc and Fleur Attia)_cropped.jpg"],
+"11":["11. Holy City Jonas, Raphael, and Ethan in Jerusalem, Israel December 2011 (Jews - Marc and Fleur Attia)_cropped.jpg"],
+"12":["12. Danny Reading from the Tora at His Bar Mitzvah (Jews - Marc and Fleur Attia)_cropped.jpg"],
+"13":["13. Yael as a Queen of the Night for Purim-CU (Jews - Family of focus)_cropped.jpg"],
+"14":["14. Susanna Holding Kea’lani Zaire, Sausalito, CA February 23rd, 2014 (Jews - Suzanna Sprong-Fernandez)_cropped.jpg"],
+"15":["15. John Plays with Berry, Jack, and Esme the Pugs in Our Apartment in San Francisco August 2018 (Jews - Suzanna Sprong-Fernandez)_cropped.jpg"],
+"16":["16. Chema Israel, Raphael’s Bar Mitsvah, Marseille, France May 2016 (Jews - Marc and Fleur Attia)_cropped.jpg"],
+"17":["17. KK Radiating the Sunlight of the Spirit NEF (Jews - Family of focus)_cropped.jpg"],
+"18":["18. Irene and Irving Dancing at Their Wedding, Feb. 8, 1948 (Jews - Irving Sacks)_cropped.jpg"],
+"19":["19. Rockets of Desire Paying Off for Ray (Jews -  Ray Pestrong)_cropped.jpg"],
 "1a":["1a. Zephyr Kai and Kea’lani Zaire Walking by the Beach, Probably Pacifica May 3rd, 2014 (Jews - Suzanna Sprong-Fernandez)_cropped.jpg"],
 "1b":["1b. Ray’s Imaginary Backyard (Jews - Ray Pestrong)_cropped.jpg"],
 "1c":["1c. Jonathan (with His First Camera), His Mom, Brother and His Mom’s Parents, 1959 or 1960 (Jews - Irving Sacks)_cropped.jpg"],
 "1d":["1d. First Time in San Francisco (Ethan, Raphael, and Jonas at Fisherman’s Wharf), July 2015  (Jews - Marc and Fleur Attia)_cropped.jpg"],
+"20":["20. Some Like It Hot│Ray’s Aunt’s Dancing Instructor (or Someone Like That) │Hot Tamale (Jews -  Ray Pestrong)_cropped.jpg"],
+"21":["21.Irene_s grandfather, Moses Bookspan, As Part of Her Wedding Procession, February 8, 1948 (Jews - Irving Sacks)_cropped.jpg"],
+"22":["22. Ray at Coney Island with His friend S.C (Jews - Ray Pestrong)_cropped.jpg"],
+"23":["23. Yael and a friend at Purim, as a Muslim and a Jew, with A Sign that Reads “Peace” Written in Arabic and Hebrew (Jews - Family of focus)_cropped.jpg"],
+"24":["24. Sailor, Irving on a top Over in Hilo, Hawaii, 1946. (Around Noon) (Jews - Irving Sacks)_cropped.jpg"],
+"25":["25. Ruth Rosenwald’s Mother’s Gravestone in Israel (Jews - Family of focus)_cropped.jpg"],
+"26":["26. MeToo HEIDI Still Burnt Up by All-Dressed Up Men Who Hide Behind and Blame HER For The [Green (in this in) (Jews - Heidi Hardin)_cropped.jpg"],
+"27":["27. Ethan, Raphael, and Jonas at Universal Studios, Los Angeles, USA May 2017 (Jews - Marc and Fleur Attia)_cropped(1).jpg"],
+"27":["27. Ethan, Raphael, and Jonas at Universal Studios, Los Angeles, USA May 2017 (Jews - Marc and Fleur Attia)_cropped.jpg"],
+"28":["28. Rays Very Special View of the Empire State Building (Jews - Ray Pestrong)_cropped(1).jpg"],
+"28":["28. Rays Very Special View of the Empire State Building (Jews - Ray Pestrong)_cropped.jpg"],
+"29":["29. Susanna Wears Baby Kea’lani Zaire, CA April 18, 2012 (Jews - Suzanna Sprong-Fernandez)_cropped.jpg"],
 "2_a":["2_a. Wilbur Springfield Holding Baby Juanita, Probably Texas or Japan, 1949 (Jews - Suzanna Sprong-Fernandez)_cropped.jpg"],
 "2_b":["2_b. Davidon a Park Bench along the East River Drive(Within a Year of His Death), c. 1952 (Jews - Ray Pestrong)_cropped.jpg"],
 "2_c":["2_c. Irving Feeding His Newborn Granddaughter, Ellen, Oct (Jews - Irving Sacks)_cropped.jpg"],
-"2_d-Ethan’s Bar Mitsvah, Marseille, France, June 2014 (Jews - Marc and Fleur Attia)_cropped":["2_d-Ethan’s Bar Mitsvah, Marseille, France, June 2014 (Jews - Marc and Fleur Attia)_cropped.jpg"],
+"2_d":["2_d. Ethan’s Bar Mitsvah, Marseille, France, June 2014 (Jews - Marc and Fleur Attia)_cropped.jpg"],
 "2a":["2a. John, Kea’lani, Susanna, and Zephyr at Six Flags for Youtube Employee Day, Summer 2017 (Jews - Suzanna Sprong-Fernandez)_cropped.jpg"],
 "2b":["2b. David Reading the Jewish Daily (at Age 60), NY City, 1950 (Jews - Ray Pestrong)_cropped.jpg"],
-"2c Lee, Reva, Irene, Jonathan and Irving Sacks":["2c Lee, Reva, Irene, Jonathan and Irving Sacks. Fall, early 1980s (Jews - Irving Sacks)_cropped.jpg"],
+"2c":["2c. Lee, Reva, Irene, Jonathan and Irving Sacks. Fall, early 1980s (Jews - Irving Sacks)_cropped.jpg"],
 "2d":["2d. Happy Fiftieth Birthday of Marc, Celebrated in Paris, France, November 2017 (Jews - Marc and Fleur Attia)_cropped(1).jpg"],
 "2d":["2d. Happy Fiftieth Birthday of Marc, Celebrated in Paris, France, November 2017 (Jews - Marc and Fleur Attia)_cropped.jpg"],
-"3_a  Lillian Ada Holds Juanita Lillian, early 1950s in either Georgia or Japan (Jews - Suzanna Sprong-Fernandez)_cropped":["3_a  Lillian Ada Holds Juanita Lillian, early 1950s in either Georgia or Japan (Jews - Suzanna Sprong-Fernandez)_cropped.jpg"],
+"30":["30. Irene on Her Wedding Day, February 8, 1948 (Evening.) CU (Jews - Irving Sacks)_cropped.jpg"],
+"31":["31. Jonathan on the Bimah (of the Congregation AnshaiSfard), Peabody, MA, 1963 (Morning.)NEF (Jews - Irving Sacks)_cropped.jpg"],
+"32":["32. URI IRU [Uri Seeing Himself Reflected in You and Vis-Versa(If You Please)]NEF (Jews - Family of focus)_cropped.jpg"],
+"3_a":["3_a.  Lillian Ada Holds Juanita Lillian, early 1950s in either Georgia or Japan (Jews - Suzanna Sprong-Fernandez)_cropped.jpg"],
 "3_b":["3_b. Ray’s Mom All Dressed Up in NYC (Jews - Ray Pestrong)_cropped.jpg"],
 "3_c":["3_c. Irene with Her Grandson, Robby, 2002 (Jews - Irving Sacks)_cropped(1).jpg"],
 "3_c":["3_c. Irene with Her Grandson, Robby, 2002 (Jews - Irving Sacks)_cropped.jpg"],
@@ -95,7 +125,7 @@ function setPainting(){ //read the url to find the specific painting
 "9a":["9a. Kea’lani Zaire at the Beach in Pacifica, May 22, 2012 (Jews - Suzanna Sprong-Fernandez)_cropped.jpg"],
 "9b":["9b. Ray’s New Younger Sister, Yetta, c.1943 (Jews - Ray Pestrong)_cropped.jpg"],
 "9c":["9c. Jonathan Romping, probably 1954 (Jews - Irving Sacks)_cropped.jpg"],
-"9d":["9d. Love at First Sight, Raphael Paris, France 2003 (Jews - Marc and Fleur Attia)_cropped.jpg"],},
+"9d":["9d. Love at First Sight, Raphael Paris, France 2003 (Jews - Marc and Fleur Attia)_cropped.jpg"]},
       "christians" : {"10_a":["10_a. Hideki_s Sister, Joko, Next to the Family Car, 1959 (Christians - Hideki Uchida).jpg"],
                       "10_b":["10_b. Shelley_s Sister on Easter Morning (Christians - Shelley Bradford Bell).jpg"],
                       "10_c":["10_c. Fictional Sister for Leslie (Christians -  Leslie Aguilar).jpg"],
@@ -179,12 +209,14 @@ function setPainting(){ //read the url to find the specific painting
       "buddhistsandjains" : [],
       "taoistsandconfucians" : []
     };
-    //convert url codings apostrophies IMPORTANT
+    //convert url codings apostrophies IMPORTANT remember to do this for later families added
+    if (urlIdParam.includes("'")) urlIdParam = urlIdParam.replace("'","_")
     if (filenames[urlGroupParam] && urlGroupParam in filenames && urlIdParam in filenames[urlGroupParam]){
       paintingTitle = filenames[urlGroupParam][urlIdParam][0];
+      if (paintingTitle.split(".")[0].includes("_")) paintingTitle = paintingTitle.split(".")[0].replace("_","'") + "." + paintingTitle.split(".").slice(1).join(".");
       paintingSrc = encodeURI("../paintings/" + urlGroupParam + "/" + filenames[urlGroupParam][urlIdParam]);
       if (urlGroupParam === "christians" && urlIdParam.includes("_")) paintingTitle = paintingTitle.replace("_","'");
-      //Add rest of titles IMPORTANT
+      //Add rest of family titles IMPORTANT
       family = (urlGroupParam === 'christians' ? "Part I : The Human Family Tree (Christians)" : 
                 urlGroupParam === 'jews' ? "Part II: Families in Paradise (Jews)" : 
                 urlGroupParam === 'muslims' ? "Part III: Art of the Family (Muslims)" :
@@ -195,9 +227,13 @@ function setPainting(){ //read the url to find the specific painting
                 ""                  
       );
       paintingDescription = ""; //need to get the text depending on both group and family IMPORTANT
+    }else{
+          //probably give an error if a bad param is given?
     }
-    //probably give an error if a bad param is given?
   }
+  //SPECIAL ISSUES
+  if (urlGroupParam === 'jews' && urlIdParam === '26') paintingTitle = "26. #MeToo HEIDI Still Burnt Up by All-Dressed Up Men Who Hide Behind and Blame HER For The [Green (in this in) (Jews - Heidi Hardin)_cropped"
+  //
   document.getElementById('paintingTitle').innerText = paintingTitle;
   document.getElementById('artworkDescription').innerText = family;
   document.getElementById('painting').src = paintingSrc;
@@ -220,7 +256,7 @@ function previousPainting(){
   }
   var sequence = {};
   if (urlGroupParam === "christians") sequence = {'1a': ['15', '1b'], '1b': ['1a', '1c'], '1c': ['1b', '2_a'], '2_a': ['1c', '2_b'], '2_b': ['2_a', '2_c'], '2_c': ['2_b', '2_d'], '2_d': ['2_c', '2a'], '2a': ['2_d', '2b'], '2b': ['2a', '2d'], '2d': ['2b', '3_a'], '3_a': ['2d', '3_b'], '3_b': ['3_a', '3_c'], '3_c': ['3_b', '3_d'], '3_d': ['3_c', '3a'], '3a': ['3_d', '3b'], '3b': ['3a', '3c'], '3c': ['3b', '3d'], '3d': ['3c', '4a'], '4a': ['3d', '4b'], '4b': ['4a', '4c'], '4c': ['4b', '4d'], '4d': ['4c', '5a'], '5a': ['4d', '5b'], '5b': ['5a', '5c'], '5c': ['5b', '6_a'], '6_a': ['5c', '6_b'], '6_b': ['6_a', '6_c'], '6_c': ['6_b', '6_d'], '6_d': ['6_c', '6a'], '6a': ['6_d', '6b'], '6b': ['6a', '6c'], '6c': ['6b', '6d'], '6d': ['6c', '7a'], '7a': ['6d', '7b'], '7b': ['7a', '7c'], '7c': ['7b', '7d'], '7d': ['7c', '8a'], '8a': ['7d', '8b'], '8b': ['8a', '8c'], '8c': ['8b', '8d'], '8d': ['8c', '9a'], '9a': ['8d', '9b'], '9b': ['9a', '9c'], '9c': ['9b', '9d'], '9d': ['9c', '10_a'], '10_a': ['9d', '10_b'], '10_b': ['10_a', '10_c'], '10_c': ['10_b', '10_d'], '10_d': ['10_c', '10a'], '10a': ['10_d', '10c'], '10c': ['10a', '10d'], '10d': ['10c', '11'], '11': ['10d', '12'], '12': ['11', '13'], '13': ['12', '14'], '14': ['13', '15'], '15': ['14', '1a']}
-  else if (urlGroupParam === "jews") sequence = {};
+  else if (urlGroupParam === "jews") sequence = {'1a': ['32', '1b'], '1b': ['1a', '1c'], '1c': ['1b', '1d'], '1d': ['1c', "2'a"], "2'a": ['1d', "2'b"], "2'b": ["2'a", "2'c"], "2'c": ["2'b", "2'd"], "2'd": ["2'c", '2a'], '2a': ["2'd", '2b'], '2b': ['2a', '2c'], '2c': ['2b', '2d'], '2d': ['2c', "3'a"], "3'a": ['2d', "3'b"], "3'b": ["3'a", "3'c"], "3'c": ["3'b", "3'd"], "3'd": ["3'c", '3a'], '3a': ["3'd", '3b'], '3b': ['3a', '3c'], '3c': ['3b', '3d'], '3d': ['3c', '4c'], '4c': ['3d', '4d'], '4d': ['4c', '5a'], '5a': ['4d', '5b'], '5b': ['5a', '5c'], '5c': ['5b', '5d'], '5d': ['5c', "6'a"], "6'a": ['5d', "6'b"], "6'b": ["6'a", "6'c"], "6'c": ["6'b", "6'd"], "6'd": ["6'c", '6a'], '6a': ["6'd", '6b'], '6b': ['6a', '6c'], '6c': ['6b', '6d'], '6d': ['6c', '7a'], '7a': ['6d', '7b'], '7b': ['7a', '7c'], '7c': ['7b', '7d'], '7d': ['7c', '8a'], '8a': ['7d', '8b'], '8b': ['8a', '8c'], '8c': ['8b', '8d'], '8d': ['8c', '9a'], '9a': ['8d', '9b'], '9b': ['9a', '9c'], '9c': ['9b', '9d'], '9d': ['9c', "10'a"], "10'a": ['9d', "10'b"], "10'b": ["10'a", "10'c"], "10'c": ["10'b", "10'd"], "10'd": ["10'c", '10a'], '10a': ["10'd", '10b'], '10b': ['10a', '10c'], '10c': ['10b', '10d'], '10d': ['10c', '11'], '11': ['10d', '12'], '12': ['11', '13'], '13': ['12', '14'], '14': ['13', '15'], '15': ['14', '16'], '16': ['15', '17'], '17': ['16', '18'], '18': ['17', '19'], '19': ['18', '20'], '20': ['19', '21'], '21': ['20', '22'], '22': ['21', '23'], '23': ['22', '24'], '24': ['23', '25'], '25': ['24', '26'], '26': ['25', '27'], '27': ['26', '28'], '28': ['27', '29'], '29': ['28', '30'], '30': ['29', '31'], '31': ['30', '32'], '32': ['31', '1a']};
   params.set('id',sequence[urlIdParam][0]);
   window.location.href = url;
 }
@@ -237,7 +273,7 @@ function nextPainting(){ //may need to change paintings size //can probably comb
   }
   var sequence = {};
   if (urlGroupParam === "christians") sequence = {'1a': ['15', '1b'], '1b': ['1a', '1c'], '1c': ['1b', '2_a'], '2_a': ['1c', '2_b'], '2_b': ['2_a', '2_c'], '2_c': ['2_b', '2_d'], '2_d': ['2_c', '2a'], '2a': ['2_d', '2b'], '2b': ['2a', '2d'], '2d': ['2b', '3_a'], '3_a': ['2d', '3_b'], '3_b': ['3_a', '3_c'], '3_c': ['3_b', '3_d'], '3_d': ['3_c', '3a'], '3a': ['3_d', '3b'], '3b': ['3a', '3c'], '3c': ['3b', '3d'], '3d': ['3c', '4a'], '4a': ['3d', '4b'], '4b': ['4a', '4c'], '4c': ['4b', '4d'], '4d': ['4c', '5a'], '5a': ['4d', '5b'], '5b': ['5a', '5c'], '5c': ['5b', '6_a'], '6_a': ['5c', '6_b'], '6_b': ['6_a', '6_c'], '6_c': ['6_b', '6_d'], '6_d': ['6_c', '6a'], '6a': ['6_d', '6b'], '6b': ['6a', '6c'], '6c': ['6b', '6d'], '6d': ['6c', '7a'], '7a': ['6d', '7b'], '7b': ['7a', '7c'], '7c': ['7b', '7d'], '7d': ['7c', '8a'], '8a': ['7d', '8b'], '8b': ['8a', '8c'], '8c': ['8b', '8d'], '8d': ['8c', '9a'], '9a': ['8d', '9b'], '9b': ['9a', '9c'], '9c': ['9b', '9d'], '9d': ['9c', '10_a'], '10_a': ['9d', '10_b'], '10_b': ['10_a', '10_c'], '10_c': ['10_b', '10_d'], '10_d': ['10_c', '10a'], '10a': ['10_d', '10c'], '10c': ['10a', '10d'], '10d': ['10c', '11'], '11': ['10d', '12'], '12': ['11', '13'], '13': ['12', '14'], '14': ['13', '15'], '15': ['14', '1a']}
-  else if (urlGroupParam === "jews") sequence = {};
+  else if (urlGroupParam === "jews") sequence = {'1a': ['32', '1b'], '1b': ['1a', '1c'], '1c': ['1b', '1d'], '1d': ['1c', "2'a"], "2'a": ['1d', "2'b"], "2'b": ["2'a", "2'c"], "2'c": ["2'b", "2'd"], "2'd": ["2'c", '2a'], '2a': ["2'd", '2b'], '2b': ['2a', '2c'], '2c': ['2b', '2d'], '2d': ['2c', "3'a"], "3'a": ['2d', "3'b"], "3'b": ["3'a", "3'c"], "3'c": ["3'b", "3'd"], "3'd": ["3'c", '3a'], '3a': ["3'd", '3b'], '3b': ['3a', '3c'], '3c': ['3b', '3d'], '3d': ['3c', '4c'], '4c': ['3d', '4d'], '4d': ['4c', '5a'], '5a': ['4d', '5b'], '5b': ['5a', '5c'], '5c': ['5b', '5d'], '5d': ['5c', "6'a"], "6'a": ['5d', "6'b"], "6'b": ["6'a", "6'c"], "6'c": ["6'b", "6'd"], "6'd": ["6'c", '6a'], '6a': ["6'd", '6b'], '6b': ['6a', '6c'], '6c': ['6b', '6d'], '6d': ['6c', '7a'], '7a': ['6d', '7b'], '7b': ['7a', '7c'], '7c': ['7b', '7d'], '7d': ['7c', '8a'], '8a': ['7d', '8b'], '8b': ['8a', '8c'], '8c': ['8b', '8d'], '8d': ['8c', '9a'], '9a': ['8d', '9b'], '9b': ['9a', '9c'], '9c': ['9b', '9d'], '9d': ['9c', "10'a"], "10'a": ['9d', "10'b"], "10'b": ["10'a", "10'c"], "10'c": ["10'b", "10'd"], "10'd": ["10'c", '10a'], '10a': ["10'd", '10b'], '10b': ['10a', '10c'], '10c': ['10b', '10d'], '10d': ['10c', '11'], '11': ['10d', '12'], '12': ['11', '13'], '13': ['12', '14'], '14': ['13', '15'], '15': ['14', '16'], '16': ['15', '17'], '17': ['16', '18'], '18': ['17', '19'], '19': ['18', '20'], '20': ['19', '21'], '21': ['20', '22'], '22': ['21', '23'], '23': ['22', '24'], '24': ['23', '25'], '25': ['24', '26'], '26': ['25', '27'], '27': ['26', '28'], '28': ['27', '29'], '29': ['28', '30'], '30': ['29', '31'], '31': ['30', '32'], '32': ['31', '1a']};
   params.set('id',sequence[urlIdParam][1]);
   window.location.href = url;
 }
