@@ -8,22 +8,18 @@ def readPaintings(family):
     strings= [];
     #open folder
     location = str(Path(os.path.realpath(__file__)).parent.absolute().parent.absolute()) + "\\" + family;
-    print(location)
     paintings = sorted(os.listdir(location))
     #print(paintings)
-    #sortingFunction(paintings[0],paintings[1]);
-    # for file in folder add to strings
     for i in paintings:
-        spText = i.split('.');
-        text = '"' + spText[0] + '":["' + i +'"],';
-        print(text)
-    #sorted dictionary
-    #join strings
-    #close folder
-    print(','.join(strings));
-    return toReturn;
+        paren = i[i.rfind("(")+1:i.rfind(")")];
+        family = paren.split("-");
+        #print(family)
+        if (len(family) > 1):
+            spText = i.split('.');
+            text = '"' + spText[0] + '":["' + family[1].lstrip() +'"],';
+            print(text)
 
 if __name__ == "__main__":
-    #readPaintings("Christians");
+    readPaintings("Christians");
     #readPaintings("Jews");
-    readPaintings("Muslims");
+    #readPaintings("Muslims");
