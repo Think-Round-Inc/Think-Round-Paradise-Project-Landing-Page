@@ -8,10 +8,9 @@ def readPaintings(family):
     strings= [];
     #open folder
     location = str(Path(os.path.realpath(__file__)).parent.absolute().parent.absolute()) + "\\" + family;
-    print(location)
+    #print(location)
     paintings = sorted(os.listdir(location))
     #print(paintings)
-    #sortingFunction(paintings[0],paintings[1]);
     # for file in folder add to strings
     for i in paintings:
         spText = i.split('.');

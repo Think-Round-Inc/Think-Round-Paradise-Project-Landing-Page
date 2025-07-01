@@ -19,6 +19,7 @@ function viewDescription(){
   dB.innerText = "Hide Description";
   dB.removeEventListener('click',viewDescription);
   dB.addEventListener('click',hideDescription);
+   //IMPORTANT change the arrow event listeners to description and family history from painting switch here 
 }
 function hideDescription(){
   var dB = document.getElementById('descButton');
@@ -26,6 +27,7 @@ function hideDescription(){
   dB.innerText = "View Description";
   dB.removeEventListener('click',hideDescription);
   dB.addEventListener('click',viewDescription);
+  //IMPORTANT change the arrow event listeners from description and family history to painting switch here
 }
 function setPainting(){ //read the url to find the specific painting
   const params = new URL(document.location.toString()).searchParams;
@@ -37,7 +39,7 @@ function setPainting(){ //read the url to find the specific painting
   //Defaults
     //Things that will need to change:
   // Painting Title, Description Composition, Description Dimensions, Actual Descripton, Painting Family, Painting Size
-  var paintingTitle = "Painting Title";
+  var paintingTitle = "Family History Statement";
   var family = "Part I : The Human Family Tree (Christians)";
   var paintingSrc = "./public/1a-4@2x.png";
   var paintingDescription = "";
@@ -226,7 +228,7 @@ function setPainting(){ //read the url to find the specific painting
                 urlGroupParam === 'taoistsandconfucians' ? "" : 
                 ""                  
       );
-      paintingDescription = ""; //need to get the text depending on both group and family IMPORTANT
+      paintingDescription = getFamily(urlIdParam,urlGroupParam);
     }else{
           //probably give an error if a bad param is given?
     }
@@ -242,6 +244,7 @@ function setPainting(){ //read the url to find the specific painting
 }
 // order should be as google drive shows it
 // loop back in the family do not switch to a new one
+//should probably make functions more modular
 function previousPainting(){
   var url = new URL(document.location.toString());
   var params = url.searchParams;
@@ -255,6 +258,9 @@ function previousPainting(){
     if (urlGroupParam === "christians" || urlGroupParam === "jews") urlIdParam = "1a";
   }
   var sequence = {};
+  if (urlGroupParam === "christians") {
+    if (urlIdParam.includes("'")) urlIdParam = urlIdParam.replace("'","_");
+  }
   if (urlGroupParam === "christians") sequence = {'1a': ['15', '1b'], '1b': ['1a', '1c'], '1c': ['1b', '2_a'], '2_a': ['1c', '2_b'], '2_b': ['2_a', '2_c'], '2_c': ['2_b', '2_d'], '2_d': ['2_c', '2a'], '2a': ['2_d', '2b'], '2b': ['2a', '2d'], '2d': ['2b', '3_a'], '3_a': ['2d', '3_b'], '3_b': ['3_a', '3_c'], '3_c': ['3_b', '3_d'], '3_d': ['3_c', '3a'], '3a': ['3_d', '3b'], '3b': ['3a', '3c'], '3c': ['3b', '3d'], '3d': ['3c', '4a'], '4a': ['3d', '4b'], '4b': ['4a', '4c'], '4c': ['4b', '4d'], '4d': ['4c', '5a'], '5a': ['4d', '5b'], '5b': ['5a', '5c'], '5c': ['5b', '6_a'], '6_a': ['5c', '6_b'], '6_b': ['6_a', '6_c'], '6_c': ['6_b', '6_d'], '6_d': ['6_c', '6a'], '6a': ['6_d', '6b'], '6b': ['6a', '6c'], '6c': ['6b', '6d'], '6d': ['6c', '7a'], '7a': ['6d', '7b'], '7b': ['7a', '7c'], '7c': ['7b', '7d'], '7d': ['7c', '8a'], '8a': ['7d', '8b'], '8b': ['8a', '8c'], '8c': ['8b', '8d'], '8d': ['8c', '9a'], '9a': ['8d', '9b'], '9b': ['9a', '9c'], '9c': ['9b', '9d'], '9d': ['9c', '10_a'], '10_a': ['9d', '10_b'], '10_b': ['10_a', '10_c'], '10_c': ['10_b', '10_d'], '10_d': ['10_c', '10a'], '10a': ['10_d', '10c'], '10c': ['10a', '10d'], '10d': ['10c', '11'], '11': ['10d', '12'], '12': ['11', '13'], '13': ['12', '14'], '14': ['13', '15'], '15': ['14', '1a']}
   else if (urlGroupParam === "jews") sequence = {'1a': ['32', '1b'], '1b': ['1a', '1c'], '1c': ['1b', '1d'], '1d': ['1c', "2'a"], "2'a": ['1d', "2'b"], "2'b": ["2'a", "2'c"], "2'c": ["2'b", "2'd"], "2'd": ["2'c", '2a'], '2a': ["2'd", '2b'], '2b': ['2a', '2c'], '2c': ['2b', '2d'], '2d': ['2c', "3'a"], "3'a": ['2d', "3'b"], "3'b": ["3'a", "3'c"], "3'c": ["3'b", "3'd"], "3'd": ["3'c", '3a'], '3a': ["3'd", '3b'], '3b': ['3a', '3c'], '3c': ['3b', '3d'], '3d': ['3c', '4c'], '4c': ['3d', '4d'], '4d': ['4c', '5a'], '5a': ['4d', '5b'], '5b': ['5a', '5c'], '5c': ['5b', '5d'], '5d': ['5c', "6'a"], "6'a": ['5d', "6'b"], "6'b": ["6'a", "6'c"], "6'c": ["6'b", "6'd"], "6'd": ["6'c", '6a'], '6a': ["6'd", '6b'], '6b': ['6a', '6c'], '6c': ['6b', '6d'], '6d': ['6c', '7a'], '7a': ['6d', '7b'], '7b': ['7a', '7c'], '7c': ['7b', '7d'], '7d': ['7c', '8a'], '8a': ['7d', '8b'], '8b': ['8a', '8c'], '8c': ['8b', '8d'], '8d': ['8c', '9a'], '9a': ['8d', '9b'], '9b': ['9a', '9c'], '9c': ['9b', '9d'], '9d': ['9c', "10'a"], "10'a": ['9d', "10'b"], "10'b": ["10'a", "10'c"], "10'c": ["10'b", "10'd"], "10'd": ["10'c", '10a'], '10a': ["10'd", '10b'], '10b': ['10a', '10c'], '10c': ['10b', '10d'], '10d': ['10c', '11'], '11': ['10d', '12'], '12': ['11', '13'], '13': ['12', '14'], '14': ['13', '15'], '15': ['14', '16'], '16': ['15', '17'], '17': ['16', '18'], '18': ['17', '19'], '19': ['18', '20'], '20': ['19', '21'], '21': ['20', '22'], '22': ['21', '23'], '23': ['22', '24'], '24': ['23', '25'], '25': ['24', '26'], '26': ['25', '27'], '27': ['26', '28'], '28': ['27', '29'], '29': ['28', '30'], '30': ['29', '31'], '31': ['30', '32'], '32': ['31', '1a']};
   params.set('id',sequence[urlIdParam][0]);
@@ -272,6 +278,9 @@ function nextPainting(){ //may need to change paintings size //can probably comb
     if (urlGroupParam === "christians" || urlGroupParam === "jews") urlIdParam = "1a";
   }
   var sequence = {};
+    if (urlGroupParam === "christians") {
+    if (urlIdParam.includes("'")) urlIdParam = urlIdParam.replace("'","_");
+  }
   if (urlGroupParam === "christians") sequence = {'1a': ['15', '1b'], '1b': ['1a', '1c'], '1c': ['1b', '2_a'], '2_a': ['1c', '2_b'], '2_b': ['2_a', '2_c'], '2_c': ['2_b', '2_d'], '2_d': ['2_c', '2a'], '2a': ['2_d', '2b'], '2b': ['2a', '2d'], '2d': ['2b', '3_a'], '3_a': ['2d', '3_b'], '3_b': ['3_a', '3_c'], '3_c': ['3_b', '3_d'], '3_d': ['3_c', '3a'], '3a': ['3_d', '3b'], '3b': ['3a', '3c'], '3c': ['3b', '3d'], '3d': ['3c', '4a'], '4a': ['3d', '4b'], '4b': ['4a', '4c'], '4c': ['4b', '4d'], '4d': ['4c', '5a'], '5a': ['4d', '5b'], '5b': ['5a', '5c'], '5c': ['5b', '6_a'], '6_a': ['5c', '6_b'], '6_b': ['6_a', '6_c'], '6_c': ['6_b', '6_d'], '6_d': ['6_c', '6a'], '6a': ['6_d', '6b'], '6b': ['6a', '6c'], '6c': ['6b', '6d'], '6d': ['6c', '7a'], '7a': ['6d', '7b'], '7b': ['7a', '7c'], '7c': ['7b', '7d'], '7d': ['7c', '8a'], '8a': ['7d', '8b'], '8b': ['8a', '8c'], '8c': ['8b', '8d'], '8d': ['8c', '9a'], '9a': ['8d', '9b'], '9b': ['9a', '9c'], '9c': ['9b', '9d'], '9d': ['9c', '10_a'], '10_a': ['9d', '10_b'], '10_b': ['10_a', '10_c'], '10_c': ['10_b', '10_d'], '10_d': ['10_c', '10a'], '10a': ['10_d', '10c'], '10c': ['10a', '10d'], '10d': ['10c', '11'], '11': ['10d', '12'], '12': ['11', '13'], '13': ['12', '14'], '14': ['13', '15'], '15': ['14', '1a']}
   else if (urlGroupParam === "jews") sequence = {'1a': ['32', '1b'], '1b': ['1a', '1c'], '1c': ['1b', '1d'], '1d': ['1c', "2'a"], "2'a": ['1d', "2'b"], "2'b": ["2'a", "2'c"], "2'c": ["2'b", "2'd"], "2'd": ["2'c", '2a'], '2a': ["2'd", '2b'], '2b': ['2a', '2c'], '2c': ['2b', '2d'], '2d': ['2c', "3'a"], "3'a": ['2d', "3'b"], "3'b": ["3'a", "3'c"], "3'c": ["3'b", "3'd"], "3'd": ["3'c", '3a'], '3a': ["3'd", '3b'], '3b': ['3a', '3c'], '3c': ['3b', '3d'], '3d': ['3c', '4c'], '4c': ['3d', '4d'], '4d': ['4c', '5a'], '5a': ['4d', '5b'], '5b': ['5a', '5c'], '5c': ['5b', '5d'], '5d': ['5c', "6'a"], "6'a": ['5d', "6'b"], "6'b": ["6'a", "6'c"], "6'c": ["6'b", "6'd"], "6'd": ["6'c", '6a'], '6a': ["6'd", '6b'], '6b': ['6a', '6c'], '6c': ['6b', '6d'], '6d': ['6c', '7a'], '7a': ['6d', '7b'], '7b': ['7a', '7c'], '7c': ['7b', '7d'], '7d': ['7c', '8a'], '8a': ['7d', '8b'], '8b': ['8a', '8c'], '8c': ['8b', '8d'], '8d': ['8c', '9a'], '9a': ['8d', '9b'], '9b': ['9a', '9c'], '9c': ['9b', '9d'], '9d': ['9c', "10'a"], "10'a": ['9d', "10'b"], "10'b": ["10'a", "10'c"], "10'c": ["10'b", "10'd"], "10'd": ["10'c", '10a'], '10a': ["10'd", '10b'], '10b': ['10a', '10c'], '10c': ['10b', '10d'], '10d': ['10c', '11'], '11': ['10d', '12'], '12': ['11', '13'], '13': ['12', '14'], '14': ['13', '15'], '15': ['14', '16'], '16': ['15', '17'], '17': ['16', '18'], '18': ['17', '19'], '19': ['18', '20'], '20': ['19', '21'], '21': ['20', '22'], '22': ['21', '23'], '23': ['22', '24'], '24': ['23', '25'], '25': ['24', '26'], '26': ['25', '27'], '27': ['26', '28'], '28': ['27', '29'], '29': ['28', '30'], '30': ['29', '31'], '31': ['30', '32'], '32': ['31', '1a']};
   params.set('id',sequence[urlIdParam][1]);
@@ -279,4 +288,115 @@ function nextPainting(){ //may need to change paintings size //can probably comb
 }
 function exitFullScreen(){
   window.location.href = "../Gallery Page/gallery-page.html";
+}
+function getFamily(id,group){ //read the id and group and return the corresponding family information or just change the text IMPORTANT ADD OTHER FAMILIES
+  var families = {}
+  console.log(id,group)
+  if (group === 'christians'){
+    families = 
+    {
+      "10_a":["Hideki Uchida"],
+      "10_b":["Shelley Bradford Bell"],
+      "10_c":["Leslie Aguilar"],
+      "10_d":["Scott Madison"],
+      "10a":["Hideki Uchida"],
+      "10b":["Shelley Bradford Bell"],
+      "10c":["Leslie Aguilar"],
+      "10d":["Scott Madison"],
+      "11":["Leslie Aguilar"],
+      "12":["Shelley Bradford Bell"],
+      "13":["Shelley Bradford Bell"],
+      "14":["Hideki Uchida"],
+      "15":["Hideki Uchida"],
+      "16":["Shelley Bradford Bell"],
+      "17":["Scott Madison"],
+      "18":["Shelley Bradford Bell"],
+      "19":["Leslie Aguilar"],
+      "1a":["Hideki Uchida"],
+      "1b":["Shelley Bradford Bell"],
+      "1c":["Leslie Aguilar"],
+      "20":["Hideki Uchida"],
+      "21":["Shelley Bradford Bell"],
+      "22":["Scott Madison"],
+      "23":["Scott Madison"],
+      "24":["Hideki Uchida"],
+      "25":["Leslie Aguilar"],
+      "26":["Hideki Uchida"],
+      "27":["Shelley Bradford Bell"],
+      "28":["Shelley Bradford Bell"],
+      "29":["Shelley Bradford Bell"],
+      "2_a":["Hideki Uchida"],
+      "2_b":["Shelley Bradford Bell"],
+      "2_c":["Leslie Aguilar"],
+      "2_d":["Scott Madison"],
+      "2a":["Hideki Uchida"],
+      "2b":["Shelley Bradford Bell"],
+      "2d":["Scott Madison"],
+      "30":["Shelley Bradford Bell"],
+      "31":["Shelley Bradford Bell"],
+      "3_a":["Hideki Uchida"],
+      "3_b":["Shelley Bradford Bell"],
+      "3_c":["Leslie Aguilar"],
+      "3_d":["Scott Madison"],
+      "3a":["Hideki Uchida"],
+      "3b":["Shelley Bradford Bell"],
+      "3c":["Leslie Aguilar"],
+      "3d":["Scott Madison"],
+      "4a":["Hideki Uchida"],
+      "4b":["Shelley Bradford Bell"],
+      "4c":["Leslie Aguilar"],
+      "4d":["Scott Madison"],
+      "5a":["Hideki Uchida"],
+      "5b":["Shelley Bradford Bell"],
+      "5c":["Shelley Bradford Bell"],
+      "6_a":["Hideki Uchida"],
+      "6_b":["Shelley Bradford Bell"],
+      "6_c":["Leslie Aguilar"],
+      "6_d":["Scott Madison"],
+      "6a":["Hideki Uchida"],
+      "6b":["Shelley Bradford Bell"],
+      "6c":["Leslie Aguilar"],
+      "6d":["Scott Madison"],
+      "7a":["Hideki Uchida"],
+      "7b":["Shelley Bradford Bell"],
+      "7c":["Leslie Aguilar"],
+      "7d":["Scott Madison"],
+      "8b":["Shelley Bradford Bell"],
+      "8c":["Leslie Aguilar"],
+      "8d":["Scott Madison"],
+      "9a":["Hideki Uchida"],
+      "9b":["Shelley Bradford Bell"],
+      "9c":["Leslie Aguilar"],
+      "9d":["Scott Madison"],
+    };
+  }
+  var familiesText = 
+  {
+    "Leslie Aguilar":
+    `
+    Latin Americans:  The family of Leslie Aguilar
+
+    Leslie Aguilar was born in South Central Los Angeles, CA in 1957.  He has two brothers and a sister.  His mom and dad met there and were married for fifteen years.  Leslie was raised in the house of her father’s birth.  His parents divorced when Leslie was five.  His mother went to work to support her family.  Leslie moved to San Francisco in 1977 to pursue his career as an artist.  The paintings of Leslie’s life span from 1958 to the present.  Leslie leads life as a gay man. His life has been a journey to expand and explore his abilities as an artist and includes dance, design, architecture, carpentry, teaching, drawing, ceramics and textiles.
+    `,
+    "Scott Madison": 
+    `
+    European Americans:  The Family of Scott Madison
+
+    These paintings are made from hundreds of slides Scott Madison’s father took from 1950 to 1975.  The family settled in South Bend, Indiana, where both parents were born, met and married.  Scott and his sister, Patricia, grew up in the Indiana family home.  Scott moved to San Francisco in 1977 “to escape the profound boredom of the Midwest.”  Scott’s dad, Don, and his mother, Mary, were married for more than fifty years.  Mary passed away several years ago and Don now lives in Redwood City, CA, under the loving care of his son, Scott.
+    `,
+    "Hideki Uchida": 
+    `
+    Japanese American Family:  Hideki Uchida’s Family
+
+    These paintings are of the family of Yachiyo Uchida.  Yachiyo moved to San Francisco forty years ago with her two children, Joko and Hideki.  She left Japan after the war to reunite with her mother.  Toshi came to San Francisco, leaving her baby, Yachiyo, in Japan.  She came to escape the abusive relationship with Hideki’s father, her second husband.  Unable to speak English comfortably, Yachio’s oral history was taken on videotape and translated by Hideki.  The paintings in this exhibit were created from black and white family photos taken mostly by Yachiyo’s stepfather, a dentist and avid photographer.  His collection of photos includes images of the San Francisco World Expo and San Francisco’s 1909 earthquake.  The artist recently married Hideki.
+    `,
+    "Shelley Bradford Bell":
+    `
+    African Americans: The Family of Shelley Bradford Bell
+
+    Shelley Bradford Bell’s family grew up in Chicago, Illinois.  Shelley’s sister, Marcia, lives in Chicago and has a daughter, Binta.  Her brother, Quintin, lives in Atlanta.  Yvonne and Eugene Bradford Jr. are her parents, who divorced after 31 years of marriage.  Eugene Bradford Sr. is her maternal grandfather and her maternal grandmother is Elizabeth Badon.  She grew up with her husband, James Bell Jr. from age five.  Her son’s name is James III.  She came to San Francisco in 1986 to fulfill a childhood dream of living in the City by the Bay.
+    `
+  };
+  if (families[id] && familiesText[families[id]]) return familiesText[families[id]];
+  return "";
 }
