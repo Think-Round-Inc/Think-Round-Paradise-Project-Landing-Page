@@ -559,6 +559,44 @@ function getFamily(id,group){ //read the id and group and return the correspondi
     Your family's view of other world religions: there is one God for everyone: Artwork in the home: paintings, sculpture, etc.
 
     `,
+    "Souleiman Ghali":
+    `
+    Souleiman Ghali Family History
+    Prepared by Souleiman Ghali
+    January 2004
+
+    Both Souleiman and wife, Doaa, were born in Lebanon to a Palestinian family of refuges from Palestine the city of Yafa. They both studied there. Both Souleiman and Doaa parents come from the same city in Palestine called Yafa.
+
+    Souleiman has 4 brothers and 2 sisters. Both parents passed away grow up as a Palestinian in the country of Lebanon came to study in the United States as a student went to Pharmacy school due to limited resources never finished due to lack of money and finical support.  Started working his way up lived in many states: Texas, New York, and finally made Bay Area his home in 1995.  
+
+    Souleiman owns his own business that does Graphic Design, Printing and Copying. He is very active in the Muslim community. He is the co-founder of the Islamic Society of San Francisco, which is the largest Islamic Institution in San Francisco and operates a Mosque and School.  He is very active in the San Francisco Bay Area and a regular advocate for Muslim and ARAB CAUSES. Souleiman strongly believes in bridging the gap between the Abrahamic Faiths:  Jews, Christians, and Muslims.
+
+    Doaa is an accountant supervisor for Artizn Co, which is a technology consultant firm, one of the main providers of Engineers for companies like CISCO SYSTEM. She works in a high-tech environment and is well regarded for her talent and devotion to her faith.
+
+    Souleiman and Doaa have two boys, Ibrahim and Muhammad, who were both born in the United States.
+
+    Souleiman and Doaa are proud to be Muslim Americans, love this country, and want to give their best to make America a better place for all. 
+
+    `,
+    "Salma Arastu":
+    `
+    Salma Arastu Family History
+
+    Alamdar Husain Arastu, an architect and Salma Arastu, an artist were married in Hyderabad, India. Salma accepted Islam at the time of their marriage and her maiden name is Kamlesh Valiram Hingorani. After marriage, they moved to Tehran, Iran for a couple of years and after revolution in Iran the family moved to Kuwait. By this time, they had two kids, Shirin and Samad Husain. Alamdar worked as an architect in National Housing at Kuwait and Salma continued practicing her art. In 1986 the couple immigrated to USA with children and settled in Bethlehem Pennsylvania as one of Alamdar’s brother was already living there. Shirin became scientist with post doc in biochemistry from Stanford University and got married and settled in the Bay area. Alamdar and Salma moved to the Bay Area in 2006. Alamdar is working with Housing Development Authority, a Federal Government Agency in San Francisco. Salma has continued her career as a professional artist and rents a beautiful large studio in Berkeley. They both live in Emeryville, California.  Samad Husain was trained as an artist and recently got married and lives in Los Angeles with his wife.
+    `,
+    "Ismailia Biaye":
+    `
+    Ismailia Biaye Family History
+
+    The Biaye family settled in the Bay Area in the late eighties. Ismaila and Mariama welcomed their first child, Josephine, in San Francisco, then her brother Karim and sisters Fatima, Mariétou, aka Bijou, and Mariam Biaye. They attended Saint Dominic Elementary (SF), Lincoln Community International School (Accra, Ghana), Sir Francis Drake High School (San Anselmo), and Emery High (Emeryville). The children, now college students and adult professionals, are first-generation Americans born in San Francisco to Senegalese parents. Ismaila, best known as Monsieur Biaye or Ismaël, has a dual career as a teacher and business communication strategist. Mariama studied fashion merchandising, and also graduated as a bilingual specialist in administrative office management. She currently works in the field of aviation security in San Francisco. Josephine studied Culinary Arts and is a professional chef. Karim is a coordinator in procurement and supply chain management. Fatima is a fashion stylist for a major international apparel retailer. Mariétou is an account executive for a leading dental software management company. Mariam is graduating in Art History from San Francisco State University in the Fall of 2019. Ismaila and Heidi worked in tandem to develop and teach a curriculum with Global Arts & Education and Alliance Française de San Francisco.
+    `,
+    "Mona Anonymous":
+    `
+    Mona Anonymous Family History
+
+    This family has asked to remain anonymous. The names provided for the titles of their portraits on the following page are all fictitious and created by Mona Anonymous, the wife and mother.
+
+    `,
   };
   if (families[id] && familiesText[families[id]]) return familiesText[families[id]];
   return ""; // if family is blank, could probably disable the button IMPORTANT
