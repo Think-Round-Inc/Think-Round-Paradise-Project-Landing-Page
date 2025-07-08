@@ -291,7 +291,7 @@ function exitFullScreen(){
 }
 function getFamily(id,group){ //read the id and group and return the corresponding family information or just change the text IMPORTANT ADD OTHER FAMILIES
   var families = {}
-  console.log(id,group)
+  // console.log(id,group)
   if (group === 'christians'){
     families = 
     {
@@ -369,8 +369,87 @@ function getFamily(id,group){ //read the id and group and return the correspondi
       "9c":["Leslie Aguilar"],
       "9d":["Scott Madison"],
     };
+  }else if (group === 'jews'){
+    families = {
+      "10_a":["Suzanna Sprong"],
+      "10_b":["Ray Pestrong"],
+      "10_c":["Irving Sacks"],
+      "10_d":["Marc and Fleur Attia"],
+      "10a":["Suzanna Sprong"],
+      "10b":["Ray Pestrong"],
+      "10c":["Irving Sacks"],
+      "10d":["Marc and Fleur Attia"],
+      "11":["Marc and Fleur Attia"],
+      "12":["Marc and Fleur Attia"],
+      // "13":["Family of focus"],
+      "14":["Suzanna Sprong"],
+      "15":["Suzanna Sprong"],
+      "16":["Marc and Fleur Attia"],
+      "17":["Family of focus"],
+      "18":["Irving Sacks"],
+      "19":["Ray Pestrong"],
+      "1a":["Suzanna Sprong"],
+      "1b":["Ray Pestrong"],
+      "1c":["Irving Sacks"],
+      "1d":["Marc and Fleur Attia"],
+      "20":["Ray Pestrong"],
+      "21":["Irving Sacks"],
+      "22":["Ray Pestrong"],
+      "23":["Family of focus"],
+      "24":["Irving Sacks"],
+      // "25":["Family of focus"],
+      "26":["Heidi Hardin"],
+      "27":["Marc and Fleur Attia"],
+      "28":["Ray Pestrong"],
+      "29":["Suzanna Sprong"],
+      "2_a":["Suzanna Sprong"],
+      "2_b":["Ray Pestrong"],
+      "2_c":["Irving Sacks"],
+      "2_d":["Marc and Fleur Attia"],
+      "2a":["Suzanna Sprong"],
+      "2b":["Ray Pestrong"],
+      "2c":["Irving Sacks"],
+      "2d":["Marc and Fleur Attia"],
+      "30":["Irving Sacks"],
+      "31":["Irving Sacks"],
+      // "32":["Family of focus"],
+      "3_a":["Suzanna Sprong"],
+      "3_b":["Ray Pestrong"],
+      "3_c":["Irving Sacks"],
+      "3_d":["Marc and Fleur Attia"],
+      "3a":["Suzanna Sprong"],
+      "3b":["Ray Pestrong"],
+      "3c":["Irving Sacks"],
+      "3d":["Marc and Fleur Attia"],
+      "4c":["Irving Sacks"],
+      "4d":["Marc and Fleur Attia"],
+      "5a":["Suzanna Sprong"],
+      "5b":["Ray Pestrong"],
+      "5c":["Irving Sacks"],
+      "5d":["Marc and Fleur Attia"],
+      "6_a":["Suzanna Sprong"],
+      "6_b":["Ray Pestrong"],
+      "6_c":["Irving Sacks"],
+      "6_d":["Marc and Fleur Attia"],
+      "6a":["Suzanna Sprong"],
+      "6b":["Ray Pestrong"],
+      "6c":["Irving Sacks"],
+      "6d":["Marc and Fleur Attia"],
+      "7a":["Suzanna Sprong"],
+      "7b":["Ray Pestrong"],
+      "7c":["Irving Sacks"],
+      "7d":["Marc and Fleur Attia"],
+      "8a":["Suzanna Sprong"],
+      "8b":["Ray Pestrong"],
+      "8c":["Irving Sacks"],
+      "8d":["Marc and Fleur Attia"],
+      "9a":["Suzanna Sprong"],
+      "9b":["Ray Pestrong"],
+      "9c":["Irving Sacks"],
+      "9d":["Marc and Fleur Attia"]
+    }
   }
-  var familiesText = 
+  var familiesText = //IMPORTANT: Will need to enable scrolling and fix formatting for longer texts. See family histories
   {
     "Leslie Aguilar":
     `
@@ -395,8 +474,92 @@ function getFamily(id,group){ //read the id and group and return the correspondi
     African Americans: The Family of Shelley Bradford Bell
 
     Shelley Bradford Bell’s family grew up in Chicago, Illinois.  Shelley’s sister, Marcia, lives in Chicago and has a daughter, Binta.  Her brother, Quintin, lives in Atlanta.  Yvonne and Eugene Bradford Jr. are her parents, who divorced after 31 years of marriage.  Eugene Bradford Sr. is her maternal grandfather and her maternal grandmother is Elizabeth Badon.  She grew up with her husband, James Bell Jr. from age five.  Her son’s name is James III.  She came to San Francisco in 1986 to fulfill a childhood dream of living in the City by the Bay.
+    `,
+    "Irving Sacks":
     `
+    Sacks Family History
+    Prepared by Irving Sacks
+    January 2004
+
+
+    Irving's parents, Hyman and Frieda Sacks, and Irene's parents, Max and Rebecca Bookspan emigrated from Eastern Europe in the early 1900s and settled in Brooklyn, New York, where Irving and Irene were born. They met after Irving's discharge from the Navy in 1946 and married in 1948. They both graduated from Brooklyn College, moved to Pittsburgh (where Irving received his BA in Physics from Carnegie Institute of Technology), then successfully on to Kansas City (where son Jonathan was born), to Long Island, New York (where son Lee was born) and have resided over the past 45 years in Peabody, Massachusetts (where daughter Reva was born). Lee married Mary Ann Cougevan, and they have a 9-year-old son, Robert. Reva is married to John Cuthbertson, and they have a 3-year-old Daughter, Ellen. Irving enjoyed a 50-year career as an engineer in Aeronautics, Energy and Environment. And after raising 3 children, Irene worked as a high school Chemistry teacher. Both have now retired and continue to reside in Peabody.
+
+    `,
+    "Ray Pestrong":
+    `
+    Pestrong Family History
+    Prepared by Ray Pestrong
+    January 2004
+
+    My mother, Irene Brandes, came to NY when she was one year old, from Romania. She arrived here in 1899, with her mother, father, 3 sisters and a brother. All but Ethel had either died or disappeared from NY by the time I was born. My mother was very attractive, and had lots of opportunities to marry, but because she was the youngest, she was not allowed to marry until her sisters were wed. At one point she ran away and secretly got married, but that was quickly annulled. She later met my father, who had come from Radomysl, Poland (near Krakow), and when I was born my mother was 40. She died at age 97. She told me he was the handsomest man she had ever met. 
+
+    My father, who died (of a heart attack) when I was 16, was very secretive about his family. I assumed they did not get along, and I did not have the foresight to ask more about his history. I only met his one brother once, but that was not a very positive experience. My father was very powerful and tried to make a living as a boxer. When that failed he worked as a furniture mover. His greatest pride was in wrestling a bear on stage, and in witnessing the Dempsey - Firpo fight, immortalized in the famous painting by (  ?  ) in which Dempsey was knocked out of the ring, and got back in to knock out Firpo. The only movies I remember him taking me to were King Kong and Mighty Joe Young. He loved powerful, fearsome figures. My father's heart attack came at the age of 63. I also had a heart attack at age 63. 
+
+    I am learning of other Pestrongs, both here in the US and in Israel, but I'm not in close contact with anyone at the moment. My sister, Diana Fish, lives in NY with her husband, Stan, has two sons, married, two grandchildren and one more on the way. Both her sons are in NY. 
+
+    I live with my second wife, Judi, in Portola Valley, and have two married daughters. One, with 2 young sons, is in NJ, and the other, with a newborn baby, is in Menlo Park. My wife has one married son, living in Boston. 
+
+    I've been teaching geology at San Francisco State for 38 years and plan to continue indefinitely.
+    `,
+    "Susanna Sprong":
+    `
+    Black Dutch: Mixed-Heritage Jews of Color in the Deep American South
+    (Susanna’s Family History)
+    Prepared by Suzanna Sprong-Fernandez
+    October 2018 (adapted by ChatGPT)
+
+    Susanna Sprong-Fernandez recounts her emotional journey through northern Spain, recognizing herself as the first in her family to return in five centuries since her Sephardic Jewish ancestors fled the Spanish Inquisition. In 1492, the expulsion forced many Jews from the Iberian Peninsula to seek refuge in nearby regions, such as Bayonne and La Rochelle, before attempting to escape to the Americas. By the 1600s, her ancestors had settled in the colonial American South, a region characterized by cultural intermingling and conflict among European colonizers, Africans, and Indigenous populations. Her family, blending Sephardic Jewish, Native American, and African American heritage, thrived in this diverse environment despite the challenges they faced.
+
+    The "Black Dutch" Identity
+    Susanna's family, known as "Black Dutch" due to their dark skin and mixed heritage, navigated complex racial dynamics in the Appalachian region. The term "Black Dutch" originally referred to Sephardic Jews fleeing Spain through Amsterdam, and it came to describe people of ambiguous racial characteristics in the American South. Susanna traces her lineage to these Sephardic Jews who married into Native American and African American communities, forming a unique tri-racial group known as Melungeons. Despite the wealth and social status some family members achieved, they faced ongoing discrimination due to their mixed heritage, prompting further westward migration.
+
+    Cultural Preservation Amidst Adversity
+    Susanna's ancestors maintained their Sephardic traditions despite the pressures to assimilate. They adopted names and customs reflective of their Jewish heritage, even as they moved through Tennessee, North Carolina, Georgia, and Texas. Her family's identity often had to be concealed or reinterpreted to fit into the racial hierarchies of the time. Susanna’s great-great-grandfather Moses Deen, for example, married in North Carolina in the 1700s, signifying their deliberate preservation of Sephardic heritage. Susanna reflects on how her family’s dark features and unique cultural practices set them apart, fostering a sense of otherness and resilience.
+
+
+
+
+    Sephardic Traditions and Hidden Identities
+    Growing up in Atlanta, Susanna experienced the blending of Jewish and Christian traditions, influenced by her mother Juanita's Sephardic heritage. Although Juanita passed as Native American for safety, she subtly preserved Jewish customs, such as the prohibition against sweeping dirt through a door, a Sephardic superstition. Susanna's childhood was enriched with Mediterranean and classical Spanish music, alongside southern bluegrass, reflecting her family's diverse cultural roots. Despite societal pressures, her mother ensured that Susanna and her siblings received Hebrew names and participated in Jewish rituals within a messianic framework.
+
+    Embracing and Documenting Heritage
+    Susanna's journey to uncover and honor her family's Sephardic roots led her to delve into genealogy, revealing the complex layers of her ancestry. Her DNA confirmed Mediterranean, Iberian, and African heritage, prompting further research into her ancestors' migrations and intermarriages. Susanna's quest to document her family's history serves as a mitzvah, a way to honor and preserve the rich cultural tapestry her ancestors wove through centuries of resilience and adaptation. She is committed to continuing her mother's legacy of cultural preservation and restoration, ensuring that their Sephardic heritage is recognized and celebrated for generations to come.
+
+    Susanna Sprong-Fernandez recounts her emotional journey through northern Spain, recognizing herself as the first in her family to return in five centuries since her Sephardic Jewish ancestors fled the Spanish Inquisition. In 1492, the expulsion forced many Jews from the Iberian Peninsula to seek refuge in nearby regions, such as Bayonne and La Rochelle, before attempting to escape to the Americas. By the 1600s, her ancestors had settled in the colonial American South, a region characterized by cultural intermingling and conflict among European colonizers, Africans, and Indigenous populations. Her family, blending Sephardic Jewish, Native American, and African American heritage, thrived in this diverse environment despite the challenges they faced.
+    `,
+    "Marc and Fleur Attia":
+    `
+    Marc and Fleur Attia Family History: Notes
+    Prepared by Marc and Fleur
+    October 2018
+
+    Place of Marriage: Marseille		
+
+    Religion: Jewish
+
+    Siblings: Marc is the twelfth Child of Salomon and the fifth of Anini.
+
+    Siblings were born in Algeria, Israël and France following the migration of Salomon and Anini after the Algerian indépendance (Jewish were French in Algeria (which was a French colony) since décret Cremieux of 1870.
+
+    Fleur is a twin to Dov.
+    Fleur’s father was born in Lyon in 1944 near the building of the Gestapo. His family hid their Jewish identity during this time, and his elder brother was hidden in a catholic family.
+
+    During the WWII, Marc's parents were in Algeria. They have been affected by the Algerian war (1954/1962) and have to leave Algeria after the independence of 1962.
+
+    Your view of America: A country full of energy
+
+    Place of Marriage: Marseille		
+
+    Parent’s religious beliefs and practices: We came from a family of believers, but Marc’s family is much more practicing than Fleur’s.
+
+    Your religious beliefs and practices: We are both believers and practicing.
+
+    Your view of other world religions and their prophets: There are different expressions of wisdom.
+
+    Your family's view of other world religions: there is one God for everyone: Artwork in the home: paintings, sculpture, etc.
+
+    `,
   };
   if (families[id] && familiesText[families[id]]) return familiesText[families[id]];
-  return "";
+  return ""; // if family is blank, could probably disable the button IMPORTANT
 }
